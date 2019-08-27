@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.droid.elements.UIButton
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            app:text="Plain Button"
+            android:layout_gravity="center"
+            app:textSize="20dp"/>
+
+        <com.droid.elements.UIButton
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            app:text="Plain Bold Button"
+            android:layout_gravity="center"
+            app:textSize="20dp"
+            app:textStyle="bold"/>
+
+        <com.droid.elements.UIButton
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            app:text="Colored Button"
+            android:layout_gravity="center"
+            app:textSize="20dp"
+            app:textStyle="bold"
+            app:backgroundColor="#FF0000"/>
+
+        <com.droid.elements.UIButton
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            app:text="Left Aligned Button"
+            android:layout_gravity="center"
+            app:textSize="20dp"
+            app:textStyle="bold"
+            app:backgroundColor="#FF0000"
+            app:gravity="left"
+            android:layout_marginTop="10dp"/>
+
+        <com.droid.elements.UIButton
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            app:text="Right Aligned Button"
+            android:layout_gravity="center"
+            app:textSize="20dp"
+            app:textStyle="bold"
+            app:backgroundColor="#FF0000"
+            app:gravity="right"
+            android:layout_marginTop="10dp"/>
+
+        <com.droid.elements.UIButton
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            app:text="Rounded Button"
+            android:layout_gravity="center"
+            app:textSize="20dp"
+            app:textStyle="bold"
+            app:backgroundColor="#9DFF00"
+            app:gravity="center"
+            android:layout_marginTop="10dp"
+            app:cornerRadius="4dp"/>
+
+        <com.droid.elements.UIButton
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            app:text="Stroked Button"
+            android:layout_gravity="center"
+            app:textSize="20dp"
+            app:textStyle="bold"
+            app:backgroundColor="#9DFF00"
+            app:gravity="center"
+            android:layout_marginTop="10dp"
+            app:cornerRadius="4dp"
+            app:strokeColor="#000000"
+            app:strokeWidth="1dp"/>
+
+        <com.droid.elements.UIButton
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            app:text="Press Me!"
+            android:layout_gravity="center"
+            app:textSize="20dp"
+            app:textStyle="bold"
+            app:backgroundColor="#9DFF00"
+            app:gravity="center"
+            android:layout_marginTop="10dp"
+            app:cornerRadius="4dp"
+            app:strokeColor="#000000"
+            app:strokeWidth="1dp"
+            app:pressedBackgroundColor="#000000"
+            app:pressedTextColor="#ffffff"/>
+
+        <com.droid.elements.UIButton
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            app:text="Icon Button"
+            android:layout_gravity="center"
+            app:textSize="20dp"
+            app:textStyle="bold"
+            app:backgroundColor="#00C4FF"
+            app:gravity="center"
+            android:layout_marginTop="10dp"
+            app:cornerRadius="4dp"
+            app:strokeColor="#000000"
+            app:strokeWidth="1dp"
+            app:icon="@drawable/twiiter"
+            app:imageHeight="50dp"
+            app:imageWidth="50dp"/>
+
+        <com.droid.elements.UIButton
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            app:text="Right Icon"
+            android:layout_gravity="center"
+            app:textSize="20dp"
+            app:textStyle="bold"
+            app:backgroundColor="#00C4FF"
+            app:gravity="center"
+            android:layout_marginTop="10dp"
+            app:cornerRadius="4dp"
+            app:strokeColor="#000000"
+            app:strokeWidth="1dp"
+            app:icon="@drawable/twiiter"
+            app:imageHeight="50dp"
+            app:imageWidth="50dp"
+            app:iconPosition="right"/>
+
+        <com.droid.elements.UIButton
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            app:text="Bottom Icon"
+            android:layout_gravity="center"
+            app:textSize="20dp"
+            app:textStyle="bold"
+            app:backgroundColor="#00C4FF"
+            app:gravity="center"
+            android:layout_marginTop="10dp"
+            app:cornerRadius="4dp"
+            app:strokeColor="#000000"
+            app:strokeWidth="1dp"
+            app:icon="@drawable/twiiter"
+            app:imageHeight="50dp"
+            app:imageWidth="50dp"
+            app:iconPosition="bottom"/>
+
+        <com.droid.elements.UIButton
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            app:text="Top Icon"
+            android:layout_gravity="center"
+            app:textSize="20dp"
+            app:textStyle="bold"
+            app:backgroundColor="#00C4FF"
+            app:gravity="center"
+            android:layout_marginTop="10dp"
+            app:cornerRadius="4dp"
+            app:strokeColor="#000000"
+            app:strokeWidth="1dp"
+            app:icon="@drawable/twiiter"
+            app:imageHeight="50dp"
+            app:imageWidth="50dp"
+            app:iconPosition="top"/>
+
+        <com.droid.elements.UIButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:text=""
+            android:layout_gravity="center"
+            app:textSize="20dp"
+            app:textStyle="bold"
+            app:backgroundColor="#00C4FF"
+            app:gravity="center"
+            android:layout_marginTop="10dp"
+            app:cornerRadius="4dp"
+            app:strokeColor="#000000"
+            app:strokeWidth="1dp"
+            app:icon="@drawable/twiiter"
+            app:imageHeight="50dp"
+            app:imageWidth="50dp"
+            app:iconPosition="left"
+            app:buttonShape="oval"/>
+
+    </LinearLayout>
+
+</ScrollView>

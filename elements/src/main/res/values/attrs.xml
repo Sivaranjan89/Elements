@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CircularImageview">
+        <attr name="borderSize" format="dimension" />
+        <attr name="borderColor" format="color" />
+    </declare-styleable>
+
+    <!--<declare-styleable name="Shape">
+        <attr name="shapeDrawable" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="File">
+        <attr name="imgWidth" format="dimension" />
+        <attr name="imgHeight" format="dimension" />
+
+        <attr name="titleSize" format="dimension" />
+        <attr name="titleColor" format="color" />
+        <attr name="titleStyle" format="integer">
+            <enum name="bold" value="1" />
+            <enum name="normal" value="2" />
+            <enum name="italic" value="3" />
+        </attr>
+
+        <attr name="contentSize" format="dimension" />
+        <attr name="contentColor" format="color" />
+        <attr name="contentStyle" format="integer">
+            <enum name="bold" value="1" />
+            <enum name="normal" value="2" />
+            <enum name="italic" value="3" />
+        </attr>
+
+        <attr name="colCount" format="integer" />
+
+        <attr name="rowType" format="integer">
+            <enum name="ImageOnly" value="1" />
+            <enum name="TitleOnly" value="2" />
+            <enum name="TitleAndContent" value="3" />
+            <enum name="ImageAndTitle1" value="4" />
+            <enum name="ImageTitleAndContent1" value="5" />
+            <enum name="ImageTitleAndContent2" value="6" />
+            <enum name="ImageTitleAndContent3" value="7" />
+            <enum name="ImageAndTitle2" value="8" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="OnScreenKeyboard">
+        <attr name="keyboardType" format="integer">
+            <enum value="1" name="number" />
+            <enum value="2" name="text" />
+        </attr>
+        <attr name="textSize" format="dimension" />
+        <attr name="textColor" format="color" />
+        <attr name="selectedTextColor" format="color" />
+        <attr name="textStyle" format="integer">
+            <enum name="bold" value="1" />
+            <enum name="normal" value="0" />
+        </attr>
+        <attr name="cellColor" format="color" />
+        <attr name="selectedCellColor" format="color" />
+        <attr name="cellBorder" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="Checks">
+        <attr name="checkOrientation" format="integer">
+            <enum value="1" name="vertical" />
+            <enum value="0" name="horizontal" />
+        </attr>
+        <attr name="checkPosition" format="integer">
+            <enum name="LTR" value="0" />
+            <enum name="RTL" value="1" />
+        </attr>
+        <attr name="checkTextSize" format="dimension" />
+        <attr name="checkTextColor" format="color" />
+        <attr name="checkTextStyle" format="integer">
+            <enum name="bold" value="1" />
+            <enum name="normal" value="0" />
+        </attr>
+        <attr name="checkColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="Radios">
+        <attr name="radioOrientation" format="integer">
+            <enum value="1" name="vertical" />
+            <enum value="0" name="horizontal" />
+        </attr>
+        <attr name="radioPosition" format="integer">
+            <enum name="LTR" value="0" />
+            <enum name="RTL" value="1" />
+        </attr>
+        <attr name="radioTextSize" format="dimension" />
+        <attr name="radioTextColor" format="color" />
+        <attr name="radioTextStyle" format="integer">
+            <enum name="bold" value="1" />
+            <enum name="normal" value="0" />
+        </attr>
+        <attr name="radioColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="ExpandingList">
+        <attr name="customIndicator" format="reference" />
+        <attr name="nonScroll" format="boolean" />
+        <attr name="autoCloseGroups" format="boolean" />
+        <attr name="indicatorPosition" format="integer">
+            <enum name="left" value="0" />
+            <enum name="right" value="1" />
+        </attr>
+        <attr name="imageSize" format="dimension" />
+        <attr name="groupDividerColor" format="color" />
+        <attr name="childDividerColor" format="color" />
+        <attr name="dividerHeight" format="dimension" />
+        <attr name="groupBackgroundColor" format="color" />
+        <attr name="childBackgroundColor" format="color" />
+        <attr name="groupTextColor" format="color" />
+        <attr name="childTextColor" format="color" />
+        <attr name="groupTextSize" format="dimension" />
+        <attr name="childTextSize" format="dimension" />
+        <attr name="groupTextStyle" format="integer">
+            <enum name="bold" value="1" />
+            <enum name="normal" value="0" />
+        </attr>
+        <attr name="childTextStyle" format="integer">
+            <enum name="bold" value="1" />
+            <enum name="normal" value="0" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="DrawingBoard">
+        <attr name="sketchColor" format="color" />
+        <attr name="brushSize" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="WheelView">
+        <attr name="wheelVisibleItems" format="integer" />
+        <attr name="wheelTextColor" format="color" />
+        <attr name="wheelSelectedTextColor" format="color" />
+        <attr name="wheelBackgroundColor" format="color" />
+        <attr name="wheelTextSize" format="dimension" />
+        <attr name="wheelSelectedTextSize" format="dimension" />
+        <attr name="wheelLineSpacing" format="dimension" />
+        <attr name="wheelSelectedItem" format="integer" />
+        <attr name="wheelIsCyclic" format="boolean" />
+        <attr name="wheelShowDivider" format="boolean" />
+        <attr name="wheelIsCurved" format="boolean" />
+        <attr name="wheelDividerColor" format="color" />
+        <attr name="wheelDividerSize" format="dimension" />
+        <attr name="wheelRectColor" format="color" />
+        <attr name="wheelTextAlign" format="integer">
+            <enum value="0" name="Left" />
+            <enum value="1" name="Center" />
+            <enum value="2" name="Right" />
+        </attr>
+        <attr name="wheelTextStyle" format="integer">
+            <enum name="bold" value="1" />
+            <enum name="normal" value="0" />
+        </attr>
+        <attr name="wheelSelectedextStyle" format="integer">
+            <enum name="bold" value="1" />
+            <enum name="normal" value="0" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="BarGraph">
+        <attr name="barWidth" format="dimension" />
+        <attr name="barHeight" format="dimension" />
+        <attr name="SingleBar" format="boolean" />
+        <attr name="graphOrientation" format="integer">
+            <enum name="horizontal" value="1" />
+            <enum name="vertical" value="2" />
+        </attr>
+        <attr name="barRadius" format="dimension" />
+        <attr name="shouldAnimate" format="boolean" />
+        <attr name="shouldBounceAnimate" format="boolean" />
+        <attr name="animationDuration" format="integer" />
+        <attr name="showLegend" format="boolean" />
+        <attr name="legendIconSize" format="dimension" />
+        <attr name="legendTextSize" format="dimension" />
+        <attr name="legendTextColor" format="color" />
+        <attr name="legendTextStyle" format="integer">
+            <enum name="bold" value="1" />
+            <enum name="normal" value="0" />
+        </attr>
+        <attr name="showLegendPercentage" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="BubbleLayout">
+        <attr name="arrowDirection" format="integer">
+            <enum name="left" value="1" />
+            <enum name="right" value="2" />
+            <enum name="top" value="3" />
+            <enum name="bottom" value="4" />
+        </attr>
+    </declare-styleable>-->
+
+    <declare-styleable name="UIButton">
+        <attr name="backgroundColor" format="color" />
+        <attr name="pressedBackgroundColor" format="color" />
+        <attr name="text" format="string" />
+        <attr name="textSize" format="dimension" />
+        <attr name="textColor" format="color" />
+        <attr name="pressedTextColor" format="color" />
+        <attr name="textStyle" format="integer">
+            <enum name="normal" value="0" />
+            <enum name="bold" value="1" />
+        </attr>
+        <attr name="fontName" format="string" />
+        <attr name="strokeColor" format="color" />
+        <attr name="strokeWidth" format="dimension" />
+        <attr name="cornerRadius" format="dimension" />
+        <attr name="icon" format="reference" />
+        <attr name="pressedIcon" format="reference" />
+        <attr name="iconPosition" format="integer">
+            <enum name="left" value="1" />
+            <enum name="right" value="2" />
+            <enum name="top" value="3" />
+            <enum name="bottom" value="4" />
+        </attr>
+        <attr name="gravity" format="integer">
+            <enum name="left" value="1" />
+            <enum name="right" value="2" />
+            <enum name="center" value="3" />
+        </attr>
+        <attr name="imageShape" format="integer">
+            <enum name="normal" value="1" />
+            <enum name="circular" value="2" />
+        </attr>
+        <attr name="imageWidth" format="dimension" />
+        <attr name="imageHeight" format="dimension" />
+        <attr name="spacing" format="dimension" />
+        <attr name="buttonShape" format="integer">
+            <enum name="rectangle" value="1" />
+            <enum name="oval" value="2" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="IconEditText">
+        <attr name="ie_backgroundColor" format="color" />
+        <attr name="ie_text" format="string" />
+        <attr name="ie_hintText" format="string" />
+        <attr name="ie_helperText" format="string" />
+        <attr name="ie_textSize" format="dimension" />
+        <attr name="ie_helperTextSize" format="dimension" />
+        <attr name="ie_textColor" format="color" />
+        <attr name="ie_hintTextColor" format="color" />
+        <attr name="ie_helperTextColor" format="color" />
+        <attr name="ie_textStyle" format="integer">
+            <enum name="normal" value="0" />
+            <enum name="bold" value="1" />
+        </attr>
+        <attr name="ie_helperTextStyle" format="integer">
+            <enum name="normal" value="0" />
+            <enum name="bold" value="1" />
+        </attr>
+        <attr name="ie_helperTextPosition" format="integer">
+            <enum name="top_left" value="1" />
+            <enum name="top_right" value="2" />
+            <enum name="bottom_left" value="3" />
+            <enum name="bottom_right" value="4" />
+        </attr>
+        <attr name="ie_fontName" format="string" />
+        <attr name="ie_helperFontName" format="string" />
+        <attr name="ie_strokeColor" format="color" />
+        <attr name="ie_strokeWidth" format="dimension" />
+        <attr name="ie_radius" format="dimension" />
+        <attr name="ie_icon" format="reference" />
+        <attr name="ie_iconPosition" format="integer">
+            <enum name="left" value="1" />
+            <enum name="right" value="2" />
+        </attr>
+        <attr name="ie_imageShape" format="integer">
+            <enum name="normal" value="1" />
+            <enum name="circular" value="2" />
+        </attr>
+        <attr name="ie_imageWidth" format="dimension" />
+        <attr name="ie_imageHeight" format="dimension" />
+        <attr name="ie_spacing" format="dimension" />
+        <attr name="ie_editTextShape" format="integer">
+            <enum name="rectangle" value="1" />
+            <enum name="oval" value="2" />
+            <enum name="none" value="3" />
+        </attr>
+        <attr name="ie_showDivider" format="boolean" />
+        <attr name="ie_dividerColor" format="color" />
+        <attr name="ie_dividerWidth" format="dimension" />
+        <attr name="ie_showLine" format="boolean" />
+        <attr name="ie_lineColor" format="color" />
+        <attr name="ie_lineWidth" format="dimension" />
+        <attr name="ie_autoStretch" format="boolean" />
+        <attr name="ie_singleLine" format="boolean" />
+        <attr name="ie_maxLines" format="integer" />
+        <attr name="ie_inputType" format="integer">
+            <enum name="text" value="1" />
+            <enum name="number" value="2" />
+            <enum name="phone" value="3" />
+            <enum name="datetime" value="4" />
+            <enum name="number_decimal" value="8192" />
+            <enum name="number_password" value="16" />
+            <enum name="email" value="32" />
+            <enum name="text_password" value="128" />
+            <enum name="person_name" value="96" />
+            <enum name="date" value="16" />
+            <enum name="time" value="32" />
+        </attr>
+        <attr name="ie_digits" format="string" />
+        <attr name="ie_allowPaste" format="boolean" />
+        <attr name="ie_allCaps" format="boolean" />
+        <attr name="ie_maxLength" format="integer" />
+        <attr name="ie_letterSpacing" format="dimension" />
+        <attr name="ie_lines" format="integer" />
+        <attr name="ie_lineSpacing" format="dimension" />
+        <attr name="ie_imeActionLabel" format="string" />
+        <attr name="ie_cursorVisible" format="boolean" />
+        <attr name="ie_imeOptions" format="integer">
+            <enum name="done" value="6" />
+            <enum name="go" value="2" />
+            <enum name="next" value="5" />
+            <enum name="none" value="1" />
+            <enum name="previous" value="7" />
+            <enum name="search" value="3" />
+            <enum name="send" value="4" />
+            <enum name="navigate_next" value="134217728" />
+            <enum name="navigate_previous" value="67108864" />
+        </attr>
+        <attr name="ie_ellipsize" format="integer">
+            <enum name="start" value="1" />
+            <enum name="middle" value="2" />
+            <enum name="end" value="3" />
+            <enum name="marquee" value="4" />
+            <enum name="none" value="0" />
+        </attr>
+        <attr name="currencySymbol" format="string" />
+        <attr name="animate" format="boolean" />
+        <attr name="animDuration" format="integer" />
+
+    </declare-styleable>
+
+</resources>
