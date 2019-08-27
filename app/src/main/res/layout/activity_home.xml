@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.droid.elements.UIButton
+        android:id="@+id/uibutton"
+        app:text="UIButton"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        app:textColor="#000000"
+        app:backgroundColor="#0BE6DD"
+        app:strokeColor="#000000"
+        app:strokeWidth="1dp"
+        app:cornerRadius="5dp"
+        app:textSize="15dp"
+        app:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"/>
+
+    <com.droid.elements.UIButton
+        android:id="@+id/uiinput"
+        app:text="UIEditText"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        app:textColor="#000000"
+        app:backgroundColor="#0BE6DD"
+        app:strokeColor="#000000"
+        app:strokeWidth="1dp"
+        app:cornerRadius="5dp"
+        app:textSize="15dp"
+        app:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"/>
+
+</LinearLayout>

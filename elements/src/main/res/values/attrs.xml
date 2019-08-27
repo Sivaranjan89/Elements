@@ -191,13 +191,11 @@
         </attr>
     </declare-styleable>-->
 
-    <declare-styleable name="UIButton">
+    <declare-styleable name="UICommon">
         <attr name="backgroundColor" format="color" />
-        <attr name="pressedBackgroundColor" format="color" />
         <attr name="text" format="string" />
         <attr name="textSize" format="dimension" />
         <attr name="textColor" format="color" />
-        <attr name="pressedTextColor" format="color" />
         <attr name="textStyle" format="integer">
             <enum name="normal" value="0" />
             <enum name="bold" value="1" />
@@ -207,6 +205,18 @@
         <attr name="strokeWidth" format="dimension" />
         <attr name="cornerRadius" format="dimension" />
         <attr name="icon" format="reference" />
+        <attr name="imageShape" format="integer">
+            <enum name="normal" value="1" />
+            <enum name="circular" value="2" />
+        </attr>
+        <attr name="imageWidth" format="dimension" />
+        <attr name="imageHeight" format="dimension" />
+        <attr name="spacing" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="UIButton">
+        <attr name="pressedBackgroundColor" format="color" />
+        <attr name="pressedTextColor" format="color" />
         <attr name="pressedIcon" format="reference" />
         <attr name="iconPosition" format="integer">
             <enum name="left" value="1" />
@@ -219,75 +229,49 @@
             <enum name="right" value="2" />
             <enum name="center" value="3" />
         </attr>
-        <attr name="imageShape" format="integer">
-            <enum name="normal" value="1" />
-            <enum name="circular" value="2" />
-        </attr>
-        <attr name="imageWidth" format="dimension" />
-        <attr name="imageHeight" format="dimension" />
-        <attr name="spacing" format="dimension" />
+
         <attr name="buttonShape" format="integer">
             <enum name="rectangle" value="1" />
             <enum name="oval" value="2" />
         </attr>
     </declare-styleable>
 
-    <declare-styleable name="IconEditText">
-        <attr name="ie_backgroundColor" format="color" />
-        <attr name="ie_text" format="string" />
-        <attr name="ie_hintText" format="string" />
-        <attr name="ie_helperText" format="string" />
-        <attr name="ie_textSize" format="dimension" />
-        <attr name="ie_helperTextSize" format="dimension" />
-        <attr name="ie_textColor" format="color" />
-        <attr name="ie_hintTextColor" format="color" />
-        <attr name="ie_helperTextColor" format="color" />
-        <attr name="ie_textStyle" format="integer">
+    <declare-styleable name="UIEditText">
+        <attr name="hintText" format="string" />
+        <attr name="hintTextColor" format="color" />
+        <attr name="helperText" format="string" />
+        <attr name="helperTextSize" format="dimension" />
+        <attr name="helperTextColor" format="color" />
+        <attr name="helperTextStyle" format="integer">
             <enum name="normal" value="0" />
             <enum name="bold" value="1" />
         </attr>
-        <attr name="ie_helperTextStyle" format="integer">
-            <enum name="normal" value="0" />
-            <enum name="bold" value="1" />
-        </attr>
-        <attr name="ie_helperTextPosition" format="integer">
+        <attr name="helperTextPosition" format="integer">
             <enum name="top_left" value="1" />
             <enum name="top_right" value="2" />
             <enum name="bottom_left" value="3" />
             <enum name="bottom_right" value="4" />
         </attr>
-        <attr name="ie_fontName" format="string" />
-        <attr name="ie_helperFontName" format="string" />
-        <attr name="ie_strokeColor" format="color" />
-        <attr name="ie_strokeWidth" format="dimension" />
-        <attr name="ie_radius" format="dimension" />
-        <attr name="ie_icon" format="reference" />
-        <attr name="ie_iconPosition" format="integer">
+        <attr name="helperFontName" format="string" />
+        <attr name="iconAlignment" format="integer">
             <enum name="left" value="1" />
             <enum name="right" value="2" />
         </attr>
-        <attr name="ie_imageShape" format="integer">
-            <enum name="normal" value="1" />
-            <enum name="circular" value="2" />
-        </attr>
-        <attr name="ie_imageWidth" format="dimension" />
-        <attr name="ie_imageHeight" format="dimension" />
-        <attr name="ie_spacing" format="dimension" />
-        <attr name="ie_editTextShape" format="integer">
+        <attr name="editTextShape" format="integer">
             <enum name="rectangle" value="1" />
             <enum name="oval" value="2" />
             <enum name="none" value="3" />
         </attr>
-        <attr name="ie_showDivider" format="boolean" />
-        <attr name="ie_dividerColor" format="color" />
-        <attr name="ie_dividerWidth" format="dimension" />
-        <attr name="ie_showLine" format="boolean" />
-        <attr name="ie_lineColor" format="color" />
-        <attr name="ie_lineWidth" format="dimension" />
-        <attr name="ie_autoStretch" format="boolean" />
-        <attr name="ie_singleLine" format="boolean" />
-        <attr name="ie_maxLines" format="integer" />
-        <attr name="ie_inputType" format="integer">
+        <attr name="showDivider" format="boolean" />
+        <attr name="dividerColor" format="color" />
+        <attr name="dividerWidth" format="dimension" />
+        <attr name="showLine" format="boolean" />
+        <attr name="lineColor" format="color" />
+        <attr name="lineWidth" format="dimension" />
+        <attr name="autoStretch" format="boolean" />
+        <attr name="singleLine" format="boolean" />
+        <attr name="maxLines" format="integer" />
+        <attr name="inputType" format="integer">
             <enum name="text" value="1" />
             <enum name="number" value="2" />
             <enum name="phone" value="3" />
@@ -300,16 +284,16 @@
             <enum name="date" value="16" />
             <enum name="time" value="32" />
         </attr>
-        <attr name="ie_digits" format="string" />
-        <attr name="ie_allowPaste" format="boolean" />
-        <attr name="ie_allCaps" format="boolean" />
-        <attr name="ie_maxLength" format="integer" />
-        <attr name="ie_letterSpacing" format="dimension" />
-        <attr name="ie_lines" format="integer" />
-        <attr name="ie_lineSpacing" format="dimension" />
-        <attr name="ie_imeActionLabel" format="string" />
-        <attr name="ie_cursorVisible" format="boolean" />
-        <attr name="ie_imeOptions" format="integer">
+        <attr name="digits" format="string" />
+        <attr name="allowPaste" format="boolean" />
+        <attr name="allCaps" format="boolean" />
+        <attr name="maxLength" format="integer" />
+        <attr name="letterSpacing" format="dimension" />
+        <attr name="lines" format="integer" />
+        <attr name="lineSpacing" format="dimension" />
+        <attr name="imeActionLabel" format="string" />
+        <attr name="cursorVisible" format="boolean" />
+        <attr name="imeOptions" format="integer">
             <enum name="done" value="6" />
             <enum name="go" value="2" />
             <enum name="next" value="5" />
@@ -320,7 +304,7 @@
             <enum name="navigate_next" value="134217728" />
             <enum name="navigate_previous" value="67108864" />
         </attr>
-        <attr name="ie_ellipsize" format="integer">
+        <attr name="ellipsize" format="integer">
             <enum name="start" value="1" />
             <enum name="middle" value="2" />
             <enum name="end" value="3" />
