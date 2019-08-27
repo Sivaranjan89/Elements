@@ -191,9 +191,7 @@ public class UIEditText extends LinearLayout {
 
         try {
             if (bgColor == Color.TRANSPARENT) {
-                if (getBackground() != null) {
-                    bgColor = ((ColorDrawable) getBackground()).getColor();
-                }
+                bgColor = ((ColorDrawable) getBackground()).getColor();
             }
         } catch (Exception e) {
             if (DroidConstants.showErrors) {
@@ -288,8 +286,6 @@ public class UIEditText extends LinearLayout {
         if (helperPosition == 3 || helperPosition == 4) {
             addView(helper);
         }
-
-        editText.bringToFront();
     }
 
     private void drawLine() {

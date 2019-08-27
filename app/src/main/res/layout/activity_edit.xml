@@ -14,13 +14,74 @@
 
         <com.droid.elements.UIEditText
             android:layout_width="200dp"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_gravity="center"
-            app:hintText="Username"
-            app:textColor="#000000"
-            app:textSize="20dp"
-            app:textStyle="bold" />
+            app:hintText="Simple EditText" />
+
+        <com.droid.elements.UIEditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            app:hintText="Rounded EditText"
+            app:cornerRadius="5dp"
+            app:strokeColor="#000000"
+            app:strokeWidth="1dp"/>
+
+        <com.droid.elements.UIEditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            app:hintText="Helper Text EditText"
+            app:cornerRadius="5dp"
+            app:strokeColor="#000000"
+            app:strokeWidth="1dp"
+            app:helperText="Helper Text"
+            app:helperTextPosition="bottom_left"/>
+
+        <com.droid.elements.UIEditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            app:hintText="Currency EditText"
+            app:cornerRadius="5dp"
+            app:strokeColor="#000000"
+            app:strokeWidth="1dp"
+            app:currencySymbol="$"/>
+
+        <com.droid.elements.UIEditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            app:hintText="Icon EditText"
+            app:cornerRadius="5dp"
+            app:strokeColor="#000000"
+            app:strokeWidth="1dp"
+            app:icon="@drawable/twiiter"
+            app:imageWidth="30dp"
+            app:imageHeight="30dp"
+            app:showDivider="true"
+            app:dividerColor="#000000"
+            app:editTextShape="rectangle"
+            app:imeOptions="next"/>
+
+        <com.droid.elements.UIEditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            app:hintText="Icon EditText with Line"
+            app:icon="@drawable/twiiter"
+            app:imageWidth="30dp"
+            app:imageHeight="30dp"
+            app:showLine="true"
+            app:lineColor="#000000"
+            app:editTextShape="none"
+            app:imeOptions="done"/>
 
     </LinearLayout>
 
