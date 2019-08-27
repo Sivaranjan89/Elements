@@ -3,30 +3,30 @@ UI Components made easy to develop.
 Use this library to design a UI element without having to code much.
 
 # Example
-<com.droid.elements.UIButton
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            app:gravity="center"
-            app:text="Button Text"
-            app:textSize="20dp"
-            app:textStyle="bold"
-            app:textColor="#000000"
-            app:pressedTextColor="#FFFFFF"
-            app:backgroundColor="#00C4FF"
-            app:pressedBackgroundColor="#000000"
-            app:cornerRadius="4dp"
-            app:strokeColor="#000000"
-            app:strokeWidth="1dp"
-            app:icon="@drawable/twiiter"
-            app:pressedIcon="@mipmap/ic_launcher"
-            app:imageHeight="50dp"
-            app:imageWidth="50dp"
-            app:iconPosition="left"
-            app:buttonShape="oval"
-            app:imageShape="normal"
-            app:spacing="5dp"
-            app:fontName="calypto.ttf" />
+<com.droid.elements.UIButton <br />
+            android:layout_width="50dp" <br />
+            android:layout_height="50dp" <br />
+            android:layout_gravity="center" <br />
+            app:gravity="center" <br />
+            app:text="Button Text" <br />
+            app:textSize="20dp" <br />
+            app:textStyle="bold" <br />
+            app:textColor="#000000" <br />
+            app:pressedTextColor="#FFFFFF" <br />
+            app:backgroundColor="#00C4FF" <br />
+            app:pressedBackgroundColor="#000000" <br />
+            app:cornerRadius="4dp" <br />
+            app:strokeColor="#000000" <br />
+            app:strokeWidth="1dp" <br />
+            app:icon="@drawable/twiiter" <br />
+            app:pressedIcon="@mipmap/ic_launcher" <br />
+            app:imageHeight="50dp" <br />
+            app:imageWidth="50dp" <br />
+            app:iconPosition="left" <br />
+            app:buttonShape="oval" <br />
+            app:imageShape="normal" <br />
+            app:spacing="5dp" <br />
+            app:fontName="calypto.ttf" /> <br />
 
 # Attributes
 app:gravity="center" <!--Set Gravity for Icon and Text--> <br />
