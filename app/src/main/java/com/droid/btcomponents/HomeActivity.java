@@ -22,5 +22,14 @@ public class HomeActivity extends Activity {
                 startActivity(i);
             }
         });
+
+        UIButton uiedit = findViewById(R.id.uiinput);
+        uiedit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(HomeActivity.this, UIEditActivity.class);
+                startActivity(i);
+            }
+        });
     }
 }

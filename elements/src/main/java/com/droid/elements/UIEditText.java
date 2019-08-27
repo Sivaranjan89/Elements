@@ -137,7 +137,7 @@ public class UIEditText extends LinearLayout {
         autoStretch = ta.getBoolean(R.styleable.UIEditText_autoStretch, false);
         singleLine = ta.getBoolean(R.styleable.UIEditText_singleLine, false);
         maxLines = ta.getInt(R.styleable.UIEditText_maxLines, 0);
-        inputType = ta.getInt(R.styleable.UIEditText_inputType, 0);
+        inputType = ta.getInt(R.styleable.UIEditText_inputType, 1);
         digits = ta.getString(R.styleable.UIEditText_digits);
         allowPaste = ta.getBoolean(R.styleable.UIEditText_allowPaste, true);
         allCaps = ta.getBoolean(R.styleable.UIEditText_allCaps, false);
@@ -191,7 +191,9 @@ public class UIEditText extends LinearLayout {
 
         try {
             if (bgColor == Color.TRANSPARENT) {
-                bgColor = ((ColorDrawable) getBackground()).getColor();
+                if (getBackground() != null) {
+                    bgColor = ((ColorDrawable) getBackground()).getColor();
+                }
             }
         } catch (Exception e) {
             if (DroidConstants.showErrors) {
@@ -286,6 +288,8 @@ public class UIEditText extends LinearLayout {
         if (helperPosition == 3 || helperPosition == 4) {
             addView(helper);
         }
+
+        editText.bringToFront();
     }
 
     private void drawLine() {
