@@ -2,6 +2,32 @@
 UI Components made easy to develop.
 Use this library to design a UI element without having to code much.
 
+# Example
+<com.droid.elements.UIButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            app:gravity="center"
+            app:text="Button Text"
+            app:textSize="20dp"
+            app:textStyle="bold"
+            app:textColor="#000000"
+            app:pressedTextColor="#FFFFFF"
+            app:backgroundColor="#00C4FF"
+            app:pressedBackgroundColor="#000000"
+            app:cornerRadius="4dp"
+            app:strokeColor="#000000"
+            app:strokeWidth="1dp"
+            app:icon="@drawable/twiiter"
+            app:pressedIcon="@mipmap/ic_launcher"
+            app:imageHeight="50dp"
+            app:imageWidth="50dp"
+            app:iconPosition="left"
+            app:buttonShape="oval"
+            app:imageShape="normal"
+            app:spacing="5dp"
+            app:fontName="calypto.ttf" />
+
 # Attributes
 app:gravity="center" <!--Set Gravity for Icon and Text--> <br />
 app:text="Button Text" <!--Set Text--> <br />
