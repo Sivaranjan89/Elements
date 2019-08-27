@@ -55,7 +55,7 @@ app:fontName="calypto.ttf" -> Set font path in assets <br />
 
 
 ## UIEditText
-![Screenshot_20190827-194224__01](https://user-images.githubusercontent.com/54542325/63779787-c42f5800-c904-11e9-84ae-7c3822b38986.jpg)
+![Screenshot_20190827-231855__01](https://user-images.githubusercontent.com/54542325/63796294-6eb67380-c923-11e9-8209-51c8bfc4d141.jpg)
 
 ## Example
 <com.droid.elements.UIEditText <br />
