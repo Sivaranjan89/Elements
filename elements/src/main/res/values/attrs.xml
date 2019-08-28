@@ -192,6 +192,11 @@
     </declare-styleable>-->
 
     <declare-styleable name="UICommon">
+
+    </declare-styleable>
+
+    <declare-styleable name="UIButton">
+        <!--Common-->
         <attr name="backgroundColor" format="color" />
         <attr name="text" format="string" />
         <attr name="textSize" format="dimension" />
@@ -212,9 +217,7 @@
         <attr name="imageWidth" format="dimension" />
         <attr name="imageHeight" format="dimension" />
         <attr name="spacing" format="dimension" />
-    </declare-styleable>
-
-    <declare-styleable name="UIButton">
+        <!--BUTTON-->
         <attr name="pressedBackgroundColor" format="color" />
         <attr name="pressedTextColor" format="color" />
         <attr name="pressedIcon" format="reference" />
@@ -237,6 +240,22 @@
     </declare-styleable>
 
     <declare-styleable name="UIEditText">
+        <!--Common-->
+        <attr name="backgroundColor" />
+        <attr name="text" />
+        <attr name="textSize" />
+        <attr name="textColor" />
+        <attr name="textStyle" />
+        <attr name="fontName" />
+        <attr name="strokeColor"/>
+        <attr name="strokeWidth" />
+        <attr name="cornerRadius"/>
+        <attr name="icon" />
+        <attr name="imageShape"/>
+        <attr name="imageWidth" />
+        <attr name="imageHeight"/>
+        <attr name="spacing" />
+        <!--EDITTEXT-->
         <attr name="hintText" format="string" />
         <attr name="hintTextColor" format="color" />
         <attr name="helperText" format="string" />

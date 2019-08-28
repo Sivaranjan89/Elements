@@ -22,7 +22,6 @@
 
     <com.droid.elements.UIButton
         android:id="@+id/uiinput"
-        app:text="UIEditText"
         android:layout_width="250dp"
         android:layout_height="50dp"
         app:textColor="#000000"
@@ -33,6 +32,20 @@
         app:textSize="15dp"
         app:textStyle="bold"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        app:text="UIEditText"/>
+
+    <com.droid.elements.UIEditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        app:textStyle="normal"
+        app:icon="@drawable/twiiter"
+        app:imageWidth="30dp"
+        app:imageHeight="30dp"
+        app:cornerRadius="4dp"
+        app:strokeColor="#000000"
+        app:strokeWidth="1dp"/>
 
 </LinearLayout>

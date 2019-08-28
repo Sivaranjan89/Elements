@@ -99,25 +99,22 @@ public class UIEditText extends LinearLayout {
             return;
         }
 
-        TypedArray ca = mContext.obtainStyledAttributes(attrs, R.styleable.UICommon);
-        text = ca.getString(R.styleable.UICommon_text);
-        textSize = ca.getDimension(R.styleable.UICommon_textSize, DroidFunctions.dpToPx(mContext, 10));
-        textStyle = ca.getInt(R.styleable.UICommon_textStyle, 0);
-        textColor = ca.getColor(R.styleable.UICommon_textColor, Color.BLACK);
-        font = ca.getString(R.styleable.UICommon_fontName);
-        strokeColor = ca.getColor(R.styleable.UICommon_strokeColor, Color.BLACK);
-        strokeWidth = ca.getDimension(R.styleable.UICommon_strokeWidth, 0);
-        radius = ca.getDimension(R.styleable.UICommon_cornerRadius, 0);
-        icon = ca.getResourceId(R.styleable.UICommon_icon, -1);
-        shape = ca.getInt(R.styleable.UICommon_imageShape, 1);
-        imageHeight = ca.getDimension(R.styleable.UICommon_imageHeight, -1);
-        imageWidth = ca.getDimension(R.styleable.UICommon_imageWidth, -1);
-        spacing = ca.getDimension(R.styleable.UICommon_spacing, 0);
-        bgColor = ca.getColor(R.styleable.UICommon_backgroundColor, Color.TRANSPARENT);
-
-        ca.recycle();
-
         TypedArray ta = mContext.obtainStyledAttributes(attrs, R.styleable.UIEditText);
+        text = ta.getString(R.styleable.UIEditText_text);
+        textSize = ta.getDimension(R.styleable.UIEditText_textSize, DroidFunctions.dpToPx(mContext, 10));
+        textStyle = ta.getInt(R.styleable.UIEditText_textStyle, 0);
+        textColor = ta.getColor(R.styleable.UIEditText_textColor, Color.BLACK);
+        font = ta.getString(R.styleable.UIEditText_fontName);
+        strokeColor = ta.getColor(R.styleable.UIEditText_strokeColor, Color.BLACK);
+        strokeWidth = ta.getDimension(R.styleable.UIEditText_strokeWidth, 0);
+        radius = ta.getDimension(R.styleable.UIEditText_cornerRadius, 0);
+        icon = ta.getResourceId(R.styleable.UIEditText_icon, -1);
+        shape = ta.getInt(R.styleable.UIEditText_imageShape, 1);
+        imageHeight = ta.getDimension(R.styleable.UIEditText_imageHeight, -1);
+        imageWidth = ta.getDimension(R.styleable.UIEditText_imageWidth, -1);
+        spacing = ta.getDimension(R.styleable.UIEditText_spacing, 0);
+        bgColor = ta.getColor(R.styleable.UIEditText_backgroundColor, Color.TRANSPARENT);
+
         hintText = ta.getString(R.styleable.UIEditText_hintText);
         helperText = ta.getString(R.styleable.UIEditText_helperText);
         helperTextSize = ta.getDimension(R.styleable.UIEditText_helperTextSize, DroidFunctions.dpToPx(mContext, 10));

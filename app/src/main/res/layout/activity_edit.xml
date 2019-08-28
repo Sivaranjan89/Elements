@@ -85,28 +85,4 @@
 
     </LinearLayout>
 
-    <!--app:editTextShape="rectangle"
-    app:cornerRadius="5dp"
-    app:strokeColor="#000000"
-    app:strokeWidth="1dp"
-    app:icon="@drawable/twiiter"
-    app:iconPosition="left"
-    app:showDivider="true"
-    app:dividerColor="#000000"
-    app:dividerWidth="1dp"
-    app:lineWidth="1dp"
-    app:spacing="10dp"
-    app:helperText="Give your Username"
-    app:helperTextSize="15dp"
-    app:helperTextColor="#FF0000"
-    app:helperTextStyle="normal"
-    app:helperTextPosition="3"
-    app:autoStretch="true"
-    app:inputType="number"
-    app:allowPaste="false"
-    app:allCaps="false"
-    app:imeOptions="search"
-    app:showLine="true"
-    app:currencySymbol="#"-->
-
 </ScrollView>

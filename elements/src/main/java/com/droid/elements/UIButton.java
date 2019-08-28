@@ -78,25 +78,22 @@ public class UIButton extends RelativeLayout {
             return;
         }
 
-        TypedArray ca = mContext.obtainStyledAttributes(attrs, R.styleable.UICommon);
-        text = ca.getString(R.styleable.UICommon_text);
-        textSize = ca.getDimension(R.styleable.UICommon_textSize, DroidFunctions.dpToPx(mContext, 10));
-        textStyle = ca.getInt(R.styleable.UICommon_textStyle, 0);
-        textColor = ca.getColor(R.styleable.UICommon_textColor, Color.BLACK);
-        font = ca.getString(R.styleable.UICommon_fontName);
-        strokeColor = ca.getColor(R.styleable.UICommon_strokeColor, Color.BLACK);
-        strokeWidth = ca.getDimension(R.styleable.UICommon_strokeWidth, 0);
-        radius = ca.getDimension(R.styleable.UICommon_cornerRadius, 0);
-        icon = ca.getResourceId(R.styleable.UICommon_icon, -1);
-        shape = ca.getInt(R.styleable.UICommon_imageShape, 1);
-        imageHeight = ca.getDimension(R.styleable.UICommon_imageHeight, -1);
-        imageWidth = ca.getDimension(R.styleable.UICommon_imageWidth, -1);
-        spacing = ca.getDimension(R.styleable.UICommon_spacing, 0);
-        bgColor = ca.getColor(R.styleable.UICommon_backgroundColor, Color.TRANSPARENT);
-
-        ca.recycle();
-
         TypedArray ta = mContext.obtainStyledAttributes(attrs, R.styleable.UIButton);
+        text = ta.getString(R.styleable.UIButton_text);
+        textSize = ta.getDimension(R.styleable.UIButton_textSize, DroidFunctions.dpToPx(mContext, 10));
+        textStyle = ta.getInt(R.styleable.UIButton_textStyle, 0);
+        textColor = ta.getColor(R.styleable.UIButton_textColor, Color.BLACK);
+        font = ta.getString(R.styleable.UIButton_fontName);
+        strokeColor = ta.getColor(R.styleable.UIButton_strokeColor, Color.BLACK);
+        strokeWidth = ta.getDimension(R.styleable.UIButton_strokeWidth, 0);
+        radius = ta.getDimension(R.styleable.UIButton_cornerRadius, 0);
+        icon = ta.getResourceId(R.styleable.UIButton_icon, -1);
+        shape = ta.getInt(R.styleable.UIButton_imageShape, 1);
+        imageHeight = ta.getDimension(R.styleable.UIButton_imageHeight, -1);
+        imageWidth = ta.getDimension(R.styleable.UIButton_imageWidth, -1);
+        spacing = ta.getDimension(R.styleable.UIButton_spacing, 0);
+        bgColor = ta.getColor(R.styleable.UIButton_backgroundColor, Color.TRANSPARENT);
+
         pressedTextColor = ta.getColor(R.styleable.UIButton_pressedTextColor, Color.TRANSPARENT);
         pressedIcon = ta.getResourceId(R.styleable.UIButton_pressedIcon, -1);
         iconPosition = ta.getInt(R.styleable.UIButton_iconPosition, 1);
