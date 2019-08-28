@@ -6,27 +6,19 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.GradientDrawable;
-import android.text.Editable;
-import android.text.InputFilter;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import android.text.method.DigitsKeyListener;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.method.LinkMovementMethod;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Gravity;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AccelerateInterpolator;
-import android.view.animation.ScaleAnimation;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Space;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.ArrayList;
 
 public class UILabel extends LinearLayout {
 
@@ -237,7 +229,13 @@ public class UILabel extends LinearLayout {
         etParams = new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         textView.setBackground(null);
         textView.setId(TEXTVIEW_ID);
-        textView.setText(text);
+        if (stringBuilder != null && !stringBuilder.toString().equalsIgnoreCase("")) {
+            textView.setText(stringBuilder);
+            textView.setMovementMethod(LinkMovementMethod.getInstance());
+        } else {
+            textView.setText(text);
+        }
+
         textView.setTextSize(DroidFunctions.pxToDp(mContext, textSize));
         textView.setTypeface(tf, textStyle);
         textView.setTextColor(textColor);
@@ -308,11 +306,15 @@ public class UILabel extends LinearLayout {
         textView.setTextSize(size);
     }
 
+    public float getTextSize() {
+        return textSize;
+    }
+
     public TextView getLabel() {
         return textView;
     }
 
-    public void setTextView(TextView label) {
+    public void setLabel(TextView label) {
         this.textView = textView;
     }
 
@@ -328,7 +330,165 @@ public class UILabel extends LinearLayout {
         lineColor = color;
     }
 
+    public int getLineColor() {
+        return lineColor;
+    }
+
     public void setDividerColor(int color) {
         this.dividerColor = color;
     }
+
+    public int getDividerColor() {
+        return dividerColor;
+    }
+
+    public void setFont(String font) {
+        this.font = font;
+    }
+
+    public String getFont() {
+        return font;
+    }
+
+    public void setSpacing(float spacing) {
+        this.spacing = spacing;
+    }
+
+    public float getSpacing() {
+        return spacing;
+    }
+
+    public void setStrokeWidth(float strokeWidth) {
+        this.strokeWidth = strokeWidth;
+    }
+
+    public float getStrokeWidth() {
+        return strokeWidth;
+    }
+
+    public void setCornerRadius(float radius) {
+        this.radius = radius;
+    }
+
+    public float getCornerRadius() {
+        return radius;
+    }
+
+    public void setIcon(int icon) {
+        this.icon = icon;
+    }
+
+    public int getIcon() {
+        return icon;
+    }
+
+    public void setImageWidth(float imageWidth) {
+        this.imageWidth = imageWidth;
+    }
+
+    public float getImageWidth() {
+        return imageWidth;
+    }
+
+    public void setImageHeight(float imageHeight) {
+        this.imageHeight = imageHeight;
+    }
+
+    public float getImageHeight() {
+        return imageHeight;
+    }
+
+    public void setBgColor(int bgColor) {
+        this.bgColor = bgColor;
+    }
+
+    public int getBgColor() {
+        return bgColor;
+    }
+
+    public void setAllCaps(boolean allCaps) {
+        this.allCaps = allCaps;
+    }
+
+    public boolean isAllCaps() {
+        return this.allCaps;
+    }
+
+    public void setDividerWidth(float dividerWidth) {
+        this.dividerWidth = dividerWidth;
+    }
+
+    public float getDividerWidth() {
+        return dividerWidth;
+    }
+
+    public void setEndSpacing(float endSpacing) {
+        this.endSpacing = endSpacing;
+    }
+
+    public float getEndSpacing() {
+        return endSpacing;
+    }
+
+    public void setStrikeText(boolean strikeText) {
+        this.strikeText = strikeText;
+    }
+
+    public boolean isStrikeText() {
+        return strikeText;
+    }
+
+    public void setShowDivider(boolean showDivider) {
+        this.showDivider = showDivider;
+    }
+
+    public boolean isShowDivider() {
+        return showDivider;
+    }
+
+    public void setShowLine(boolean showLine) {
+        this.showLine = showLine;
+    }
+
+    public boolean isShowLine() {
+        return showLine;
+    }
+
+    public void setLineWidth(float lineWidth) {
+        this.lineWidth = lineWidth;
+    }
+
+    public float getLineWidth() {
+        return lineWidth;
+    }
+
+    public void setUnderlineText(boolean underlineText) {
+        this.underlineText = underlineText;
+    }
+
+    public boolean isUnderlineText() {
+        return underlineText;
+    }
+
+    SpannableStringBuilder stringBuilder = new SpannableStringBuilder();
+
+    public void setSpanText(SpannableString spanner) {
+        stringBuilder.append(spanner);
+
+        invalidateUILabel();
+    }
+
+    public void removeSpans() {
+        stringBuilder.clear();
+        if (text == null) {
+            text = "";
+        }
+        invalidateUILabel();
+    }
+
+    public void invalidateUILabel() {
+        removeAllViews();
+        drawTextView();
+    }
 }
+

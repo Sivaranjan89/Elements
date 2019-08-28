@@ -36,20 +36,21 @@
         app:text="UIEditText" />
 
     <com.droid.elements.UILabel
+        android:id="@+id/uilabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_gravity="center"
         app:iconAlignment="left"
         app:endSpace="10dp"
-        app:text="UILabel"
+        app:text="This is a UILabel which will display lots of text"
         app:textStyle="bold"
-        app:textSize="20dp"
+        app:textSize="15dp"
         app:cornerRadius="1dp"
         app:strokeColor="#000000"
         app:strokeWidth="1dp"
         app:icon="@drawable/twiiter"
         app:imageHeight="50dp"
-        app:imageWidth="50dp"/>
+        app:imageWidth="50dp" />
 
 </LinearLayout>
