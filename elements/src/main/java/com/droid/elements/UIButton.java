@@ -7,6 +7,7 @@ import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.GradientDrawable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -135,7 +136,9 @@ public class UIButton extends RelativeLayout {
 
         try {
             if (bgColor == Color.TRANSPARENT) {
-                bgColor = ((ColorDrawable) getBackground()).getColor();
+                if (getBackground() != null) {
+                    bgColor = ((ColorDrawable) getBackground()).getColor();
+                }
             }
         } catch (Exception e) {
             if (DroidConstants.showErrors) {
@@ -222,8 +225,16 @@ public class UIButton extends RelativeLayout {
 
     private void designText() {
         Typeface tf = null;
-        if (font != null && !font.trim().equalsIgnoreCase("")) {
-            tf = Typeface.createFromAsset(mContext.getAssets(), font);
+        try {
+            if (font != null && !font.trim().equalsIgnoreCase("")) {
+                tf = Typeface.createFromAsset(mContext.getAssets(), font);
+            }
+        } catch (Exception e) {
+            if (DroidConstants.showErrors) {
+                e.printStackTrace();
+                Log.e("ERROR ::::: ", "MISSING / INVALID PATH FOR FONT IN ASSETS");
+                Toast.makeText(mContext, "Error in Font Path", Toast.LENGTH_LONG).show();
+            }
         }
 
         tv = new TextView(mContext);

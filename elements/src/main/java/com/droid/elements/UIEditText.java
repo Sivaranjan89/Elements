@@ -12,6 +12,7 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.text.method.DigitsKeyListener;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
@@ -188,7 +189,9 @@ public class UIEditText extends LinearLayout {
 
         try {
             if (bgColor == Color.TRANSPARENT) {
-                bgColor = ((ColorDrawable) getBackground()).getColor();
+                if (getBackground() != null) {
+                    bgColor = ((ColorDrawable) getBackground()).getColor();
+                }
             }
         } catch (Exception e) {
             if (DroidConstants.showErrors) {
@@ -312,8 +315,16 @@ public class UIEditText extends LinearLayout {
             maxLines = 1;
         }
         Typeface tf = null;
-        if (font != null && !font.trim().equalsIgnoreCase("")) {
-            tf = Typeface.createFromAsset(mContext.getAssets(), font);
+        try {
+            if (font != null && !font.trim().equalsIgnoreCase("")) {
+                tf = Typeface.createFromAsset(mContext.getAssets(), font);
+            }
+        } catch (Exception e) {
+            if (DroidConstants.showErrors) {
+                e.printStackTrace();
+                Log.e("ERROR ::::: ", "MISSING / INVALID PATH FOR FONT IN ASSETS");
+                Toast.makeText(mContext, "Error in Font Path", Toast.LENGTH_LONG).show();
+            }
         }
 
         editText = new EditText(mContext);
