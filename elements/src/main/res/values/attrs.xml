@@ -191,10 +191,6 @@
         </attr>
     </declare-styleable>-->
 
-    <declare-styleable name="UICommon">
-
-    </declare-styleable>
-
     <declare-styleable name="UIButton">
         <!--Common-->
         <attr name="backgroundColor" format="color" />
@@ -238,6 +234,10 @@
             <enum name="oval" value="2" />
         </attr>
     </declare-styleable>
+
+
+
+
 
     <declare-styleable name="UIEditText">
         <!--Common-->
@@ -333,6 +333,46 @@
         <attr name="currencySymbol" format="string" />
         <attr name="animate" format="boolean" />
         <attr name="animDuration" format="integer" />
+    </declare-styleable>
+
+
+
+
+    <declare-styleable name="UILabel">
+        <!--Common-->
+        <attr name="backgroundColor" />
+        <attr name="text" />
+        <attr name="textSize" />
+        <attr name="textColor" />
+        <attr name="textStyle" />
+        <attr name="fontName" />
+        <attr name="strokeColor"/>
+        <attr name="strokeWidth" />
+        <attr name="cornerRadius"/>
+        <attr name="icon" />
+        <attr name="imageShape"/>
+        <attr name="imageWidth" />
+        <attr name="imageHeight"/>
+        <attr name="spacing" />
+        <!--DERIVED FROM EDITTEXT-->
+        <attr name="ellipsize"/>
+        <attr name="allCaps" />
+        <attr name="showDivider" />
+        <attr name="dividerColor" />
+        <attr name="dividerWidth" />
+        <attr name="showLine" />
+        <attr name="lineColor" />
+        <attr name="lineWidth" />
+        <attr name="iconAlignment" />
+        <!--LABEL-->
+        <attr name="strikeText" format="boolean" />
+        <attr name="underlineText" format="boolean" />
+        <attr name="textGravity" format="integer">
+            <enum name="left" value="3" />
+            <enum name="center" value="17" />
+            <enum name="right" value="5" />
+        </attr>
+        <attr name="endSpace" format="dimension"/>
 
     </declare-styleable>
 

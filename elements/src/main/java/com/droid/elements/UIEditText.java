@@ -236,6 +236,7 @@ public class UIEditText extends LinearLayout {
                     main.addView(space);
                 }
                 main.addView(editText);
+                main.addView(space);
             } else {
                 main.setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
                 editText.setGravity(Gravity.LEFT);
