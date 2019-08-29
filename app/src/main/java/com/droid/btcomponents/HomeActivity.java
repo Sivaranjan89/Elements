@@ -41,25 +41,13 @@ public class HomeActivity extends Activity {
             }
         });
 
-        UILabel label = findViewById(R.id.uilabel);
-        label.setSpanText(new TextSpanner("Text ").setTextColor(Color.RED).build());
-        label.setSpanText(new TextSpanner(" ").build());
-        label.setSpanText(new TextSpanner("BG").setTextColor(Color.RED).setBackgroundColor(Color.BLACK).build());
-        label.setSpanText(new TextSpanner(" ").build());
-        label.setSpanText(new TextSpanner(" Size ").setTextColor(Color.BLACK).setTextSize(0.5f).build());
-        label.setSpanText(new TextSpanner(" ").build());
-        label.setSpanText(new TextSpanner(" Chip ").setRoundedBackgroundColor(Color.RED, Color.BLUE, DroidFunctions.dpToPx(this, 5)).build());
-        label.setSpanText(new TextSpanner(" ").build());
-        label.setSpanText(new TextSpanner("Strike").setStrikeText().build());
-        label.setSpanText(new TextSpanner(" ").build());
-        label.setSpanText(new TextSpanner("Underline").setUnderlineText().build());
-        label.setSpanText(new TextSpanner(" ").build());
-        label.setSpanText(new TextSpanner("Click").setOnClick(new View.OnClickListener() {
+        UIButton uitext = findViewById(R.id.uilabel);
+        uitext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(HomeActivity.this, "Clicked", Toast.LENGTH_LONG).show();
+                Intent i = new Intent(HomeActivity.this, UILabelActivity.class);
+                startActivity(i);
             }
-        }).setTextColor(Color.BLUE).setUnderlineText().build());
-        label.removeSpans();
+        });
     }
 }

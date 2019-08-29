@@ -373,6 +373,7 @@
             <enum name="right" value="5" />
         </attr>
         <attr name="endSpace" format="dimension"/>
+        <attr name="labelPadding" format="dimension" />
 
     </declare-styleable>
 

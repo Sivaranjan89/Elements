@@ -19,6 +19,7 @@
 
         <activity android:name=".MainActivity" />
         <activity android:name=".UIEditActivity" />
+        <activity android:name=".UILabelActivity" />
     </application>
 
 </manifest>

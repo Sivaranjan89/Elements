@@ -3,6 +3,7 @@ package com.droid.elements;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.GradientDrawable;
@@ -52,6 +53,7 @@ public class UILabel extends LinearLayout {
     private boolean strikeText, underlineText;
     private boolean allCaps;
     private int textGravity = 0;
+    private float padding;
 
     public UILabel(Context context) {
         super(context);
@@ -97,6 +99,7 @@ public class UILabel extends LinearLayout {
         strikeText = ta.getBoolean(R.styleable.UILabel_strikeText, false);
         underlineText = ta.getBoolean(R.styleable.UILabel_underlineText, false);
         textGravity = ta.getInt(R.styleable.UILabel_textGravity, 0);
+        padding = ta.getDimension(R.styleable.UILabel_labelPadding, 0);
 
 
         if (imageHeight != -1 || imageWidth != -1) {
@@ -142,6 +145,7 @@ public class UILabel extends LinearLayout {
         main.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         main.setOrientation(LinearLayout.HORIZONTAL);
         main.setGravity(Gravity.CENTER_VERTICAL);
+        main.setPadding((int)padding, (int)padding, (int)padding, (int)padding);
 
         designLabel();
         designImage();
@@ -241,6 +245,15 @@ public class UILabel extends LinearLayout {
         textView.setTextColor(textColor);
         textView.setAllCaps(allCaps);
         textView.setGravity(textGravity);
+
+        if (strikeText) {
+            textView.setPaintFlags(textView.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+        }
+
+        if (underlineText) {
+            textView.setPaintFlags(textView.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+        }
+
         setEllipsize();
         textView.setLayoutParams(etParams);
     }
