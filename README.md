@@ -73,6 +73,7 @@ app:spacing="5dp" -> Set Spacing between image and text <br />
 app:fontName="calypto.ttf" -> Set font path in assets <br />
 
 
+
 ## UIEditText
 ![Screenshot_20190827-231855__01](https://user-images.githubusercontent.com/54542325/63796294-6eb67380-c923-11e9-8209-51c8bfc4d141.jpg)
 
@@ -127,3 +128,8 @@ app:autoStretch="true" -> The edittext will stretch as the input characters keep
 app:currencySymbol="1dp" -> Will auto append the currency when user types any character <br />
 app:animate="true" -> Animates the edittext on start <br />
 app:animDuration="1000" -> Duration for the animation <br />
+
+
+
+# UILabel (TextView)
+![uilabel](https://user-images.githubusercontent.com/54542325/63907177-13c27080-ca38-11e9-958d-0cf61faeb595.png)
