@@ -1,6 +1,25 @@
 # Elements
 UI Components made easy to develop.
 Use this library to design a UI element without having to code much.
+Available UI Elements with Latest release are,
+1) Button
+2) EditText
+3) TextView
+
+# How to Install Plugin
+Add the below in your root build.gradle(project) at the end of repositories:<br />
+allprojects {<br />
+repositories {<br />
+...<br />
+<b>maven { url 'https://jitpack.io' }</b><br />
+}<br />
+}<br />
+            
+Add the dependency in build.gradle(module) : <br />
+dependencies {<br />
+<b>implementation 'com.github.Sivaranjan89:Elements:1.1'</b><br />
+}<br />
+
 
 ## UIButton
 ![Screenshot_20190827-194224__01](https://user-images.githubusercontent.com/54542325/63779787-c42f5800-c904-11e9-84ae-7c3822b38986.jpg)
