@@ -379,4 +379,13 @@
 
     </declare-styleable>
 
+
+
+
+    <declare-styleable name="UILinearLayout">
+        <attr name="strokeColor"/>
+        <attr name="strokeWidth" />
+        <attr name="cornerRadius"/>
+    </declare-styleable>
+
 </resources>
