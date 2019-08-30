@@ -128,6 +128,10 @@ app:autoStretch="true" -> The edittext will stretch as the input characters keep
 app:currencySymbol="1dp" -> Will auto append the currency when user types any character <br />
 app:animate="true" -> Animates the edittext on start <br />
 app:animDuration="1000" -> Duration for the animation <br />
+app:leftPadding="10dp" -> set Left Padding for EditText <br />
+app:rightPadding="10dp" -> set Right Padding for EditText <br />
+app:topPadding="10dp" -> set Top Padding for EditText <br />
+app:bottomPadding="10dp" -> set Bottom Padding for EditText <br />
 
 
 
