@@ -88,6 +88,8 @@ public class UIButton extends RelativeLayout {
         gravity = 3;
         pressedBackgroundColor = bgColor;
         buttonShape = 1;
+
+        drawButton();
     }
 
     public UIButton(Context context, AttributeSet attrs) {
