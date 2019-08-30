@@ -17,7 +17,7 @@ repositories {<br />
             
 Add the dependency in build.gradle(module) : <br />
 dependencies {<br />
-<b>implementation 'com.github.Sivaranjan89:Elements:1.1'</b><br />
+<b>implementation 'com.github.Sivaranjan89:Elements:1.10'</b><br />
 }<br />
 
 
