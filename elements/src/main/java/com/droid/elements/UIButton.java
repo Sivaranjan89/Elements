@@ -8,6 +8,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.GradientDrawable;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -269,7 +270,7 @@ public class UIButton extends RelativeLayout {
         txParams.gravity = Gravity.CENTER_VERTICAL;
         tv.setId(TEXTVIEW_ID);
         tv.setText(text);
-        tv.setTextSize(DroidFunctions.pxToDp(mContext, textSize));
+        tv.setTextSize(TypedValue.COMPLEX_UNIT_DIP, DroidFunctions.pxToDp(mContext, textSize));
         tv.setTypeface(tf, textStyle);
         tv.setTextColor(textColor);
         tv.setLayoutParams(txParams);
