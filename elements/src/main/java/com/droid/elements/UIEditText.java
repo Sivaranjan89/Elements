@@ -82,6 +82,7 @@ public class UIEditText extends LinearLayout {
     private String currency;
     private boolean shouldAnimate;
     private long animationDuration;
+    private float leftPadding, rightPadding, topPadding, bottomPadding;
 
     public UIEditText(Context context) {
         super(context);
@@ -150,6 +151,10 @@ public class UIEditText extends LinearLayout {
         currency = ta.getString(R.styleable.UIEditText_currencySymbol);
         shouldAnimate = ta.getBoolean(R.styleable.UIEditText_animate, false);
         animationDuration = ta.getInteger(R.styleable.UIEditText_animDuration, 1000);
+        leftPadding = ta.getDimension(R.styleable.UIEditText_leftPadding, DroidFunctions.dpToPx(mContext, 8));
+        rightPadding = ta.getDimension(R.styleable.UIEditText_rightPadding, DroidFunctions.dpToPx(mContext, 8));
+        topPadding = ta.getDimension(R.styleable.UIEditText_topPadding, DroidFunctions.dpToPx(mContext, 8));
+        bottomPadding = ta.getDimension(R.styleable.UIEditText_bottomPadding, DroidFunctions.dpToPx(mContext, 8));
 
 
         if (imageHeight != -1 || imageWidth != -1) {
@@ -226,53 +231,62 @@ public class UIEditText extends LinearLayout {
 
         if (editTextShape == 1 || editTextShape == 2) {
             main.setBackground(drawGradientDrawable());
-            if (iconPosition == 1) {
-                main.addView(image);
-                if (showDivider) {
-                    main.addView(space);
-                    main.addView(divider);
-                    main.addView(space2);
+            if (icon != -1) {
+                if (iconPosition == 1) {
+                    main.addView(image);
+                    if (showDivider) {
+                        main.addView(space);
+                        main.addView(divider);
+                        main.addView(space2);
+                    } else {
+                        main.addView(space);
+                    }
+                    main.addView(editText);
                 } else {
-                    main.addView(space);
+                    main.setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
+                    editText.setGravity(Gravity.LEFT);
+                    main.addView(image);
+                    if (showDivider) {
+                        main.addView(space);
+                        main.addView(divider);
+                        main.addView(space2);
+                    } else {
+                        main.addView(space);
+                    }
+                    main.addView(editText);
                 }
-                main.addView(editText);
-                main.addView(space);
-            } else {
-                main.setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
-                editText.setGravity(Gravity.LEFT);
-                main.addView(image);
-                if (showDivider) {
-                    main.addView(space);
-                    main.addView(divider);
-                    main.addView(space2);
-                } else {
-                    main.addView(space);
-                }
+            }
+            else {
                 main.addView(editText);
             }
         } else if (editTextShape == 3) {
             drawLine();
-            if (iconPosition == 1) {
-                main.addView(image);
-                if (showDivider) {
-                    main.addView(space);
-                    main.addView(divider);
-                    main.addView(space2);
+            if (icon != -1) {
+                if (iconPosition == 1) {
+                    main.addView(image);
+                    if (showDivider) {
+                        main.addView(space);
+                        main.addView(divider);
+                        main.addView(space2);
+                    } else {
+                        main.addView(space);
+                    }
+                    main.addView(editText);
                 } else {
-                    main.addView(space);
+                    main.setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
+                    editText.setGravity(Gravity.LEFT);
+                    main.addView(image);
+                    if (showDivider) {
+                        main.addView(space);
+                        main.addView(divider);
+                        main.addView(space2);
+                    } else {
+                        main.addView(space);
+                    }
+                    main.addView(editText);
                 }
-                main.addView(editText);
-            } else {
-                main.setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
-                editText.setGravity(Gravity.LEFT);
-                main.addView(image);
-                if (showDivider) {
-                    main.addView(space);
-                    main.addView(divider);
-                    main.addView(space2);
-                } else {
-                    main.addView(space);
-                }
+            }
+            else {
                 main.addView(editText);
             }
         }
@@ -337,6 +351,7 @@ public class UIEditText extends LinearLayout {
             etParams = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.WRAP_CONTENT);
         }
+        editText.setPadding((int)leftPadding, (int)topPadding, (int)rightPadding, (int)bottomPadding);
         editText.setBackground(null);
         editText.setId(EDITTEXT_ID);
         editText.setText(text);
