@@ -15,7 +15,7 @@
 
         <com.droid.elements.UIButton
             android:layout_width="250dp"
-            android:layout_height="50dp"
+            android:layout_height="35dp"
             app:text="Plain Button"
             android:layout_gravity="center"
             app:textSize="15dp"
@@ -23,7 +23,7 @@
 
         <com.droid.elements.UIButton
             android:layout_width="250dp"
-            android:layout_height="50dp"
+            android:layout_height="35dp"
             app:text="Plain Bold Button"
             android:layout_gravity="center"
             app:textSize="15dp"
@@ -32,16 +32,16 @@
 
         <com.droid.elements.UIButton
             android:layout_width="250dp"
-            android:layout_height="50dp"
+            android:layout_height="35dp"
             app:text="Colored Button"
             android:layout_gravity="center"
             app:textSize="15dp"
             app:textStyle="bold"
-            app:backgroundColor="#FF0000"/>
+            app:backgroundColor="#FF0000" />
 
         <com.droid.elements.UIButton
             android:layout_width="250dp"
-            android:layout_height="50dp"
+            android:layout_height="35dp"
             app:text="Left Aligned Button"
             android:layout_gravity="center"
             app:textSize="15dp"
@@ -52,7 +52,7 @@
 
         <com.droid.elements.UIButton
             android:layout_width="250dp"
-            android:layout_height="50dp"
+            android:layout_height="35dp"
             app:text="Right Aligned Button"
             android:layout_gravity="center"
             app:textSize="15dp"
@@ -63,7 +63,7 @@
 
         <com.droid.elements.UIButton
             android:layout_width="250dp"
-            android:layout_height="50dp"
+            android:layout_height="35dp"
             app:text="Rounded Button"
             android:layout_gravity="center"
             app:textSize="15dp"
@@ -75,7 +75,7 @@
 
         <com.droid.elements.UIButton
             android:layout_width="250dp"
-            android:layout_height="50dp"
+            android:layout_height="35dp"
             app:text="Stroked Button"
             android:layout_gravity="center"
             app:textSize="15dp"
@@ -89,7 +89,7 @@
 
         <com.droid.elements.UIButton
             android:layout_width="250dp"
-            android:layout_height="50dp"
+            android:layout_height="35dp"
             app:text="Press Me!"
             android:layout_gravity="center"
             app:textSize="15dp"
@@ -105,7 +105,7 @@
 
         <com.droid.elements.UIButton
             android:layout_width="250dp"
-            android:layout_height="50dp"
+            android:layout_height="35dp"
             app:text="Icon Button"
             android:layout_gravity="center"
             app:textSize="15dp"
@@ -122,7 +122,7 @@
 
         <com.droid.elements.UIButton
             android:layout_width="250dp"
-            android:layout_height="50dp"
+            android:layout_height="35dp"
             app:text="Right Icon"
             android:layout_gravity="center"
             app:textSize="15dp"
