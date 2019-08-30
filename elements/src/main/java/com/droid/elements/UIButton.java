@@ -176,6 +176,7 @@ public class UIButton extends RelativeLayout {
     }
 
     private void drawButton() {
+        removeAllViews();
         LinearLayout parentLayout = new LinearLayout(mContext);
         parentLayout.setBackgroundColor(Color.TRANSPARENT);
         LayoutParams params = new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
@@ -357,6 +358,7 @@ public class UIButton extends RelativeLayout {
     //Setters and Getters
     public void setText(String text) {
         this.text = text;
+        drawButton();
     }
     public String getText() {
         return text;
@@ -364,6 +366,7 @@ public class UIButton extends RelativeLayout {
 
     public void setTextSize(float sizeInDP) {
         this.textSize = DroidFunctions.dpToPx(mContext, sizeInDP);
+        drawButton();
     }
     public float getTextSize() {
         return textSize;
@@ -374,6 +377,7 @@ public class UIButton extends RelativeLayout {
             textStyle = TEXTSTYLE_NORMAL;
         }
         this.textStyle = textStyle;
+        drawButton();
     }
 
     public int getTextStyle() {
@@ -382,6 +386,7 @@ public class UIButton extends RelativeLayout {
 
     public void setTextColor(int textColor) {
         this.textColor = textColor;
+        drawButton();
     }
 
     public int getTextColor() {
@@ -390,6 +395,7 @@ public class UIButton extends RelativeLayout {
 
     public void setPressedTextColor(int pressedTextColor) {
         this.pressedTextColor = pressedTextColor;
+        drawButton();
     }
 
     public int getPressedTextColor() {
@@ -398,6 +404,7 @@ public class UIButton extends RelativeLayout {
 
     public void setBgColor(int bgColor) {
         this.bgColor = bgColor;
+        drawButton();
     }
 
     public int getBgColor() {
@@ -406,6 +413,7 @@ public class UIButton extends RelativeLayout {
 
     public void setPressedBackgroundColor(int pressedBackgroundColor) {
         this.pressedBackgroundColor = pressedBackgroundColor;
+        drawButton();
     }
 
     public int getPressedBackgroundColor() {
@@ -414,6 +422,7 @@ public class UIButton extends RelativeLayout {
 
     public void setStrokeColor(int strokeColor) {
         this.strokeColor = strokeColor;
+        drawButton();
     }
 
     public int getStrokeColor() {
@@ -422,6 +431,7 @@ public class UIButton extends RelativeLayout {
 
     public void setStrokeWidth(float strokeWidthInDp) {
         this.strokeWidth = DroidFunctions.dpToPx(mContext, strokeWidth);
+        drawButton();
     }
 
     public float getStrokeWidth() {
@@ -430,6 +440,7 @@ public class UIButton extends RelativeLayout {
 
     public void setIcon(int icon) {
         this.icon = icon;
+        drawButton();
     }
 
     public int getIcon() {
@@ -438,6 +449,7 @@ public class UIButton extends RelativeLayout {
 
     public void setPressedIcon(int pressedIcon) {
         this.pressedIcon = pressedIcon;
+        drawButton();
     }
 
     public int getPressedIcon() {
@@ -449,6 +461,7 @@ public class UIButton extends RelativeLayout {
             iconPosition = ICONPOSITION_LEFT;
         }
         this.iconPosition = iconPosition;
+        drawButton();
     }
 
     public int getIconPosition() {
@@ -457,6 +470,7 @@ public class UIButton extends RelativeLayout {
 
     public void setCornerRadius(float radiusInDp) {
         this.radius = DroidFunctions.dpToPx(mContext, radius);
+        drawButton();
     }
 
     public float getCornerRadius() {
@@ -465,6 +479,7 @@ public class UIButton extends RelativeLayout {
 
     public void setImageHeight(float imageHeightInDp) {
         this.imageHeight = DroidFunctions.dpToPx(mContext, imageHeight);
+        drawButton();
     }
 
     public float getImageHeight() {
@@ -473,6 +488,7 @@ public class UIButton extends RelativeLayout {
 
     public void setImageWidth(float imageWidthInDp) {
         this.imageWidth = DroidFunctions.dpToPx(mContext, imageWidth);
+        drawButton();
     }
 
     public float getImageWidth() {
@@ -481,6 +497,7 @@ public class UIButton extends RelativeLayout {
 
     public void setSpacing(float spacingInDp) {
         this.spacing = DroidFunctions.dpToPx(mContext, spacing);
+        drawButton();
     }
 
     public float getSpacing() {
@@ -489,6 +506,7 @@ public class UIButton extends RelativeLayout {
 
     public void setFont(String fontPath) {
         this.font = font;
+        drawButton();
     }
 
     public String getFont() {
@@ -500,6 +518,7 @@ public class UIButton extends RelativeLayout {
             buttonShape = BUTTONSHAPE_RECTANGLE;
         }
         this.buttonShape = buttonShape;
+        drawButton();
     }
 
     public int getButtonShape() {
@@ -511,6 +530,7 @@ public class UIButton extends RelativeLayout {
             shape = IMAGESHAPE_NORMAL;
         }
         this.shape = shape;
+        drawButton();
     }
 
     public int getImageShape() {
