@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#494848">
 
     <com.droid.elements.UILabel
         android:layout_width="wrap_content"
@@ -11,7 +12,7 @@
         android:layout_marginTop="10dp"
         app:text="Simple Label"
         app:textSize="15dp"
-        app:textColor="#000000"
+        app:textColor="#FFFFFF"
         android:layout_gravity="center"/>
 
     <com.droid.elements.UILabel
@@ -20,8 +21,8 @@
         android:layout_marginTop="10dp"
         app:text="Round Cornered Label"
         app:textSize="15dp"
-        app:textColor="#000000"
-        app:strokeColor="#000000"
+        app:textColor="#FFFFFF"
+        app:strokeColor="#FFFFFF"
         app:strokeWidth="1dp"
         app:cornerRadius="4dp"
         android:layout_gravity="center"
@@ -33,7 +34,7 @@
         android:layout_marginTop="10dp"
         app:text="Label with Icon"
         app:textSize="15dp"
-        app:textColor="#000000"
+        app:textColor="#FFFFFF"
         app:icon="@drawable/twiiter"
         app:imageWidth="30dp"
         app:imageHeight="30dp"
@@ -45,11 +46,11 @@
         android:layout_marginTop="10dp"
         app:text="Round Corner Label with Icon"
         app:textSize="15dp"
-        app:textColor="#000000"
+        app:textColor="#FFFFFF"
         app:icon="@drawable/twiiter"
         app:imageWidth="30dp"
         app:imageHeight="30dp"
-        app:strokeColor="#000000"
+        app:strokeColor="#FFFFFF"
         app:strokeWidth="1dp"
         app:cornerRadius="4dp"
         android:layout_gravity="center"
@@ -61,7 +62,7 @@
         android:layout_marginTop="10dp"
         app:text="Strike Text Label"
         app:textSize="15dp"
-        app:textColor="#000000"
+        app:textColor="#FFFFFF"
         app:strikeText="true"
         android:layout_gravity="center"
         app:labelPadding="5dp"/>
@@ -72,7 +73,7 @@
         android:layout_marginTop="10dp"
         app:text="Underline Text Label"
         app:textSize="15dp"
-        app:textColor="#000000"
+        app:textColor="#FFFFFF"
         app:underlineText="true"
         android:layout_gravity="center"
         app:labelPadding="5dp"/>
@@ -83,7 +84,7 @@
         android:layout_marginTop="10dp"
         app:text="Caps Text Label"
         app:textSize="15dp"
-        app:textColor="#000000"
+        app:textColor="#FFFFFF"
         app:textStyle="bold"
         app:allCaps="true"
         android:layout_gravity="center"
@@ -98,7 +99,7 @@
         app:textSize="15dp"
         app:labelPadding="5dp"
         app:cornerRadius="4dp"
-        app:strokeColor="#000000"
+        app:strokeColor="#FFFFFF"
         app:strokeWidth="1dp"/>
 
 </LinearLayout>
