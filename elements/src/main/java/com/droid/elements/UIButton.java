@@ -9,6 +9,7 @@ import android.graphics.drawable.GradientDrawable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
+import android.view.DragEvent;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -91,6 +92,17 @@ public class UIButton extends RelativeLayout {
         buttonShape = 1;
 
         drawButton();
+    }
+
+    @Override
+    public boolean dispatchDragEvent(DragEvent ev){
+        boolean r = super.dispatchDragEvent(ev);
+        if (r && (ev.getAction() == DragEvent.ACTION_DRAG_STARTED
+                || ev.getAction() == DragEvent.ACTION_DRAG_ENDED
+                || ev.getAction() == DragEvent.ACTION_DROP)){
+            onDragEvent(ev);
+        }
+        return r;
     }
 
     public UIButton(Context context, AttributeSet attrs) {
