@@ -65,6 +65,29 @@ public class UIButton extends RelativeLayout {
     public UIButton(Context context) {
         super(context);
         mContext = context;
+        initDefaults();
+    }
+
+    private void initDefaults() {
+        textSize = DroidFunctions.dpToPx(mContext, 10);
+        textStyle = 0;
+        textColor = Color.BLACK;
+        font = "";
+        strokeColor = Color.BLACK;
+        strokeWidth = 0;
+        radius = 0;
+        icon = -1;
+        shape = 1;
+        imageHeight = -1;
+        imageWidth = -1;
+        spacing = 0;
+        bgColor = Color.TRANSPARENT;
+        pressedTextColor = textColor;
+        pressedIcon = icon;
+        iconPosition = 1;
+        gravity = 3;
+        pressedBackgroundColor = bgColor;
+        buttonShape = 1;
     }
 
     public UIButton(Context context, AttributeSet attrs) {
