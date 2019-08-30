@@ -12,6 +12,7 @@ import android.text.SpannableStringBuilder;
 import android.text.method.LinkMovementMethod;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,25 +24,38 @@ import android.widget.Toast;
 
 public class UILabel extends LinearLayout {
 
-    private static final int TEXTVIEW_ID = 2;
     Context mContext;
+
+    //Label Constants
+    private static final int TEXTVIEW_ID = 2;
+
+    //Label Attributes
     private String text;
     private float textSize;
     private int textStyle;
     private int textColor;
     private String font;
+    private TextView textView;
+    private boolean strikeText, underlineText;
+    private boolean allCaps;
+    private int textGravity = 0;
+
+    //Border Attributes
     private int strokeColor;
     private float strokeWidth;
     private float radius;
+
+    //Icon Attributes
     private int icon;
     private int iconPosition;
     private int shape;
-    private int bgColor;
     private float imageHeight, imageWidth;
+    private ImageView image;
+
+    //Component Attributes
+    private int bgColor;
     private float spacing;
     private float endSpacing;
-    private TextView textView;
-    private ImageView image;
     private int dividerColor, lineColor;
     private boolean showDivider, showLine;
     private float lineWidth, dividerWidth;
@@ -50,14 +64,44 @@ public class UILabel extends LinearLayout {
     private Space endSpace;
     private View divider;
     private Space space2;
-    private boolean strikeText, underlineText;
-    private boolean allCaps;
-    private int textGravity = 0;
     private float padding;
 
     public UILabel(Context context) {
         super(context);
         mContext = context;
+        initDefaults();
+    }
+
+    private void initDefaults() {
+        text = "";
+        textSize = DroidFunctions.dpToPx(mContext, 10);
+        textStyle = 0;
+        textColor = Color.BLACK;
+        font = null;
+        strokeColor = Color.BLACK;
+        strokeWidth = 0;
+        radius = 0;
+        icon = -1;
+        shape = 1;
+        imageHeight = -1;
+        imageWidth = -1;
+        spacing = 0;
+        endSpacing = 0;
+        bgColor = Color.TRANSPARENT;
+        iconPosition = 1;
+        dividerColor = Color.TRANSPARENT;
+        lineColor = Color.BLACK;
+        showDivider = false;
+        showLine = false;
+        lineWidth = DroidFunctions.dpToPx(mContext, 1);
+        dividerWidth = DroidFunctions.dpToPx(mContext, 1);
+        allCaps = false;
+        strikeText = false;
+        underlineText = false;
+        textGravity = 0;
+        padding = 0;
+
+        invalidateUILabel();
     }
 
     public UILabel(Context context, AttributeSet attrs) {
@@ -135,11 +179,11 @@ public class UILabel extends LinearLayout {
             }
             bgColor = Color.TRANSPARENT;
         }
-        drawTextView();
+        invalidateUILabel();
     }
 
     private void drawTextView() {
-        setOrientation(LinearLayout.VERTICAL);
+        this.setOrientation(LinearLayout.VERTICAL);
 
         LinearLayout main = new LinearLayout(mContext);
         main.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
@@ -186,9 +230,9 @@ public class UILabel extends LinearLayout {
             main.addView(endSpace);
         }
 
-        addView(main);
+        this.addView(main);
         if (showLine) {
-            addView(line);
+            this.addView(line);
         }
     }
 
@@ -240,7 +284,7 @@ public class UILabel extends LinearLayout {
             textView.setText(text);
         }
 
-        textView.setTextSize(DroidFunctions.pxToDp(mContext, textSize));
+        textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, DroidFunctions.pxToDp(mContext, textSize));
         textView.setTypeface(tf, textStyle);
         textView.setTextColor(textColor);
         textView.setAllCaps(allCaps);
@@ -309,15 +353,17 @@ public class UILabel extends LinearLayout {
     }
 
     public void setTextColor(int color) {
-        textView.setTextColor(color);
+        this.textColor = color;
+        invalidateUILabel();
     }
 
     public int getTextColor() {
         return textColor;
     }
 
-    public void setTextSize(float size) {
-        textView.setTextSize(size);
+    public void setTextSize(float sizeInDp) {
+        this.textSize = DroidFunctions.dpToPx(mContext, sizeInDp);
+        invalidateUILabel();
     }
 
     public float getTextSize() {
@@ -329,7 +375,8 @@ public class UILabel extends LinearLayout {
     }
 
     public void setLabel(TextView label) {
-        this.textView = textView;
+        this.textView = label;
+        invalidateUILabel();
     }
 
     public ImageView getImageView() {
@@ -338,10 +385,12 @@ public class UILabel extends LinearLayout {
 
     public void setImageView(ImageView image) {
         this.image = image;
+        invalidateUILabel();
     }
 
     public void setLineColor(int color) {
         lineColor = color;
+        invalidateUILabel();
     }
 
     public int getLineColor() {
@@ -350,6 +399,7 @@ public class UILabel extends LinearLayout {
 
     public void setDividerColor(int color) {
         this.dividerColor = color;
+        invalidateUILabel();
     }
 
     public int getDividerColor() {
@@ -358,30 +408,34 @@ public class UILabel extends LinearLayout {
 
     public void setFont(String font) {
         this.font = font;
+        invalidateUILabel();
     }
 
     public String getFont() {
         return font;
     }
 
-    public void setSpacing(float spacing) {
-        this.spacing = spacing;
+    public void setSpacing(float spacingInDp) {
+        this.spacing = DroidFunctions.dpToPx(mContext, spacingInDp);
+        invalidateUILabel();
     }
 
     public float getSpacing() {
         return spacing;
     }
 
-    public void setStrokeWidth(float strokeWidth) {
-        this.strokeWidth = strokeWidth;
+    public void setStrokeWidth(float strokeWidthInDp) {
+        this.strokeWidth = DroidFunctions.dpToPx(mContext, strokeWidthInDp);
+        invalidateUILabel();
     }
 
     public float getStrokeWidth() {
         return strokeWidth;
     }
 
-    public void setCornerRadius(float radius) {
-        this.radius = radius;
+    public void setCornerRadius(float radiusInDp) {
+        this.radius = DroidFunctions.dpToPx(mContext, radiusInDp);
+        invalidateUILabel();
     }
 
     public float getCornerRadius() {
@@ -390,22 +444,25 @@ public class UILabel extends LinearLayout {
 
     public void setIcon(int icon) {
         this.icon = icon;
+        invalidateUILabel();
     }
 
     public int getIcon() {
         return icon;
     }
 
-    public void setImageWidth(float imageWidth) {
-        this.imageWidth = imageWidth;
+    public void setImageWidth(float imageWidthInDp) {
+        this.imageWidth = DroidFunctions.dpToPx(mContext, imageWidthInDp);
+        invalidateUILabel();
     }
 
     public float getImageWidth() {
         return imageWidth;
     }
 
-    public void setImageHeight(float imageHeight) {
-        this.imageHeight = imageHeight;
+    public void setImageHeight(float imageHeightInDp) {
+        this.imageHeight = DroidFunctions.dpToPx(mContext, imageHeightInDp);
+        invalidateUILabel();
     }
 
     public float getImageHeight() {
@@ -414,6 +471,7 @@ public class UILabel extends LinearLayout {
 
     public void setBgColor(int bgColor) {
         this.bgColor = bgColor;
+        invalidateUILabel();
     }
 
     public int getBgColor() {
@@ -422,22 +480,25 @@ public class UILabel extends LinearLayout {
 
     public void setAllCaps(boolean allCaps) {
         this.allCaps = allCaps;
+        invalidateUILabel();
     }
 
     public boolean isAllCaps() {
         return this.allCaps;
     }
 
-    public void setDividerWidth(float dividerWidth) {
-        this.dividerWidth = dividerWidth;
+    public void setDividerWidth(float dividerWidthInDp) {
+        this.dividerWidth = DroidFunctions.dpToPx(mContext, dividerWidthInDp);
+        invalidateUILabel();
     }
 
     public float getDividerWidth() {
         return dividerWidth;
     }
 
-    public void setEndSpacing(float endSpacing) {
-        this.endSpacing = endSpacing;
+    public void setEndSpacing(float endSpacingInDp) {
+        this.endSpacing = DroidFunctions.dpToPx(mContext, endSpacingInDp);
+        invalidateUILabel();
     }
 
     public float getEndSpacing() {
@@ -446,6 +507,7 @@ public class UILabel extends LinearLayout {
 
     public void setStrikeText(boolean strikeText) {
         this.strikeText = strikeText;
+        invalidateUILabel();
     }
 
     public boolean isStrikeText() {
@@ -454,6 +516,7 @@ public class UILabel extends LinearLayout {
 
     public void setShowDivider(boolean showDivider) {
         this.showDivider = showDivider;
+        invalidateUILabel();
     }
 
     public boolean isShowDivider() {
@@ -462,14 +525,16 @@ public class UILabel extends LinearLayout {
 
     public void setShowLine(boolean showLine) {
         this.showLine = showLine;
+        invalidateUILabel();
     }
 
     public boolean isShowLine() {
         return showLine;
     }
 
-    public void setLineWidth(float lineWidth) {
-        this.lineWidth = lineWidth;
+    public void setLineWidth(float lineWidthInDp) {
+        this.lineWidth = DroidFunctions.dpToPx(mContext, lineWidthInDp);
+        invalidateUILabel();
     }
 
     public float getLineWidth() {
@@ -478,6 +543,7 @@ public class UILabel extends LinearLayout {
 
     public void setUnderlineText(boolean underlineText) {
         this.underlineText = underlineText;
+        invalidateUILabel();
     }
 
     public boolean isUnderlineText() {
