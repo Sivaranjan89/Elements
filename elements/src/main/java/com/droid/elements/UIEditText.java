@@ -80,8 +80,6 @@ public class UIEditText extends LinearLayout {
     private int imeOptions;
     private int ellipsize;
     private String currency;
-    private boolean shouldAnimate;
-    private long animationDuration;
     private float leftPadding, rightPadding, topPadding, bottomPadding;
 
     public UIEditText(Context context) {
@@ -149,8 +147,6 @@ public class UIEditText extends LinearLayout {
         imeOptions = ta.getInt(R.styleable.UIEditText_imeOptions, 6);
         ellipsize = ta.getInt(R.styleable.UIEditText_ellipsize, 0);
         currency = ta.getString(R.styleable.UIEditText_currencySymbol);
-        shouldAnimate = ta.getBoolean(R.styleable.UIEditText_animate, false);
-        animationDuration = ta.getInteger(R.styleable.UIEditText_animDuration, 1000);
         leftPadding = ta.getDimension(R.styleable.UIEditText_leftPadding, DroidFunctions.dpToPx(mContext, 8));
         rightPadding = ta.getDimension(R.styleable.UIEditText_rightPadding, DroidFunctions.dpToPx(mContext, 8));
         topPadding = ta.getDimension(R.styleable.UIEditText_topPadding, DroidFunctions.dpToPx(mContext, 8));
@@ -206,13 +202,6 @@ public class UIEditText extends LinearLayout {
             bgColor = Color.TRANSPARENT;
         }
         drawEditText();
-
-        if (shouldAnimate) {
-            ScaleAnimation animation = new ScaleAnimation(0, 1, 1, 1);
-            animation.setDuration(animationDuration);
-            animation.setInterpolator(new AccelerateInterpolator());
-            startAnimation(animation);
-        }
     }
 
     private void drawEditText() {

@@ -301,6 +301,7 @@ public class UILabel extends LinearLayout {
 
     public void setText(String text) {
         textView.setText(text);
+        stringBuilder.clear();
     }
 
     public String getText() {

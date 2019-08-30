@@ -331,8 +331,6 @@
             <enum name="none" value="0" />
         </attr>
         <attr name="currencySymbol" format="string" />
-        <attr name="animate" format="boolean" />
-        <attr name="animDuration" format="integer" />
         <attr name="leftPadding" format="dimension" />
         <attr name="topPadding" format="dimension" />
         <attr name="bottomPadding" format="dimension" />
