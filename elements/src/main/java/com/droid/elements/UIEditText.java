@@ -617,7 +617,7 @@ public class UIEditText extends LinearLayout {
     }
 
     public String getText() {
-        return text;
+        return editText.getText().toString();
     }
 
     public void setTextColor(int color) {
@@ -656,7 +656,7 @@ public class UIEditText extends LinearLayout {
     }
 
     public String getHintText() {
-        return hintText;
+        return editText.getHint().toString();
     }
 
     public void setHintTextColor(int color) {
@@ -683,7 +683,7 @@ public class UIEditText extends LinearLayout {
     }
 
     public String getHelperText() {
-        return helperText;
+        return helper.getText().toString();
     }
 
     public void setHelperTextColor(int color) {
