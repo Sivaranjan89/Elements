@@ -24,6 +24,10 @@ import android.widget.Toast;
 
 public class UILabel extends LinearLayout {
 
+    public static final int LABEL_TEXTGRAVITY_CENTER = 17;
+    public static final int LABEL_TEXTGRAVITY_LEFT = 3;
+    public static final int LABEL_TEXTGRAVITY_RIGHT = 5;
+
     Context mContext;
 
     //Label Constants
@@ -343,9 +347,12 @@ public class UILabel extends LinearLayout {
         return gd;
     }
 
+
+    //Getters and Setters
     public void setText(String text) {
-        textView.setText(text);
+        this.text = text;
         stringBuilder.clear();
+        invalidateUILabel();
     }
 
     public String getText() {
@@ -370,22 +377,22 @@ public class UILabel extends LinearLayout {
         return textSize;
     }
 
-    public TextView getLabel() {
-        return textView;
-    }
-
     public void setLabel(TextView label) {
         this.textView = label;
         invalidateUILabel();
     }
 
-    public ImageView getImageView() {
-        return image;
+    public TextView getLabel() {
+        return textView;
     }
 
     public void setImageView(ImageView image) {
         this.image = image;
         invalidateUILabel();
+    }
+
+    public ImageView getImageView() {
+        return image;
     }
 
     public void setLineColor(int color) {
@@ -550,6 +557,50 @@ public class UILabel extends LinearLayout {
         return underlineText;
     }
 
+    public void setTextStyle(int textStyle) {
+        this.textStyle = textStyle;
+    }
+
+    public int getTextStyle() {
+        return textStyle;
+    }
+
+    public void setIconPosition(int iconPosition) {
+        this.iconPosition = iconPosition;
+    }
+
+    public int getIconPosition() {
+        return iconPosition;
+    }
+
+    public void setStrokeColor(int strokeColor) {
+        this.strokeColor = strokeColor;
+    }
+
+    public int getStrokeColor() {
+        return strokeColor;
+    }
+
+    public void setPadding(float padding) {
+        this.padding = padding;
+    }
+
+    public float getPadding() {
+        return padding;
+    }
+
+    public void setTextGravity(int textGravity) {
+        if (textGravity != LABEL_TEXTGRAVITY_CENTER && textGravity != LABEL_TEXTGRAVITY_LEFT && textGravity != LABEL_TEXTGRAVITY_RIGHT ) {
+            textGravity = LABEL_TEXTGRAVITY_LEFT;
+        }
+        this.textGravity = textGravity;
+    }
+
+    public int getTextGravity() {
+        return textGravity;
+    }
+
+    //Spans
     SpannableStringBuilder stringBuilder = new SpannableStringBuilder();
 
     public void setSpanText(SpannableString spanner) {

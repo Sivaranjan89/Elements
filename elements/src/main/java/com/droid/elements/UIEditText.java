@@ -8,11 +8,13 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.GradientDrawable;
 import android.text.Editable;
 import android.text.InputFilter;
+import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.text.method.DigitsKeyListener;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
@@ -29,6 +31,19 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class UIEditText extends LinearLayout {
+
+    public static final int ICONPOSITION_LEFT = 1;
+    public static final int ICONPOSITION_RIGHT = 2;
+    public static final int ICONPOSITION_TOP = 3;
+    public static final int ICONPOSITION_BOTTOM = 4;
+
+    public static final int HELPERTEXTOSITION_TOP_LEFT = 1;
+    public static final int HELPERTEXTPOSITION_TOP_RIGHT = 2;
+    public static final int HELPERTEXTPOSITION_BOTTOM_LEFT = 3;
+    public static final int HELPERTEXTPOSITION_BOTTOM_RIGHT = 4;
+
+    public static final int TEXTSTYLE_NORMAL = 0;
+    public static final int TEXTSTYLE_BOLD = 1;
 
     private static final int EDITTEXT_ID = 1;
     Context mContext;
@@ -51,6 +66,7 @@ public class UIEditText extends LinearLayout {
     private int editTextShape;
     private String hintText;
     private String helperText;
+    private float hintTextSize;
     private float helperTextSize;
     private int helperTextStyle;
     private int helperTextColor;
@@ -81,6 +97,7 @@ public class UIEditText extends LinearLayout {
     private int ellipsize;
     private String currency;
     private float leftPadding, rightPadding, topPadding, bottomPadding;
+    private boolean disableComponent = false;
 
     public UIEditText(Context context) {
         super(context);
@@ -116,6 +133,7 @@ public class UIEditText extends LinearLayout {
         bgColor = ta.getColor(R.styleable.UIEditText_backgroundColor, Color.TRANSPARENT);
 
         hintText = ta.getString(R.styleable.UIEditText_hintText);
+        hintTextSize = ta.getDimension(R.styleable.UIEditText_hintTextSize, DroidFunctions.dpToPx(mContext, 10));
         helperText = ta.getString(R.styleable.UIEditText_helperText);
         helperTextSize = ta.getDimension(R.styleable.UIEditText_helperTextSize, DroidFunctions.dpToPx(mContext, 10));
         helperTextStyle = ta.getInt(R.styleable.UIEditText_helperTextStyle, 0);
@@ -151,6 +169,7 @@ public class UIEditText extends LinearLayout {
         rightPadding = ta.getDimension(R.styleable.UIEditText_rightPadding, DroidFunctions.dpToPx(mContext, 8));
         topPadding = ta.getDimension(R.styleable.UIEditText_topPadding, DroidFunctions.dpToPx(mContext, 8));
         bottomPadding = ta.getDimension(R.styleable.UIEditText_bottomPadding, DroidFunctions.dpToPx(mContext, 8));
+        disableComponent = ta.getBoolean(R.styleable.UIEditText_disableComponent, false);
 
 
         if (imageHeight != -1 || imageWidth != -1) {
@@ -344,11 +363,16 @@ public class UIEditText extends LinearLayout {
         editText.setBackground(null);
         editText.setId(EDITTEXT_ID);
         editText.setText(text);
-        editText.setHint(hintText);
-        editText.setTextSize(DroidFunctions.pxToDp(mContext, textSize));
+        editText.setTextSize(TypedValue.COMPLEX_UNIT_DIP, DroidFunctions.pxToDp(mContext, textSize));
         editText.setTypeface(tf, textStyle);
         editText.setTextColor(textColor);
-        editText.setHintTextColor(hintTextColor);
+
+        SpannableStringBuilder hintTextBuilder = new SpannableStringBuilder("");
+        hintTextBuilder.append(new TextSpanner(hintText).setTextColor(hintTextColor)
+                .setTextSizeAbsolute(DroidFunctions.pxToDp(mContext, hintTextSize))
+                .build());
+        editText.setHint(hintTextBuilder);
+
         editText.setInputType(inputType);
         editText.setImeOptions(imeOptions);
         editText.setLongClickable(allowPaste);
@@ -438,6 +462,12 @@ public class UIEditText extends LinearLayout {
                 }
             }
         });
+
+        if (disableComponent) {
+            editText.setEnabled(false);
+        } else {
+            editText.setEnabled(true);
+        }
     }
 
     private void designHelperText() {
@@ -510,70 +540,375 @@ public class UIEditText extends LinearLayout {
         return gd;
     }
 
+
+    //Getters and Setters
     public void setText(String text) {
-        editText.setText(text);
+        this.text = text;
     }
 
     public String getText() {
-        return editText.getText().toString();
-    }
-
-    public void setHintText(String text) {
-        editText.setHint(text);
-    }
-
-    public void setHelperText(String text) {
-        helper.setText(text);
+        return text;
     }
 
     public void setTextColor(int color) {
-        editText.setTextColor(color);
+        this.textColor = color;
+    }
+
+    public int getTextColor() {
+        return textColor;
+    }
+
+    public void setTextSize(float sizeInDp) {
+        this.textSize = DroidFunctions.dpToPx(mContext, sizeInDp);
+    }
+
+    public float getTextSize() {
+        return textSize;
+    }
+
+    public void setTextStyle(int textStyle) {
+        if (textStyle < 0 || textStyle > 1) {
+            this.textStyle = TEXTSTYLE_NORMAL;
+        }
+        this.textStyle = textStyle;
+    }
+
+    public int getTextStyle() {
+        return textStyle;
+    }
+
+    public void setHintText(String text) {
+        this.hintText = text;
+    }
+
+    public String getHintText() {
+        return hintText;
     }
 
     public void setHintTextColor(int color) {
-        editText.setHintTextColor(color);
+        this.hintTextColor = color;
+    }
+
+    public int getHintTextColor() {
+        return hintTextColor;
+    }
+
+    public void setHintTextSize(float sizeInDp) {
+        this.hintTextSize = DroidFunctions.dpToPx(mContext, sizeInDp);
+    }
+
+    public float getHintTextSize() {
+        return hintTextSize;
+    }
+
+    public void setHelperText(String text) {
+        this.helperText = text;
+    }
+
+    public String getHelperText() {
+        return helperText;
     }
 
     public void setHelperTextColor(int color) {
-        helper.setTextColor(color);
+        this.helperTextColor = color;
     }
 
-    public void setTextSize(float size) {
-        editText.setTextSize(size);
+    public int getHelperTextColor() {
+        return helperTextColor;
     }
 
-    public void setHelperTextSize(float size) {
-        helper.setTextSize(size);
+    public void setHelperTextSize(float sizeInDp) {
+        this.helperTextSize = DroidFunctions.dpToPx(mContext, sizeInDp);
+    }
+
+    public float getHelperTextSize() {
+        return helperTextSize;
+    }
+
+    public void setHelperTextStyle(int helperTextStyle) {
+        if (helperTextStyle < 0 || helperTextStyle > 1) {
+            this.helperTextStyle = TEXTSTYLE_NORMAL;
+        }
+        this.helperTextStyle = helperTextStyle;
+    }
+
+    public int getHelperTextStyle() {
+        return helperTextStyle;
     }
 
     public void setCursorPosition(int position) {
         editText.setSelection(position);
     }
 
-    public EditText getEditText() {
-        return editText;
-    }
-
     public void setEditText(EditText editText) {
         this.editText = editText;
     }
 
-    public ImageView getImageView() {
-        return image;
+    public EditText getEditText() {
+        return editText;
     }
 
     public void setImageView(ImageView image) {
         this.image = image;
     }
 
+    public ImageView getImageView() {
+        return image;
+    }
+
     public void setLineColor(int color) {
         lineColor = color;
+    }
+
+    public int getLineColor() {
+        return lineColor;
+    }
+
+    public void setLineWidth(float sizeInDp) {
+        this.lineWidth = DroidFunctions.dpToPx(mContext, sizeInDp);
+    }
+
+    public float getLineWidth() {
+        return lineWidth;
     }
 
     public void setDividerColor(int color) {
         this.dividerColor = color;
     }
 
+    public int getDividerColor() {
+        return dividerColor;
+    }
+
+    public void setDividerWidth(float sizeInDp) {
+        this.dividerWidth = DroidFunctions.dpToPx(mContext, sizeInDp);
+    }
+
+    public float getDividerWidth() {
+        return dividerWidth;
+    }
+
+    public void setFont(String font) {
+        this.font = font;
+    }
+
+    public String getFont() {
+        return font;
+    }
+
+    public void setBgColor(int bgColor) {
+        this.bgColor = bgColor;
+    }
+
+    public int getBgColor() {
+        return bgColor;
+    }
+
+    public void setCornerRadius(float sizeInDp) {
+        this.radius = DroidFunctions.dpToPx(mContext, sizeInDp);
+    }
+
+    public float getCornerRadius() {
+        return radius;
+    }
+
+    public void setStrokeColor(int strokeColor) {
+        this.strokeColor = strokeColor;
+    }
+
+    public int getStrokeColor() {
+        return strokeColor;
+    }
+
+    public void setStrokeWidth(float sizeInDp) {
+        this.strokeWidth = DroidFunctions.dpToPx(mContext, sizeInDp);
+    }
+
+    public float getStrokeWidth() {
+        return strokeWidth;
+    }
+
+    public void setEditTextShape(int editTextShape) {
+        this.editTextShape = editTextShape;
+    }
+
+    public int getEditTextShape() {
+        return editTextShape;
+    }
+
+    public void setAllCaps(boolean allCaps) {
+        this.allCaps = allCaps;
+    }
+
+    public boolean isAllCaps() {
+        return allCaps;
+    }
+
+    public void setAutoStretch(boolean autoStretch) {
+        this.autoStretch = autoStretch;
+    }
+
+    public boolean isAutoStretch() {
+        return autoStretch;
+    }
+
+    public void setHelperFont(String helperFont) {
+        this.helperFont = helperFont;
+    }
+
+    public String getHelperFont() {
+        return helperFont;
+    }
+
+    public void setAllowPaste(boolean allowPaste) {
+        this.allowPaste = allowPaste;
+    }
+
+    public boolean isAllowPaste() {
+        return allowPaste;
+    }
+
+    public void setBottomPadding(float sizeInDp) {
+        this.bottomPadding = DroidFunctions.dpToPx(mContext, sizeInDp);
+    }
+
+    public float getBottomPadding() {
+        return bottomPadding;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setDisableComponent(boolean disableComponent) {
+        this.disableComponent = disableComponent;
+    }
+
+    public boolean isDisableComponent() {
+        return disableComponent;
+    }
+
+    public void setCursorVisible(boolean cursorVisible) {
+        this.cursorVisible = cursorVisible;
+    }
+
+    public boolean isCursorVisible() {
+        return cursorVisible;
+    }
+
+    public void setIcon(int icon) {
+        this.icon = icon;
+    }
+
+    public int getIcon() {
+        return icon;
+    }
+
+    public void setIconPosition(int iconPosition) {
+        if (iconPosition > 4 || iconPosition < 1) {
+            this.iconPosition = ICONPOSITION_LEFT;
+        }
+        this.iconPosition = iconPosition;
+    }
+
+    public int getIconPosition() {
+        return iconPosition;
+    }
+
+    public void setHelperPosition(int helperPosition) {
+        if (helperPosition > 4 || helperPosition < 1) {
+            this.helperPosition = HELPERTEXTOSITION_TOP_LEFT;
+        }
+        this.helperPosition = helperPosition;
+    }
+
+    public int getHelperPosition() {
+        return helperPosition;
+    }
+
+    public void setImageHeight(float sizeInDp) {
+        this.imageHeight = DroidFunctions.dpToPx(mContext, sizeInDp);
+    }
+
+    public float getImageHeight() {
+        return imageHeight;
+    }
+
+    public void setImageWidth(float sizeInDp) {
+        this.imageWidth = DroidFunctions.dpToPx(mContext, sizeInDp);
+    }
+
+    public float getImageWidth() {
+        return imageWidth;
+    }
+
+    public void setLeftPadding(float sizeInDp) {
+        this.leftPadding = DroidFunctions.dpToPx(mContext, sizeInDp);
+    }
+
+    public float getLeftPadding() {
+        return leftPadding;
+    }
+
+    public void setLetterSpacing(float sizeInDp) {
+        this.letterSpacing = DroidFunctions.dpToPx(mContext, sizeInDp);
+    }
+
+    public float getLetterSpacing() {
+        return letterSpacing;
+    }
+
+    public void setLineSpacing(float sizeInDp) {
+        this.lineSpacing = DroidFunctions.dpToPx(mContext, sizeInDp);
+    }
+
+    public float getLineSpacing() {
+        return lineSpacing;
+    }
+
+    public void setRightPadding(float sizeInDp) {
+        this.rightPadding = DroidFunctions.dpToPx(mContext, sizeInDp);
+    }
+
+    public float getRightPadding() {
+        return rightPadding;
+    }
+
+    public void setShowDivider(boolean showDivider) {
+        this.showDivider = showDivider;
+    }
+
+    public boolean isShowDivider() {
+        return showDivider;
+    }
+
+    public void setShowLine(boolean showLine) {
+        this.showLine = showLine;
+    }
+
+    public boolean isShowLine() {
+        return showLine;
+    }
+
+    public void setSpacing(float sizeInDp) {
+        this.spacing = DroidFunctions.dpToPx(mContext, sizeInDp);
+    }
+
+    public float getSpacing() {
+        return spacing;
+    }
+
+    public void setTopPadding(float sizeInDp) {
+        this.topPadding = DroidFunctions.dpToPx(mContext, sizeInDp);
+    }
+
+    public float getTopPadding() {
+        return topPadding;
+    }
 
     private AddTextChangedListener addTextChangedListener;
     private LongClickListener longClickListener;
