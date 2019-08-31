@@ -102,6 +102,66 @@ public class UIEditText extends LinearLayout {
     public UIEditText(Context context) {
         super(context);
         mContext = context;
+
+        initDefaults();
+    }
+
+    private void initDefaults() {
+        text = "";
+        textSize = DroidFunctions.dpToPx(mContext, 10);
+        textStyle = TEXTSTYLE_NORMAL;
+        textColor = Color.BLACK;
+        font = "";
+        strokeColor = Color.BLACK;
+        strokeWidth = 0;
+        radius = 0;
+        icon = -1;
+        shape = 1;
+        imageHeight = -1;
+        imageWidth = -1;
+        spacing = 0;
+        bgColor = Color.TRANSPARENT;
+
+        hintText = "";
+        hintTextSize = DroidFunctions.dpToPx(mContext, 10);
+        helperText = "";
+        helperTextSize = DroidFunctions.dpToPx(mContext, 10);
+        helperTextStyle = TEXTSTYLE_NORMAL;
+        hintTextColor = Color.GRAY;
+        helperTextColor = Color.BLACK;
+        helperFont = "";
+        iconPosition = ICONPOSITION_LEFT;
+        editTextShape = 1;
+        dividerColor = Color.TRANSPARENT;
+        lineColor = Color.BLACK;
+        showDivider = true;
+        showLine = true;
+        lineWidth = DroidFunctions.dpToPx(mContext, 1);
+        dividerWidth = DroidFunctions.dpToPx(mContext, 1);
+        helperPosition = HELPERTEXTPOSITION_BOTTOM_LEFT;
+        autoStretch = false;
+        singleLine = false;
+        maxLines = 0;
+        inputType = 1;
+        digits = "";
+        allowPaste = true;
+        allCaps = false;
+        maxLength = 0;
+        lines = 0;
+        letterSpacing = 0;
+        lineSpacing = 0;
+        cursorVisible = true;
+        imeActionLabel = "";
+        imeOptions = 6;
+        ellipsize = 0;
+        currency = "";
+        leftPadding = DroidFunctions.dpToPx(mContext, 8);
+        rightPadding = DroidFunctions.dpToPx(mContext, 8);
+        topPadding = DroidFunctions.dpToPx(mContext, 8);
+        bottomPadding = DroidFunctions.dpToPx(mContext, 8);
+        disableComponent = false;
+
+        invalidateComponent();
     }
 
     public UIEditText(Context context, AttributeSet attrs) {
@@ -220,11 +280,16 @@ public class UIEditText extends LinearLayout {
             }
             bgColor = Color.TRANSPARENT;
         }
+        invalidateComponent();
+    }
+
+    public void invalidateComponent() {
+        this.removeAllViews();
         drawEditText();
     }
 
     private void drawEditText() {
-        setOrientation(LinearLayout.VERTICAL);
+        this.setOrientation(LinearLayout.VERTICAL);
 
         LinearLayout main = new LinearLayout(mContext);
         main.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
@@ -300,14 +365,16 @@ public class UIEditText extends LinearLayout {
         }
 
         if (helperPosition == 1 || helperPosition == 2) {
-            addView(helper);
+            this.addView(helper);
         }
-        addView(main);
+
+        this.addView(main);
+
         if (editTextShape == 3 && showLine) {
-            addView(line);
+            this.addView(line);
         }
         if (helperPosition == 3 || helperPosition == 4) {
-            addView(helper);
+            this.addView(helper);
         }
     }
 
@@ -465,8 +532,10 @@ public class UIEditText extends LinearLayout {
 
         if (disableComponent) {
             editText.setEnabled(false);
+            editText.setAlpha(0.5f);
         } else {
             editText.setEnabled(true);
+            editText.setAlpha(1f);
         }
     }
 
@@ -544,6 +613,7 @@ public class UIEditText extends LinearLayout {
     //Getters and Setters
     public void setText(String text) {
         this.text = text;
+        invalidateComponent();
     }
 
     public String getText() {
@@ -552,6 +622,7 @@ public class UIEditText extends LinearLayout {
 
     public void setTextColor(int color) {
         this.textColor = color;
+        invalidateComponent();
     }
 
     public int getTextColor() {
@@ -560,6 +631,7 @@ public class UIEditText extends LinearLayout {
 
     public void setTextSize(float sizeInDp) {
         this.textSize = DroidFunctions.dpToPx(mContext, sizeInDp);
+        invalidateComponent();
     }
 
     public float getTextSize() {
@@ -571,6 +643,7 @@ public class UIEditText extends LinearLayout {
             this.textStyle = TEXTSTYLE_NORMAL;
         }
         this.textStyle = textStyle;
+        invalidateComponent();
     }
 
     public int getTextStyle() {
@@ -579,6 +652,7 @@ public class UIEditText extends LinearLayout {
 
     public void setHintText(String text) {
         this.hintText = text;
+        invalidateComponent();
     }
 
     public String getHintText() {
@@ -587,6 +661,7 @@ public class UIEditText extends LinearLayout {
 
     public void setHintTextColor(int color) {
         this.hintTextColor = color;
+        invalidateComponent();
     }
 
     public int getHintTextColor() {
@@ -595,6 +670,7 @@ public class UIEditText extends LinearLayout {
 
     public void setHintTextSize(float sizeInDp) {
         this.hintTextSize = DroidFunctions.dpToPx(mContext, sizeInDp);
+        invalidateComponent();
     }
 
     public float getHintTextSize() {
@@ -603,6 +679,7 @@ public class UIEditText extends LinearLayout {
 
     public void setHelperText(String text) {
         this.helperText = text;
+        invalidateComponent();
     }
 
     public String getHelperText() {
@@ -611,6 +688,7 @@ public class UIEditText extends LinearLayout {
 
     public void setHelperTextColor(int color) {
         this.helperTextColor = color;
+        invalidateComponent();
     }
 
     public int getHelperTextColor() {
@@ -619,6 +697,7 @@ public class UIEditText extends LinearLayout {
 
     public void setHelperTextSize(float sizeInDp) {
         this.helperTextSize = DroidFunctions.dpToPx(mContext, sizeInDp);
+        invalidateComponent();
     }
 
     public float getHelperTextSize() {
@@ -630,6 +709,7 @@ public class UIEditText extends LinearLayout {
             this.helperTextStyle = TEXTSTYLE_NORMAL;
         }
         this.helperTextStyle = helperTextStyle;
+        invalidateComponent();
     }
 
     public int getHelperTextStyle() {
@@ -638,10 +718,12 @@ public class UIEditText extends LinearLayout {
 
     public void setCursorPosition(int position) {
         editText.setSelection(position);
+        invalidateComponent();
     }
 
     public void setEditText(EditText editText) {
         this.editText = editText;
+        invalidateComponent();
     }
 
     public EditText getEditText() {
@@ -650,6 +732,7 @@ public class UIEditText extends LinearLayout {
 
     public void setImageView(ImageView image) {
         this.image = image;
+        invalidateComponent();
     }
 
     public ImageView getImageView() {
@@ -658,6 +741,7 @@ public class UIEditText extends LinearLayout {
 
     public void setLineColor(int color) {
         lineColor = color;
+        invalidateComponent();
     }
 
     public int getLineColor() {
@@ -666,6 +750,7 @@ public class UIEditText extends LinearLayout {
 
     public void setLineWidth(float sizeInDp) {
         this.lineWidth = DroidFunctions.dpToPx(mContext, sizeInDp);
+        invalidateComponent();
     }
 
     public float getLineWidth() {
@@ -674,6 +759,7 @@ public class UIEditText extends LinearLayout {
 
     public void setDividerColor(int color) {
         this.dividerColor = color;
+        invalidateComponent();
     }
 
     public int getDividerColor() {
@@ -682,6 +768,7 @@ public class UIEditText extends LinearLayout {
 
     public void setDividerWidth(float sizeInDp) {
         this.dividerWidth = DroidFunctions.dpToPx(mContext, sizeInDp);
+        invalidateComponent();
     }
 
     public float getDividerWidth() {
@@ -690,6 +777,7 @@ public class UIEditText extends LinearLayout {
 
     public void setFont(String font) {
         this.font = font;
+        invalidateComponent();
     }
 
     public String getFont() {
@@ -698,6 +786,7 @@ public class UIEditText extends LinearLayout {
 
     public void setBgColor(int bgColor) {
         this.bgColor = bgColor;
+        invalidateComponent();
     }
 
     public int getBgColor() {
@@ -706,6 +795,7 @@ public class UIEditText extends LinearLayout {
 
     public void setCornerRadius(float sizeInDp) {
         this.radius = DroidFunctions.dpToPx(mContext, sizeInDp);
+        invalidateComponent();
     }
 
     public float getCornerRadius() {
@@ -714,6 +804,7 @@ public class UIEditText extends LinearLayout {
 
     public void setStrokeColor(int strokeColor) {
         this.strokeColor = strokeColor;
+        invalidateComponent();
     }
 
     public int getStrokeColor() {
@@ -722,6 +813,7 @@ public class UIEditText extends LinearLayout {
 
     public void setStrokeWidth(float sizeInDp) {
         this.strokeWidth = DroidFunctions.dpToPx(mContext, sizeInDp);
+        invalidateComponent();
     }
 
     public float getStrokeWidth() {
@@ -730,6 +822,7 @@ public class UIEditText extends LinearLayout {
 
     public void setEditTextShape(int editTextShape) {
         this.editTextShape = editTextShape;
+        invalidateComponent();
     }
 
     public int getEditTextShape() {
@@ -738,6 +831,7 @@ public class UIEditText extends LinearLayout {
 
     public void setAllCaps(boolean allCaps) {
         this.allCaps = allCaps;
+        invalidateComponent();
     }
 
     public boolean isAllCaps() {
@@ -746,6 +840,7 @@ public class UIEditText extends LinearLayout {
 
     public void setAutoStretch(boolean autoStretch) {
         this.autoStretch = autoStretch;
+        invalidateComponent();
     }
 
     public boolean isAutoStretch() {
@@ -754,6 +849,7 @@ public class UIEditText extends LinearLayout {
 
     public void setHelperFont(String helperFont) {
         this.helperFont = helperFont;
+        invalidateComponent();
     }
 
     public String getHelperFont() {
@@ -762,6 +858,7 @@ public class UIEditText extends LinearLayout {
 
     public void setAllowPaste(boolean allowPaste) {
         this.allowPaste = allowPaste;
+        invalidateComponent();
     }
 
     public boolean isAllowPaste() {
@@ -770,6 +867,7 @@ public class UIEditText extends LinearLayout {
 
     public void setBottomPadding(float sizeInDp) {
         this.bottomPadding = DroidFunctions.dpToPx(mContext, sizeInDp);
+        invalidateComponent();
     }
 
     public float getBottomPadding() {
@@ -778,6 +876,7 @@ public class UIEditText extends LinearLayout {
 
     public void setCurrency(String currency) {
         this.currency = currency;
+        invalidateComponent();
     }
 
     public String getCurrency() {
@@ -786,6 +885,7 @@ public class UIEditText extends LinearLayout {
 
     public void setDisableComponent(boolean disableComponent) {
         this.disableComponent = disableComponent;
+        invalidateComponent();
     }
 
     public boolean isDisableComponent() {
@@ -794,6 +894,7 @@ public class UIEditText extends LinearLayout {
 
     public void setCursorVisible(boolean cursorVisible) {
         this.cursorVisible = cursorVisible;
+        invalidateComponent();
     }
 
     public boolean isCursorVisible() {
@@ -802,6 +903,7 @@ public class UIEditText extends LinearLayout {
 
     public void setIcon(int icon) {
         this.icon = icon;
+        invalidateComponent();
     }
 
     public int getIcon() {
@@ -813,6 +915,7 @@ public class UIEditText extends LinearLayout {
             this.iconPosition = ICONPOSITION_LEFT;
         }
         this.iconPosition = iconPosition;
+        invalidateComponent();
     }
 
     public int getIconPosition() {
@@ -824,6 +927,7 @@ public class UIEditText extends LinearLayout {
             this.helperPosition = HELPERTEXTOSITION_TOP_LEFT;
         }
         this.helperPosition = helperPosition;
+        invalidateComponent();
     }
 
     public int getHelperPosition() {
@@ -832,6 +936,7 @@ public class UIEditText extends LinearLayout {
 
     public void setImageHeight(float sizeInDp) {
         this.imageHeight = DroidFunctions.dpToPx(mContext, sizeInDp);
+        invalidateComponent();
     }
 
     public float getImageHeight() {
@@ -840,6 +945,7 @@ public class UIEditText extends LinearLayout {
 
     public void setImageWidth(float sizeInDp) {
         this.imageWidth = DroidFunctions.dpToPx(mContext, sizeInDp);
+        invalidateComponent();
     }
 
     public float getImageWidth() {
@@ -848,6 +954,7 @@ public class UIEditText extends LinearLayout {
 
     public void setLeftPadding(float sizeInDp) {
         this.leftPadding = DroidFunctions.dpToPx(mContext, sizeInDp);
+        invalidateComponent();
     }
 
     public float getLeftPadding() {
@@ -856,6 +963,7 @@ public class UIEditText extends LinearLayout {
 
     public void setLetterSpacing(float sizeInDp) {
         this.letterSpacing = DroidFunctions.dpToPx(mContext, sizeInDp);
+        invalidateComponent();
     }
 
     public float getLetterSpacing() {
@@ -864,6 +972,7 @@ public class UIEditText extends LinearLayout {
 
     public void setLineSpacing(float sizeInDp) {
         this.lineSpacing = DroidFunctions.dpToPx(mContext, sizeInDp);
+        invalidateComponent();
     }
 
     public float getLineSpacing() {
@@ -872,6 +981,7 @@ public class UIEditText extends LinearLayout {
 
     public void setRightPadding(float sizeInDp) {
         this.rightPadding = DroidFunctions.dpToPx(mContext, sizeInDp);
+        invalidateComponent();
     }
 
     public float getRightPadding() {
@@ -880,6 +990,7 @@ public class UIEditText extends LinearLayout {
 
     public void setShowDivider(boolean showDivider) {
         this.showDivider = showDivider;
+        invalidateComponent();
     }
 
     public boolean isShowDivider() {
@@ -888,6 +999,7 @@ public class UIEditText extends LinearLayout {
 
     public void setShowLine(boolean showLine) {
         this.showLine = showLine;
+        invalidateComponent();
     }
 
     public boolean isShowLine() {
@@ -896,6 +1008,7 @@ public class UIEditText extends LinearLayout {
 
     public void setSpacing(float sizeInDp) {
         this.spacing = DroidFunctions.dpToPx(mContext, sizeInDp);
+        invalidateComponent();
     }
 
     public float getSpacing() {
@@ -904,6 +1017,7 @@ public class UIEditText extends LinearLayout {
 
     public void setTopPadding(float sizeInDp) {
         this.topPadding = DroidFunctions.dpToPx(mContext, sizeInDp);
+        invalidateComponent();
     }
 
     public float getTopPadding() {
