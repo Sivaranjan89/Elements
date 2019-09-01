@@ -371,7 +371,7 @@ public class UIEditText extends LinearLayout {
 
         this.addView(main);
 
-        if (editTextShape == 3 && showLine) {
+        if (showLine) {
             this.addView(line);
         }
         if (helperPosition == 3 || helperPosition == 4) {
