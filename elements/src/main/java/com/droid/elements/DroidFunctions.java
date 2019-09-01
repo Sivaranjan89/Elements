@@ -8,6 +8,8 @@ import android.graphics.Canvas;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 
 public class DroidFunctions {
 
@@ -54,5 +56,12 @@ public class DroidFunctions {
 
     public static float pxToDp(float px) {
         return (px / Resources.getSystem().getDisplayMetrics().density);
+    }
+
+    public static void hideSoftKeyboard(Context context, View view) {
+        if (view != null) {
+            InputMethodManager imm = (InputMethodManager)context.getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
     }
 }
