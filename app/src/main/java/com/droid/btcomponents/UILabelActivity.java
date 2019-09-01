@@ -28,7 +28,7 @@ public class UILabelActivity extends Activity {
         label.setSpanText(new TextSpanner(" ").build());
         label.setSpanText(new TextSpanner("View").setTextSizeAbsolute(10).build());
         label.setSpanText(new TextSpanner(" ").build());
-        label.setSpanText(new TextSpanner(" Component ").setRoundedBackgroundColor(Color.BLACK, Color.WHITE, DroidFunctions.dpToPx(this, 4)).build());
+        label.setSpanText(new TextSpanner(" Component ").setRoundedBackgroundColor(Color.BLACK, Color.WHITE, DroidFunctions.dpToPx(4)).build());
         label.setSpanText(new TextSpanner(" ").build());
         label.setSpanText(new TextSpanner("Bold").setBoldText().build());
         label.setSpanText(new TextSpanner(" ").build());
@@ -41,7 +41,7 @@ public class UILabelActivity extends Activity {
             }
         }).setTextColor(Color.BLUE).setUnderlineText().build());
         label.setSpanText(new TextSpanner("\nThis is ").build());
-        label.setSpanText(new TextSpanner("Image").setImage(this, R.mipmap.ic_launcher_round, DroidFunctions.dpToPx(this, 20)).build());
+        label.setSpanText(new TextSpanner("Image").setImage(this, R.mipmap.ic_launcher_round, DroidFunctions.dpToPx(20)).build());
         label.setSpanText(new TextSpanner(" Android Icon \n").build());
         label.setSpanText(new TextSpanner("Click to Delete").build());
         label.setSpanText(new TextSpanner("\n").build());

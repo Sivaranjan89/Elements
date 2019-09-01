@@ -78,7 +78,7 @@ public class UILabel extends LinearLayout {
 
     private void initDefaults() {
         text = "";
-        textSize = DroidFunctions.dpToPx(mContext, 10);
+        textSize = DroidFunctions.dpToPx(10);
         textStyle = 0;
         textColor = Color.BLACK;
         font = null;
@@ -97,8 +97,8 @@ public class UILabel extends LinearLayout {
         lineColor = Color.BLACK;
         showDivider = false;
         showLine = false;
-        lineWidth = DroidFunctions.dpToPx(mContext, 1);
-        dividerWidth = DroidFunctions.dpToPx(mContext, 1);
+        lineWidth = DroidFunctions.dpToPx(1);
+        dividerWidth = DroidFunctions.dpToPx(1);
         allCaps = false;
         strikeText = false;
         underlineText = false;
@@ -122,7 +122,7 @@ public class UILabel extends LinearLayout {
 
         TypedArray ta = mContext.obtainStyledAttributes(attrs, R.styleable.UILabel);
         text = ta.getString(R.styleable.UILabel_text);
-        textSize = ta.getDimension(R.styleable.UILabel_textSize, DroidFunctions.dpToPx(mContext, 10));
+        textSize = ta.getDimension(R.styleable.UILabel_textSize, DroidFunctions.dpToPx(10));
         textStyle = ta.getInt(R.styleable.UILabel_textStyle, 0);
         textColor = ta.getColor(R.styleable.UILabel_textColor, Color.BLACK);
         font = ta.getString(R.styleable.UILabel_fontName);
@@ -141,8 +141,8 @@ public class UILabel extends LinearLayout {
         lineColor = ta.getColor(R.styleable.UILabel_lineColor, Color.BLACK);
         showDivider = ta.getBoolean(R.styleable.UILabel_showDivider, false);
         showLine = ta.getBoolean(R.styleable.UILabel_showLine, false);
-        lineWidth = ta.getDimension(R.styleable.UILabel_lineWidth, DroidFunctions.dpToPx(mContext, 1));
-        dividerWidth = ta.getDimension(R.styleable.UILabel_dividerWidth, DroidFunctions.dpToPx(mContext, 1));
+        lineWidth = ta.getDimension(R.styleable.UILabel_lineWidth, DroidFunctions.dpToPx(1));
+        dividerWidth = ta.getDimension(R.styleable.UILabel_dividerWidth, DroidFunctions.dpToPx(1));
         allCaps = ta.getBoolean(R.styleable.UILabel_allCaps, false);
         strikeText = ta.getBoolean(R.styleable.UILabel_strikeText, false);
         underlineText = ta.getBoolean(R.styleable.UILabel_underlineText, false);
@@ -288,7 +288,7 @@ public class UILabel extends LinearLayout {
             textView.setText(text);
         }
 
-        textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, DroidFunctions.pxToDp(mContext, textSize));
+        textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, DroidFunctions.pxToDp(textSize));
         textView.setTypeface(tf, textStyle);
         textView.setTextColor(textColor);
         textView.setAllCaps(allCaps);
@@ -369,7 +369,7 @@ public class UILabel extends LinearLayout {
     }
 
     public void setTextSize(float sizeInDp) {
-        this.textSize = DroidFunctions.dpToPx(mContext, sizeInDp);
+        this.textSize = DroidFunctions.dpToPx(sizeInDp);
         invalidateUILabel();
     }
 
@@ -423,7 +423,7 @@ public class UILabel extends LinearLayout {
     }
 
     public void setSpacing(float spacingInDp) {
-        this.spacing = DroidFunctions.dpToPx(mContext, spacingInDp);
+        this.spacing = DroidFunctions.dpToPx(spacingInDp);
         invalidateUILabel();
     }
 
@@ -432,7 +432,7 @@ public class UILabel extends LinearLayout {
     }
 
     public void setStrokeWidth(float strokeWidthInDp) {
-        this.strokeWidth = DroidFunctions.dpToPx(mContext, strokeWidthInDp);
+        this.strokeWidth = DroidFunctions.dpToPx(strokeWidthInDp);
         invalidateUILabel();
     }
 
@@ -441,7 +441,7 @@ public class UILabel extends LinearLayout {
     }
 
     public void setCornerRadius(float radiusInDp) {
-        this.radius = DroidFunctions.dpToPx(mContext, radiusInDp);
+        this.radius = DroidFunctions.dpToPx(radiusInDp);
         invalidateUILabel();
     }
 
@@ -459,7 +459,7 @@ public class UILabel extends LinearLayout {
     }
 
     public void setImageWidth(float imageWidthInDp) {
-        this.imageWidth = DroidFunctions.dpToPx(mContext, imageWidthInDp);
+        this.imageWidth = DroidFunctions.dpToPx(imageWidthInDp);
         invalidateUILabel();
     }
 
@@ -468,7 +468,7 @@ public class UILabel extends LinearLayout {
     }
 
     public void setImageHeight(float imageHeightInDp) {
-        this.imageHeight = DroidFunctions.dpToPx(mContext, imageHeightInDp);
+        this.imageHeight = DroidFunctions.dpToPx(imageHeightInDp);
         invalidateUILabel();
     }
 
@@ -495,7 +495,7 @@ public class UILabel extends LinearLayout {
     }
 
     public void setDividerWidth(float dividerWidthInDp) {
-        this.dividerWidth = DroidFunctions.dpToPx(mContext, dividerWidthInDp);
+        this.dividerWidth = DroidFunctions.dpToPx(dividerWidthInDp);
         invalidateUILabel();
     }
 
@@ -504,7 +504,7 @@ public class UILabel extends LinearLayout {
     }
 
     public void setEndSpacing(float endSpacingInDp) {
-        this.endSpacing = DroidFunctions.dpToPx(mContext, endSpacingInDp);
+        this.endSpacing = DroidFunctions.dpToPx(endSpacingInDp);
         invalidateUILabel();
     }
 
@@ -540,7 +540,7 @@ public class UILabel extends LinearLayout {
     }
 
     public void setLineWidth(float lineWidthInDp) {
-        this.lineWidth = DroidFunctions.dpToPx(mContext, lineWidthInDp);
+        this.lineWidth = DroidFunctions.dpToPx(lineWidthInDp);
         invalidateUILabel();
     }
 

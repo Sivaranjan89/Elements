@@ -79,7 +79,7 @@ public class UIButton extends RelativeLayout {
 
     private void initDefaults() {
         //Init Default Values for Using the component without XML
-        textSize = DroidFunctions.dpToPx(mContext, 10);
+        textSize = DroidFunctions.dpToPx(10);
         textStyle = 0;
         textColor = Color.BLACK;
         font = "";
@@ -116,7 +116,7 @@ public class UIButton extends RelativeLayout {
 
         TypedArray ta = mContext.obtainStyledAttributes(attrs, R.styleable.UIButton);
         text = ta.getString(R.styleable.UIButton_text);
-        textSize = ta.getDimension(R.styleable.UIButton_textSize, DroidFunctions.dpToPx(mContext, 10));
+        textSize = ta.getDimension(R.styleable.UIButton_textSize, DroidFunctions.dpToPx(10));
         textStyle = ta.getInt(R.styleable.UIButton_textStyle, 0);
         textColor = ta.getColor(R.styleable.UIButton_textColor, Color.BLACK);
         font = ta.getString(R.styleable.UIButton_fontName);
@@ -280,7 +280,7 @@ public class UIButton extends RelativeLayout {
         txParams.gravity = Gravity.CENTER_VERTICAL;
         tv.setId(TEXTVIEW_ID);
         tv.setText(text);
-        tv.setTextSize(TypedValue.COMPLEX_UNIT_DIP, DroidFunctions.pxToDp(mContext, textSize));
+        tv.setTextSize(TypedValue.COMPLEX_UNIT_DIP, DroidFunctions.pxToDp(textSize));
         tv.setTypeface(tf, textStyle);
         tv.setTextColor(textColor);
         tv.setLayoutParams(txParams);
@@ -376,7 +376,7 @@ public class UIButton extends RelativeLayout {
     }
 
     public void setTextSize(float sizeInDP) {
-        this.textSize = DroidFunctions.dpToPx(mContext, sizeInDP);
+        this.textSize = DroidFunctions.dpToPx(sizeInDP);
         drawButton();
     }
     public float getTextSize() {
@@ -441,7 +441,7 @@ public class UIButton extends RelativeLayout {
     }
 
     public void setStrokeWidth(float strokeWidthInDp) {
-        this.strokeWidth = DroidFunctions.dpToPx(mContext, strokeWidthInDp);
+        this.strokeWidth = DroidFunctions.dpToPx(strokeWidthInDp);
         drawButton();
     }
 
@@ -480,7 +480,7 @@ public class UIButton extends RelativeLayout {
     }
 
     public void setCornerRadius(float radiusInDp) {
-        this.radius = DroidFunctions.dpToPx(mContext, radiusInDp);
+        this.radius = DroidFunctions.dpToPx(radiusInDp);
         drawButton();
     }
 
@@ -489,7 +489,7 @@ public class UIButton extends RelativeLayout {
     }
 
     public void setImageHeight(float imageHeightInDp) {
-        this.imageHeight = DroidFunctions.dpToPx(mContext, imageHeightInDp);
+        this.imageHeight = DroidFunctions.dpToPx(imageHeightInDp);
         drawButton();
     }
 
@@ -498,7 +498,7 @@ public class UIButton extends RelativeLayout {
     }
 
     public void setImageWidth(float imageWidthInDp) {
-        this.imageWidth = DroidFunctions.dpToPx(mContext, imageWidthInDp);
+        this.imageWidth = DroidFunctions.dpToPx(imageWidthInDp);
         drawButton();
     }
 
@@ -507,7 +507,7 @@ public class UIButton extends RelativeLayout {
     }
 
     public void setSpacing(float spacingInDp) {
-        this.spacing = DroidFunctions.dpToPx(mContext, spacingInDp);
+        this.spacing = DroidFunctions.dpToPx(spacingInDp);
         drawButton();
     }
 
