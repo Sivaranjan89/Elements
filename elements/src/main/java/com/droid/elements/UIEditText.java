@@ -98,6 +98,7 @@ public class UIEditText extends LinearLayout {
     private String currency;
     private float leftPadding, rightPadding, topPadding, bottomPadding;
     private boolean disableComponent = false;
+    private boolean isEditable = true;
 
     public UIEditText(Context context) {
         super(context);
@@ -537,6 +538,12 @@ public class UIEditText extends LinearLayout {
             editText.setEnabled(true);
             editText.setAlpha(1f);
         }
+
+        if (isEditable) {
+            editText.setEnabled(true);
+        } else {
+            editText.setEnabled(false);
+        }
     }
 
     private void designHelperText() {
@@ -892,6 +899,15 @@ public class UIEditText extends LinearLayout {
         return disableComponent;
     }
 
+    public void setEditable(boolean isEditable) {
+        this.isEditable = isEditable;
+        invalidateComponent();
+    }
+
+    public boolean isEditable() {
+        return isEditable;
+    }
+
     public void setCursorVisible(boolean cursorVisible) {
         this.cursorVisible = cursorVisible;
         invalidateComponent();
@@ -1022,6 +1038,14 @@ public class UIEditText extends LinearLayout {
 
     public float getTopPadding() {
         return topPadding;
+    }
+
+    public void setTextTypeFace(Typeface typeface, int type) {
+        editText.setTypeface(typeface, type);
+    }
+
+    public void setHelperTextTypeFace(Typeface typeface, int type) {
+        helper.setTypeface(typeface, type);
     }
 
     private AddTextChangedListener addTextChangedListener;
