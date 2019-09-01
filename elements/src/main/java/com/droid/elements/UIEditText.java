@@ -293,7 +293,7 @@ public class UIEditText extends LinearLayout {
         this.setOrientation(LinearLayout.VERTICAL);
 
         LinearLayout main = new LinearLayout(mContext);
-        main.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        main.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         main.setOrientation(LinearLayout.HORIZONTAL);
 
         designEditText();
