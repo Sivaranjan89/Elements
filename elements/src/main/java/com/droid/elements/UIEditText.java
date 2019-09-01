@@ -37,7 +37,7 @@ public class UIEditText extends LinearLayout {
     public static final int ICONPOSITION_TOP = 3;
     public static final int ICONPOSITION_BOTTOM = 4;
 
-    public static final int HELPERTEXTOSITION_TOP_LEFT = 1;
+    public static final int HELPERTEXTPOSITION_TOP_LEFT = 1;
     public static final int HELPERTEXTPOSITION_TOP_RIGHT = 2;
     public static final int HELPERTEXTPOSITION_BOTTOM_LEFT = 3;
     public static final int HELPERTEXTPOSITION_BOTTOM_RIGHT = 4;
@@ -924,7 +924,7 @@ public class UIEditText extends LinearLayout {
 
     public void setHelperPosition(int helperPosition) {
         if (helperPosition > 4 || helperPosition < 1) {
-            this.helperPosition = HELPERTEXTOSITION_TOP_LEFT;
+            this.helperPosition = HELPERTEXTPOSITION_TOP_LEFT;
         }
         this.helperPosition = helperPosition;
         invalidateComponent();
