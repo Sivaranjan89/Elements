@@ -1,6 +1,7 @@
 package com.droid.elements;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -47,11 +48,11 @@ public class DroidFunctions {
         }
     }
 
-    public static float dpToPx(Context context, float dp) {
-        return dp * context.getResources().getDisplayMetrics().density;
+    public static float dpToPx(float dp) {
+        return (dp * Resources.getSystem().getDisplayMetrics().density);
     }
 
-    public static float pxToDp(Context context, float px) {
-        return px / context.getResources().getDisplayMetrics().density;
+    public static float pxToDp(float px) {
+        return (px / Resources.getSystem().getDisplayMetrics().density);
     }
 }
