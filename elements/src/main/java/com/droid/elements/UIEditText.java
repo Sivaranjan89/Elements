@@ -136,7 +136,7 @@ public class UIEditText extends LinearLayout {
         dividerColor = Color.TRANSPARENT;
         lineColor = Color.BLACK;
         showDivider = true;
-        showLine = true;
+        showLine = false;
         lineWidth = DroidFunctions.dpToPx(1);
         dividerWidth = DroidFunctions.dpToPx(1);
         helperPosition = HELPERTEXTPOSITION_BOTTOM_LEFT;
@@ -206,7 +206,7 @@ public class UIEditText extends LinearLayout {
         dividerColor = ta.getColor(R.styleable.UIEditText_dividerColor, Color.TRANSPARENT);
         lineColor = ta.getColor(R.styleable.UIEditText_lineColor, Color.BLACK);
         showDivider = ta.getBoolean(R.styleable.UIEditText_showDivider, true);
-        showLine = ta.getBoolean(R.styleable.UIEditText_showLine, true);
+        showLine = ta.getBoolean(R.styleable.UIEditText_showLine, false);
         lineWidth = ta.getDimension(R.styleable.UIEditText_lineWidth, DroidFunctions.dpToPx(1));
         dividerWidth = ta.getDimension(R.styleable.UIEditText_dividerWidth, DroidFunctions.dpToPx(1));
         helperPosition = ta.getInt(R.styleable.UIEditText_helperTextPosition, 4);
@@ -293,7 +293,7 @@ public class UIEditText extends LinearLayout {
         this.setOrientation(LinearLayout.VERTICAL);
 
         LinearLayout main = new LinearLayout(mContext);
-        main.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        main.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         main.setOrientation(LinearLayout.HORIZONTAL);
 
         designEditText();
