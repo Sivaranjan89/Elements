@@ -563,7 +563,7 @@ public class UIEditText extends LinearLayout {
         }
         helper.setBackground(null);
         helper.setText(helperText);
-        helper.setTextSize(DroidFunctions.pxToDp(helperTextSize));
+        helper.setTextSize(TypedValue.COMPLEX_UNIT_DIP, DroidFunctions.pxToDp(helperTextSize));
         helper.setTypeface(tf, helperTextStyle);
         helper.setTextColor(helperTextColor);
         helper.setLayoutParams(params);
