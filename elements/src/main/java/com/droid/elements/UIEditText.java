@@ -161,6 +161,7 @@ public class UIEditText extends LinearLayout {
         topPadding = DroidFunctions.dpToPx(8);
         bottomPadding = DroidFunctions.dpToPx(8);
         disableComponent = false;
+        isEditable = true;
 
         invalidateComponent();
     }
@@ -231,6 +232,7 @@ public class UIEditText extends LinearLayout {
         topPadding = ta.getDimension(R.styleable.UIEditText_topPadding, DroidFunctions.dpToPx(8));
         bottomPadding = ta.getDimension(R.styleable.UIEditText_bottomPadding, DroidFunctions.dpToPx(8));
         disableComponent = ta.getBoolean(R.styleable.UIEditText_disableComponent, false);
+        isEditable = ta.getBoolean(R.styleable.UIEditText_isEditable, true);
 
 
         if (imageHeight != -1 || imageWidth != -1) {

@@ -151,6 +151,7 @@
         <attr name="bottomPadding" format="dimension" />
         <attr name="rightPadding" format="dimension" />
         <attr name="disableComponent" format="boolean" />
+        <attr name="isEditable" format="boolean" />
     </declare-styleable>
 
 
