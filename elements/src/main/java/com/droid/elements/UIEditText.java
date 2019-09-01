@@ -302,6 +302,7 @@ public class UIEditText extends LinearLayout {
         generateDivider();
         generateSpace2();
         designHelperText();
+        drawLine();
 
         if (editTextShape == 1 || editTextShape == 2) {
             main.setBackground(drawGradientDrawable());
@@ -334,7 +335,6 @@ public class UIEditText extends LinearLayout {
                 main.addView(editText);
             }
         } else if (editTextShape == 3) {
-            drawLine();
             if (icon != -1) {
                 if (iconPosition == 1) {
                     main.addView(image);
