@@ -205,4 +205,11 @@
         <attr name="cornerRadius"/>
     </declare-styleable>
 
+
+
+
+    <declare-styleable name="UIExpandableListView">
+        <attr name="singleGroupDisplay" format="boolean" />
+    </declare-styleable>
+
 </resources>

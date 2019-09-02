@@ -1,21 +1,22 @@
 package com.droid.btcomponents;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.text.style.ClickableSpan;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.RelativeLayout;
-import android.widget.Toast;
 
-import com.droid.elements.DroidFunctions;
-import com.droid.elements.TextSpanner;
 import com.droid.elements.UIButton;
-import com.droid.elements.UIEditText;
 import com.droid.elements.UILabel;
+import com.droid.elements.expandablelist.UIExpandableListView;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
 
 public class HomeActivity extends Activity {
 
@@ -54,27 +55,50 @@ public class HomeActivity extends Activity {
         });
 
 
-        /*RelativeLayout main = new RelativeLayout(this);
-        main.setBackgroundColor(Color.WHITE);
-        main.setLayoutParams(new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        LinkedHashMap<String, List<String>> details = new LinkedHashMap<>();
+        List<String> children1 = new ArrayList<>();
+        children1.add("P1C1");
+        children1.add("P1C2");
+        List<String> children2 = new ArrayList<>();
+        children2.add("P2C1");
+        children2.add("P2C2");
+        List<String> children3 = new ArrayList<>();
+        children3.add("P3C1");
+        children3.add("P3C2");
 
-        UIEditText et = new UIEditText(this);
-        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        params.addRule(RelativeLayout.CENTER_IN_PARENT);
-        et.setLayoutParams(params);
-        et.setText("Sivaranjan");
-        et.setTextSize(15);
-        et.setTextColor(Color.BLACK);
-        et.setHelperText("Helper");
-        et.setHelperTextSize(10);
-        et.setHelperPosition(1);
-        et.setHelperTextColor(Color.RED);
-        et.setStrokeWidth(2);
-        et.setCornerRadius(4);
+        details.put("Parent 1", children1);
+        details.put("Parent 2", children2);
+        details.put("Parent 3", children3);
 
-        setContentView(main);
+        UIExpandableListView listView = findViewById(R.id.exp);
+        listView.setData(details);
+        listView.designParentChildView(new UIExpandableListView.DesignParentChildView() {
+            @Override
+            public View designChildView(int parentPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent, String childText) {
+                if (convertView == null) {
+                    LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                    convertView = layoutInflater.inflate(R.layout.list_child, null);
+                }
+
+                UILabel label = convertView.findViewById(R.id.child);
+                label.setText(childText);
+
+                return convertView;
+            }
+
+            @Override
+            public View designParentView(int parentPosition, boolean isExpanded, View convertView, ViewGroup parent, List<String> parentTitles) {
+                if (convertView == null) {
+                    LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                    convertView = layoutInflater.inflate(R.layout.list_parent, null);
+                }
+
+                UILabel label = convertView.findViewById(R.id.parent);
+                label.setText(parentTitles.get(parentPosition));
 
 
-        main.addView(et);*/
+                return convertView;
+            }
+        });
     }
 }
