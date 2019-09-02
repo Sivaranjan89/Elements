@@ -2,8 +2,6 @@ package com.droid.elements.expandablelist;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.Color;
-import android.graphics.drawable.GradientDrawable;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +9,6 @@ import android.widget.ExpandableListView;
 import android.widget.Toast;
 
 import com.droid.elements.DroidConstants;
-import com.droid.elements.DroidFunctions;
 import com.droid.elements.R;
 
 import java.util.ArrayList;
@@ -26,7 +23,7 @@ public class UIExpandableListView extends ExpandableListView {
 
     private Context mContext;
     private List<String> listTitle;
-    private HashMap<String, List<String>> expandableListDetail;
+    private HashMap<String, List<Object>> expandableListDetail;
     private UIExpandableAdapter adapter;
 
     public UIExpandableListView(Context context) {
@@ -83,7 +80,7 @@ public class UIExpandableListView extends ExpandableListView {
         }
     }
 
-    public void setData(HashMap<String, List<String>> parentChildData) {
+    public void setData(HashMap<String, List<Object>> parentChildData) {
         this.expandableListDetail = parentChildData;
         this.listTitle = new ArrayList<>(expandableListDetail.keySet());
         if (adapter != null) {
@@ -100,13 +97,18 @@ public class UIExpandableListView extends ExpandableListView {
     }
 
     private DesignParentChildView parentChildView;
+    private GroupExpandListener groupExpandListener;
 
     public interface DesignParentChildView {
         View designChildView(int parentPosition, int childPosition,
-                             boolean isLastChild, View convertView, ViewGroup parent, String childText);
+                             boolean isLastChild, View convertView, ViewGroup parent, Object childText);
 
         View designParentView(int parentPosition, boolean isExpanded,
                              View convertView, ViewGroup parent, List<String> parentTitles);
+    }
+
+    public interface GroupExpandListener {
+
     }
 
     public void designParentChildView(DesignParentChildView parentChildView) {

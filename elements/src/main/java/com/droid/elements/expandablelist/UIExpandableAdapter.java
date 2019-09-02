@@ -16,11 +16,11 @@ public class UIExpandableAdapter extends BaseExpandableListAdapter {
 
     private Context context;
     private List<String> listTitle;
-    private HashMap<String, List<String>> expandableListDetail;
+    private HashMap<String, List<Object>> expandableListDetail;
     private UIExpandableListView.DesignParentChildView parentChildView;
 
     public UIExpandableAdapter(Context context, List<String> listTitle,
-                               HashMap<String, List<String>> expandableListDetail,
+                               HashMap<String, List<Object>> expandableListDetail,
                                UIExpandableListView.DesignParentChildView parentChildView) {
         this.context = context;
         this.listTitle = listTitle;
@@ -43,8 +43,8 @@ public class UIExpandableAdapter extends BaseExpandableListAdapter {
     public View getChildView(int listPosition, int expandedListPosition,
                              boolean isLastChild, View convertView, ViewGroup parent) {
         try {
-            String childText = (String) getChild(listPosition, expandedListPosition);
-            convertView = parentChildView.designChildView(listPosition, expandedListPosition, isLastChild, convertView, parent, childText);
+            Object child = (Object) getChild(listPosition, expandedListPosition);
+            convertView = parentChildView.designChildView(listPosition, expandedListPosition, isLastChild, convertView, parent, child);
         } catch (Exception e) {
             if (DroidConstants.showErrors) {
                 e.printStackTrace();

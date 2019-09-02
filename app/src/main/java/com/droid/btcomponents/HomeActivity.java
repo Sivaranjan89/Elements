@@ -14,7 +14,6 @@ import com.droid.elements.UILabel;
 import com.droid.elements.expandablelist.UIExpandableListView;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 
@@ -55,7 +54,7 @@ public class HomeActivity extends Activity {
         });
 
 
-        LinkedHashMap<String, List<String>> details = new LinkedHashMap<>();
+        LinkedHashMap details = new LinkedHashMap<>();
         List<String> children1 = new ArrayList<>();
         children1.add("P1C1");
         children1.add("P1C2");
@@ -74,14 +73,14 @@ public class HomeActivity extends Activity {
         listView.setData(details);
         listView.designParentChildView(new UIExpandableListView.DesignParentChildView() {
             @Override
-            public View designChildView(int parentPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent, String childText) {
+            public View designChildView(int parentPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent, Object childText) {
                 if (convertView == null) {
                     LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                     convertView = layoutInflater.inflate(R.layout.list_child, null);
                 }
 
                 UILabel label = convertView.findViewById(R.id.child);
-                label.setText(childText);
+                label.setText((String) childText);
 
                 return convertView;
             }
