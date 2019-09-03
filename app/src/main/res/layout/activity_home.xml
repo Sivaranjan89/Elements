@@ -51,6 +51,12 @@
         android:layout_marginTop="10dp"
         app:text="UILabel" />
 
+    <com.droid.elements.UIEditText
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        app:text="Siva"
+        app:disableComponent="true"/>
+
     <com.droid.elements.expandablelist.UIExpandableListView
         android:id="@+id/exp"
         android:layout_width="300dp"

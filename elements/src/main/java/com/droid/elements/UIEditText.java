@@ -541,7 +541,7 @@ public class UIEditText extends LinearLayout {
             editText.setAlpha(1f);
         }
 
-        if (isEditable) {
+        if (isEditable && !disableComponent) {
             editText.setEnabled(true);
         } else {
             editText.setEnabled(false);
