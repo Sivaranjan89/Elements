@@ -101,7 +101,7 @@ public class UIExpandableListView extends ExpandableListView {
 
     public interface DesignParentChildView {
         View designChildView(int parentPosition, int childPosition,
-                             boolean isLastChild, View convertView, ViewGroup parent, Object childText);
+                             boolean isLastChild, View convertView, ViewGroup parent, Object child);
 
         View designParentView(int parentPosition, boolean isExpanded,
                              View convertView, ViewGroup parent, List<String> parentTitles);
