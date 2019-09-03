@@ -42,7 +42,7 @@ public class UILabel extends LinearLayout {
     private TextView textView;
     private boolean strikeText, underlineText;
     private boolean allCaps;
-    private int textGravity = 0;
+    private int textGravity = LABEL_TEXTGRAVITY_CENTER;
 
     //Border Attributes
     private int strokeColor;
@@ -102,7 +102,7 @@ public class UILabel extends LinearLayout {
         allCaps = false;
         strikeText = false;
         underlineText = false;
-        textGravity = 0;
+        textGravity = LABEL_TEXTGRAVITY_CENTER;
         padding = 0;
 
         invalidateUILabel();
@@ -146,7 +146,7 @@ public class UILabel extends LinearLayout {
         allCaps = ta.getBoolean(R.styleable.UILabel_allCaps, false);
         strikeText = ta.getBoolean(R.styleable.UILabel_strikeText, false);
         underlineText = ta.getBoolean(R.styleable.UILabel_underlineText, false);
-        textGravity = ta.getInt(R.styleable.UILabel_textGravity, 0);
+        textGravity = ta.getInt(R.styleable.UILabel_textGravity, LABEL_TEXTGRAVITY_CENTER);
         padding = ta.getDimension(R.styleable.UILabel_labelPadding, 0);
 
 
@@ -193,7 +193,6 @@ public class UILabel extends LinearLayout {
         main.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         main.setOrientation(LinearLayout.HORIZONTAL);
         main.setGravity(Gravity.CENTER_VERTICAL);
-        main.setPadding((int)padding, (int)padding, (int)padding, (int)padding);
 
         designLabel();
         designImage();
@@ -278,7 +277,7 @@ public class UILabel extends LinearLayout {
 
         textView = new TextView(mContext);
         LayoutParams etParams;
-        etParams = new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        etParams = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         textView.setBackground(null);
         textView.setId(TEXTVIEW_ID);
         if (stringBuilder != null && !stringBuilder.toString().equalsIgnoreCase("")) {
@@ -304,6 +303,7 @@ public class UILabel extends LinearLayout {
 
         setEllipsize();
         textView.setLayoutParams(etParams);
+        textView.setPadding((int)padding, (int)padding, (int)padding, (int)padding);
     }
 
     private void setEllipsize() {
