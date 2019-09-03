@@ -277,7 +277,7 @@ public class UILabel extends LinearLayout {
 
         textView = new TextView(mContext);
         LayoutParams etParams;
-        etParams = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        etParams = new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         textView.setBackground(null);
         textView.setId(TEXTVIEW_ID);
         if (stringBuilder != null && !stringBuilder.toString().equalsIgnoreCase("")) {
