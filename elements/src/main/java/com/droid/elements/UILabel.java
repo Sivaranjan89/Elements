@@ -130,9 +130,9 @@ public class UILabel extends LinearLayout {
         strokeWidth = ta.getDimension(R.styleable.UILabel_strokeWidth, 0);
         radius = ta.getDimension(R.styleable.UILabel_cornerRadius, 0);
         icon = ta.getResourceId(R.styleable.UILabel_icon, -1);
-        shape = ta.getInt(R.styleable.UILabel_imageShape, 1);
-        imageHeight = ta.getDimension(R.styleable.UILabel_imageHeight, -1);
-        imageWidth = ta.getDimension(R.styleable.UILabel_imageWidth, -1);
+        shape = ta.getInt(R.styleable.UILabel_iconShape, 1);
+        imageHeight = ta.getDimension(R.styleable.UILabel_iconHeight, -1);
+        imageWidth = ta.getDimension(R.styleable.UILabel_iconWidth, -1);
         spacing = ta.getDimension(R.styleable.UILabel_spacing, 0);
         endSpacing = ta.getDimension(R.styleable.UILabel_endSpace, 0);
         bgColor = ta.getColor(R.styleable.UILabel_backgroundColor, Color.TRANSPARENT);

@@ -188,9 +188,9 @@ public class UIEditText extends LinearLayout {
         strokeWidth = ta.getDimension(R.styleable.UIEditText_strokeWidth, 0);
         radius = ta.getDimension(R.styleable.UIEditText_cornerRadius, 0);
         icon = ta.getResourceId(R.styleable.UIEditText_icon, -1);
-        shape = ta.getInt(R.styleable.UIEditText_imageShape, 1);
-        imageHeight = ta.getDimension(R.styleable.UIEditText_imageHeight, -1);
-        imageWidth = ta.getDimension(R.styleable.UIEditText_imageWidth, -1);
+        shape = ta.getInt(R.styleable.UIEditText_iconShape, 1);
+        imageHeight = ta.getDimension(R.styleable.UIEditText_iconHeight, -1);
+        imageWidth = ta.getDimension(R.styleable.UIEditText_iconWidth, -1);
         spacing = ta.getDimension(R.styleable.UIEditText_spacing, 0);
         bgColor = ta.getColor(R.styleable.UIEditText_backgroundColor, Color.TRANSPARENT);
 

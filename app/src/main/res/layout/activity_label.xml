@@ -36,8 +36,8 @@
         app:textSize="15dp"
         app:textColor="#FFFFFF"
         app:icon="@drawable/twiiter"
-        app:imageWidth="30dp"
-        app:imageHeight="30dp"
+        app:iconWidth="30dp"
+        app:iconHeight="30dp"
         android:layout_gravity="center"/>
 
     <com.droid.elements.UILabel
@@ -48,8 +48,8 @@
         app:textSize="15dp"
         app:textColor="#FFFFFF"
         app:icon="@drawable/twiiter"
-        app:imageWidth="30dp"
-        app:imageHeight="30dp"
+        app:iconWidth="30dp"
+        app:iconHeight="30dp"
         app:strokeColor="#FFFFFF"
         app:strokeWidth="1dp"
         app:cornerRadius="4dp"

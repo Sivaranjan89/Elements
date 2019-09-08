@@ -124,9 +124,9 @@ public class UIButton extends RelativeLayout {
         strokeWidth = ta.getDimension(R.styleable.UIButton_strokeWidth, 0);
         radius = ta.getDimension(R.styleable.UIButton_cornerRadius, 0);
         icon = ta.getResourceId(R.styleable.UIButton_icon, -1);
-        shape = ta.getInt(R.styleable.UIButton_imageShape, 1);
-        imageHeight = ta.getDimension(R.styleable.UIButton_imageHeight, -1);
-        imageWidth = ta.getDimension(R.styleable.UIButton_imageWidth, -1);
+        shape = ta.getInt(R.styleable.UIButton_iconShape, 1);
+        imageHeight = ta.getDimension(R.styleable.UIButton_iconHeight, -1);
+        imageWidth = ta.getDimension(R.styleable.UIButton_iconWidth, -1);
         spacing = ta.getDimension(R.styleable.UIButton_spacing, 0);
         bgColor = ta.getColor(R.styleable.UIButton_backgroundColor, Color.TRANSPARENT);
 

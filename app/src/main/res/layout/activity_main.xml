@@ -117,8 +117,8 @@
             app:strokeColor="#000000"
             app:strokeWidth="1dp"
             app:icon="@drawable/twiiter"
-            app:imageHeight="50dp"
-            app:imageWidth="50dp"/>
+            app:iconHeight="50dp"
+            app:iconWidth="50dp"/>
 
         <com.droid.elements.UIButton
             android:layout_width="250dp"
@@ -134,8 +134,8 @@
             app:strokeColor="#000000"
             app:strokeWidth="1dp"
             app:icon="@drawable/twiiter"
-            app:imageHeight="50dp"
-            app:imageWidth="50dp"
+            app:iconHeight="50dp"
+            app:iconWidth="50dp"
             app:iconPosition="right"/>
 
         <com.droid.elements.UIButton
@@ -152,8 +152,8 @@
             app:strokeColor="#000000"
             app:strokeWidth="1dp"
             app:icon="@drawable/twiiter"
-            app:imageHeight="50dp"
-            app:imageWidth="50dp"
+            app:iconHeight="50dp"
+            app:iconWidth="50dp"
             app:iconPosition="bottom"/>
 
         <com.droid.elements.UIButton
@@ -170,8 +170,8 @@
             app:strokeColor="#000000"
             app:strokeWidth="1dp"
             app:icon="@drawable/twiiter"
-            app:imageHeight="50dp"
-            app:imageWidth="50dp"
+            app:iconHeight="50dp"
+            app:iconWidth="50dp"
             app:iconPosition="top"/>
 
         <com.droid.elements.UIButton
@@ -188,8 +188,8 @@
             app:strokeColor="#000000"
             app:strokeWidth="1dp"
             app:icon="@drawable/twiiter"
-            app:imageHeight="50dp"
-            app:imageWidth="50dp"
+            app:iconHeight="50dp"
+            app:iconWidth="50dp"
             app:iconPosition="left"
             app:buttonShape="oval"/>
 

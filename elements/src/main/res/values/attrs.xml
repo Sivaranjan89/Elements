@@ -20,12 +20,12 @@
         <attr name="strokeWidth" format="dimension" />
         <attr name="cornerRadius" format="dimension" />
         <attr name="icon" format="reference" />
-        <attr name="imageShape" format="integer">
+        <attr name="iconShape" format="integer">
             <enum name="normal" value="1" />
             <enum name="circular" value="2" />
         </attr>
-        <attr name="imageWidth" format="dimension" />
-        <attr name="imageHeight" format="dimension" />
+        <attr name="iconWidth" format="dimension" />
+        <attr name="iconHeight" format="dimension" />
         <attr name="spacing" format="dimension" />
         <!--BUTTON-->
         <attr name="pressedBackgroundColor" format="color" />
@@ -65,9 +65,9 @@
         <attr name="strokeWidth" />
         <attr name="cornerRadius"/>
         <attr name="icon" />
-        <attr name="imageShape"/>
-        <attr name="imageWidth" />
-        <attr name="imageHeight"/>
+        <attr name="iconShape"/>
+        <attr name="iconWidth" />
+        <attr name="iconHeight"/>
         <attr name="spacing" />
         <!--EDITTEXT-->
         <attr name="hintText" format="string" />
@@ -169,9 +169,9 @@
         <attr name="strokeWidth" />
         <attr name="cornerRadius"/>
         <attr name="icon" />
-        <attr name="imageShape"/>
-        <attr name="imageWidth" />
-        <attr name="imageHeight"/>
+        <attr name="iconShape"/>
+        <attr name="iconWidth" />
+        <attr name="iconHeight"/>
         <attr name="spacing" />
         <!--DERIVED FROM EDITTEXT-->
         <attr name="ellipsize"/>
@@ -210,6 +210,25 @@
 
     <declare-styleable name="UIExpandableListView">
         <attr name="singleGroupDisplay" format="boolean" />
+    </declare-styleable>
+
+
+
+
+    <declare-styleable name="UICheckBox">
+        <attr name="text" />
+        <attr name="textSize" />
+        <attr name="textColor" />
+        <attr name="textStyle" />
+        <attr name="fontName" />
+        <attr name="strokeColor" />
+        <attr name="strokeWidth" />
+        <attr name="cornerRadius" />
+        <attr name="iconPosition" />
+        <attr name="iconWidth" />
+        <attr name="iconHeight" />
+        <attr name="spacing"/>
+        <attr name="backgroundColor" />
     </declare-styleable>
 
 </resources>
