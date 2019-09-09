@@ -3,13 +3,16 @@ package com.droid.btcomponents;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
+import com.droid.elements.DroidFunctions;
 import com.droid.elements.UIButton;
+import com.droid.elements.UICheckBox;
 import com.droid.elements.UILabel;
 import com.droid.elements.expandablelist.UIExpandableListView;
 
@@ -54,7 +57,18 @@ public class HomeActivity extends Activity {
         });
 
 
-        LinkedHashMap details = new LinkedHashMap<>();
+        UICheckBox check = findViewById(R.id.check);
+        ArrayList<String> data = new ArrayList<>();
+        data.add("P1C1");
+        data.add("P1C2");
+        ArrayList<Bitmap> icons = new ArrayList<>();
+        icons.add(DroidFunctions.imageResourceToBitmap(HomeActivity.this, R.mipmap.icon));
+        icons.add(DroidFunctions.imageResourceToBitmap(HomeActivity.this, R.mipmap.icon));
+        check.setData(data);
+        check.setIcons(icons);
+
+
+        /*LinkedHashMap details = new LinkedHashMap<>();
         List<String> children1 = new ArrayList<>();
         children1.add("P1C1");
         children1.add("P1C2");
@@ -98,6 +112,6 @@ public class HomeActivity extends Activity {
 
                 return convertView;
             }
-        });
+        });*/
     }
 }

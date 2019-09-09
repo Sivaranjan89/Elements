@@ -51,7 +51,7 @@
         android:layout_marginTop="10dp"
         app:text="UILabel" />
 
-    <com.droid.elements.expandablelist.UIExpandableListView
+    <!--<com.droid.elements.expandablelist.UIExpandableListView
         android:id="@+id/exp"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
@@ -61,6 +61,25 @@
         android:scrollbars="none"
         android:layout_gravity="center_horizontal"
         android:layoutDirection="rtl"
-        app:singleGroupDisplay="true"/>
+        app:singleGroupDisplay="true"/>-->
+
+    <com.droid.elements.UICheckBox
+        android:id="@+id/check"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:backgroundColor="#FFFFFF"
+        app:cornerRadius="3dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="#000000"
+        app:textSize="20dp"
+        app:textStyle="bold"
+        app:textColor="#000000"
+        app:checkColor="#FF0000"
+        app:orientation="horizontal"
+        app:iconPos="left"/>
+        <!--
+        />-->
 
 </LinearLayout>

@@ -216,7 +216,6 @@
 
 
     <declare-styleable name="UICheckBox">
-        <attr name="text" />
         <attr name="textSize" />
         <attr name="textColor" />
         <attr name="textStyle" />
@@ -224,11 +223,21 @@
         <attr name="strokeColor" />
         <attr name="strokeWidth" />
         <attr name="cornerRadius" />
-        <attr name="iconPosition" />
+        <attr name="iconPos" format="integer">
+            <enum name="left" value="1"/>
+            <enum name="right" value="2"/>
+        </attr>
         <attr name="iconWidth" />
         <attr name="iconHeight" />
         <attr name="spacing"/>
         <attr name="backgroundColor" />
+        <attr name="checkboxPadding" format="dimension"/>
+        <attr name="checkColor" format="color"/>
+        <attr name="customCheckbox" format="reference" />
+        <attr name="orientation" format="integer">
+            <enum name="horizontal" value="0"/>
+            <enum name="vertical" value="1"/>
+        </attr>
     </declare-styleable>
 
 </resources>
