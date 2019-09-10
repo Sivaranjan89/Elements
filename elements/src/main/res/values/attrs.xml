@@ -234,10 +234,31 @@
         <attr name="checkboxPadding" format="dimension"/>
         <attr name="checkColor" format="color"/>
         <attr name="customCheckbox" format="reference" />
-        <attr name="orientation" format="integer">
+        <attr name="direction" format="integer">
             <enum name="horizontal" value="0"/>
             <enum name="vertical" value="1"/>
         </attr>
+    </declare-styleable>
+
+
+
+
+    <declare-styleable name="UIRadioButton">
+        <attr name="textSize" />
+        <attr name="textColor" />
+        <attr name="textStyle" />
+        <attr name="fontName" />
+        <attr name="layoutDirection" format="integer">
+            <enum name="LTR" value="0"/>
+            <enum name="RTL" value="1"/>
+        </attr>
+        <attr name="customRadiobutton" format="reference" />
+        <attr name="direction" format="integer">
+            <enum name="horizontal" value="0"/>
+            <enum name="vertical" value="1"/>
+        </attr>
+        <attr name="radioColor" format="color"/>
+
     </declare-styleable>
 
 </resources>

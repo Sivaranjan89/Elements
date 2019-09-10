@@ -62,8 +62,8 @@ public class HomeActivity extends Activity {
         data.add("P1C1");
         data.add("P1C2");
         ArrayList<Bitmap> icons = new ArrayList<>();
-        icons.add(DroidFunctions.imageResourceToBitmap(HomeActivity.this, R.mipmap.icon));
-        icons.add(DroidFunctions.imageResourceToBitmap(HomeActivity.this, R.mipmap.icon));
+        icons.add(DroidFunctions.imageResourceToBitmap(HomeActivity.this, R.drawable.twiiter));
+        icons.add(DroidFunctions.imageResourceToBitmap(HomeActivity.this, R.drawable.twiiter));
         check.setData(data);
         check.setIcons(icons);
 

@@ -69,7 +69,6 @@
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:backgroundColor="#FFFFFF"
         app:cornerRadius="3dp"
         app:strokeWidth="1dp"
         app:strokeColor="#000000"
@@ -77,9 +76,11 @@
         app:textStyle="bold"
         app:textColor="#000000"
         app:checkColor="#FF0000"
-        app:orientation="horizontal"
-        app:iconPos="left"/>
-        <!--
-        />-->
+        app:direction="vertical"
+        app:iconPos="left"
+        app:iconHeight="40dp"
+        app:iconWidth="40dp"
+        android:padding="10dp"
+        app:checkboxPadding="10dp"/>
 
 </LinearLayout>

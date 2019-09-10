@@ -32,6 +32,11 @@ import androidx.core.widget.CompoundButtonCompat;
 import java.util.ArrayList;
 
 public class UICheckBox extends LinearLayout {
+    public static final int TEXTSTYLE_NORMAL = 0;
+    public static final int TEXTSTYLE_BOLD = 1;
+
+    public static final int DIRECTION_HORIZONTAL = 0;
+    public static final int DIRECTION_VERTICAL = 0;
 
     Context mContext;
 
@@ -133,7 +138,7 @@ public class UICheckBox extends LinearLayout {
         padding = ta.getDimension(R.styleable.UICheckBox_checkboxPadding, -1);
         checkColor = ta.getColor(R.styleable.UICheckBox_checkColor, Color.BLACK);
         customCheck = ta.getResourceId(R.styleable.UICheckBox_customCheckbox, -1);
-        orientation = ta.getInt(R.styleable.UICheckBox_orientation, 0);
+        orientation = ta.getInt(R.styleable.UICheckBox_direction, 0);
 
 
         if (iconHeight != -1 || iconWidth != -1) {
@@ -187,9 +192,7 @@ public class UICheckBox extends LinearLayout {
         }
 
         //Draw the layout
-        if (iconPosition == 1 || iconPosition == 2) {
-            drawHorizontalLayouts();
-        }
+        drawHorizontalLayouts();
     }
 
     private void drawHorizontalLayouts() {
@@ -317,6 +320,160 @@ public class UICheckBox extends LinearLayout {
 
     public ArrayList<Bitmap> getIcons() {
         return icons;
+    }
+
+    public void setStrokeWidth(float strokeWidthInDp) {
+        this.strokeWidth = DroidFunctions.dpToPx(strokeWidthInDp);
+        invalidateUICheckbox();
+    }
+
+    public float getStrokeWidth() {
+        return strokeWidth;
+    }
+
+    public void setStrokeColor(int strokeColor) {
+        this.strokeColor = strokeColor;
+        invalidateUICheckbox();
+    }
+
+    public int getStrokeColor() {
+        return strokeColor;
+    }
+
+    public void setTextSize(float textSizeInDp) {
+        this.textSize = DroidFunctions.dpToPx(textSizeInDp);
+        invalidateUICheckbox();
+    }
+
+    public float getTextSize() {
+        return textSize;
+    }
+
+    public void setTextView(TextView textView) {
+        this.textView = textView;
+        invalidateUICheckbox();
+    }
+
+    public TextView getTextView() {
+        return textView;
+    }
+
+    public void setIconPosition(int iconPosition) {
+        this.iconPosition = iconPosition;
+        invalidateUICheckbox();
+    }
+
+    public int getIconPosition() {
+        return iconPosition;
+    }
+
+    public void setTextStyle(int textStyle) {
+        if (textStyle < 0 || textStyle > 1) {
+            textStyle = TEXTSTYLE_NORMAL;
+        }
+        this.textStyle = textStyle;
+        invalidateUICheckbox();
+    }
+
+    public int getTextStyle() {
+        return textStyle;
+    }
+
+    public void setTextColor(int textColor) {
+        this.textColor = textColor;
+        invalidateUICheckbox();
+    }
+
+    public int getTextColor() {
+        return textColor;
+    }
+
+    public void setSpacing(float spacingInDp) {
+        this.spacing = DroidFunctions.dpToPx(spacingInDp);
+        invalidateUICheckbox();
+    }
+
+    public float getSpacing() {
+        return spacing;
+    }
+
+    public void setFont(String fontName) {
+        this.font = fontName;
+        invalidateUICheckbox();
+    }
+
+    public String getFont() {
+        return font;
+    }
+
+    public void setDirection(int direction) {
+        if (orientation < 0 || orientation > 1) {
+            orientation = DIRECTION_HORIZONTAL;
+        }
+        this.orientation = orientation;
+        invalidateUICheckbox();
+    }
+
+    public int getDirection() {
+        return orientation;
+    }
+
+    public void setBackgroundColor(int backgroundColor) {
+        this.backgroundColor = backgroundColor;
+        invalidateUICheckbox();
+    }
+
+    public int getBackgroundColor() {
+        return backgroundColor;
+    }
+
+    public void setCheckColor(int checkColor) {
+        this.checkColor = checkColor;
+        invalidateUICheckbox();
+    }
+
+    public int getCheckColor() {
+        return checkColor;
+    }
+
+    public void setCornerRadius(float cornerRadiusInDp) {
+        this.cornerRadius = DroidFunctions.dpToPx(cornerRadiusInDp);
+        invalidateUICheckbox();
+    }
+
+    public float getCornerRadius() {
+        return cornerRadius;
+    }
+
+    public void setCustomCheck(int customCheck) {
+        this.customCheck = customCheck;
+        invalidateUICheckbox();
+    }
+
+    public int getCustomCheck() {
+        return customCheck;
+    }
+
+    public void setIconHeight(float iconHeightInDp) {
+        this.iconHeight = DroidFunctions.dpToPx(iconHeightInDp);
+        invalidateUICheckbox();
+    }
+
+    public float getIconHeight() {
+        return iconHeight;
+    }
+
+    public void setIconWidth(float iconWidthInDp) {
+        this.iconWidth = DroidFunctions.dpToPx(iconWidthInDp);
+        invalidateUICheckbox();
+    }
+
+    public float getIconWidth() {
+        return iconWidth;
+    }
+
+    public ArrayList<Integer> getSelectedItems() {
+        return selectedItems;
     }
 }
 
