@@ -223,21 +223,18 @@
         <attr name="strokeColor" />
         <attr name="strokeWidth" />
         <attr name="cornerRadius" />
-        <attr name="iconPos" format="integer">
-            <enum name="left" value="1"/>
-            <enum name="right" value="2"/>
-        </attr>
-        <attr name="iconWidth" />
-        <attr name="iconHeight" />
-        <attr name="spacing"/>
         <attr name="backgroundColor" />
-        <attr name="checkboxPadding" format="dimension"/>
         <attr name="checkColor" format="color"/>
         <attr name="customCheckbox" format="reference" />
         <attr name="direction" format="integer">
             <enum name="horizontal" value="0"/>
             <enum name="vertical" value="1"/>
         </attr>
+        <attr name="renderDirection" format="integer">
+            <enum name="LTR" value="0"/>
+            <enum name="RTL" value="1"/>
+        </attr>
+        <attr name="data" format="enum"/>
     </declare-styleable>
 
 
@@ -248,16 +245,16 @@
         <attr name="textColor" />
         <attr name="textStyle" />
         <attr name="fontName" />
-        <attr name="layoutDirection" format="integer">
-            <enum name="LTR" value="0"/>
-            <enum name="RTL" value="1"/>
-        </attr>
-        <attr name="customRadiobutton" format="reference" />
-        <attr name="direction" format="integer">
-            <enum name="horizontal" value="0"/>
-            <enum name="vertical" value="1"/>
-        </attr>
-        <attr name="radioColor" format="color"/>
+        <attr name="strokeColor" />
+        <attr name="strokeWidth" />
+        <attr name="cornerRadius" />
+        <attr name="backgroundColor" />
+        <attr name="checkColor"/>
+        <attr name="customCheckbox"/>
+        <attr name="direction" />
+        <attr name="renderDirection" />
+        <attr name="data" />
+        <attr name="selectedItem" format="integer" />
 
     </declare-styleable>
 

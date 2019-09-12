@@ -52,23 +52,17 @@ public class UICheckBox extends LinearLayout {
     private float strokeWidth;
     private float cornerRadius;
 
-    //Icon Attributes
-    private ArrayList<Bitmap> icons = new ArrayList<>();
-    private ArrayList<String> data = new ArrayList<>();
-    private int iconPosition;
-    private float iconHeight, iconWidth;
-
     //Component Attributes
     private int backgroundColor;
-    private float spacing;
-    private float padding;
     private int checkColor;
     private int customCheck;
     private Typeface tf;
 
     //Data
+    private ArrayList<String> data = new ArrayList<>();
     private ArrayList<Integer> selectedItems = new ArrayList<>();
     private int orientation;
+    private int renderDirection = 0;
 
     public UICheckBox(Context context) {
         super(context);
@@ -84,28 +78,11 @@ public class UICheckBox extends LinearLayout {
         strokeColor = Color.BLACK;
         strokeWidth = 0;
         cornerRadius = 0;
-        iconHeight = -1;
-        iconWidth = -1;
-        spacing = DroidFunctions.dpToPx(1);
         backgroundColor = Color.TRANSPARENT;
         checkColor = Color.BLACK;
-        iconPosition = 1;
-        padding = -1;
         customCheck = -1;
         orientation = 0;
-
-
-        if (iconHeight != -1 || iconWidth != -1) {
-            if (iconHeight == -1 && iconWidth != -1) {
-                iconHeight = iconWidth;
-            }
-            if (iconWidth == -1 && iconHeight != -1) {
-                iconWidth = iconHeight;
-            }
-        } else {
-            iconWidth = textSize * 2;
-            iconHeight = textSize * 2;
-        }
+        renderDirection = 0;
 
         invalidateUICheckbox();
     }
@@ -130,27 +107,17 @@ public class UICheckBox extends LinearLayout {
         strokeColor = ta.getColor(R.styleable.UICheckBox_strokeColor, Color.BLACK);
         strokeWidth = ta.getDimension(R.styleable.UICheckBox_strokeWidth, 0);
         cornerRadius = ta.getDimension(R.styleable.UICheckBox_cornerRadius, 0);
-        iconHeight = ta.getDimension(R.styleable.UICheckBox_iconHeight, -1);
-        iconWidth = ta.getDimension(R.styleable.UICheckBox_iconWidth, -1);
-        spacing = ta.getDimension(R.styleable.UICheckBox_spacing, DroidFunctions.dpToPx(1));
         backgroundColor = ta.getColor(R.styleable.UICheckBox_backgroundColor, Color.TRANSPARENT);
-        iconPosition = ta.getInt(R.styleable.UICheckBox_iconPos, 1);
-        padding = ta.getDimension(R.styleable.UICheckBox_checkboxPadding, -1);
         checkColor = ta.getColor(R.styleable.UICheckBox_checkColor, Color.BLACK);
         customCheck = ta.getResourceId(R.styleable.UICheckBox_customCheckbox, -1);
         orientation = ta.getInt(R.styleable.UICheckBox_direction, 0);
+        renderDirection = ta.getInt(R.styleable.UICheckBox_renderDirection, 0);
+        CharSequence[] chardata = ta.getTextArray(R.styleable.UIRadioButton_data);
 
-
-        if (iconHeight != -1 || iconWidth != -1) {
-            if (iconHeight == -1 && iconWidth != -1) {
-                iconHeight = iconWidth;
+        if (chardata != null) {
+            for (int i = 0; i < chardata.length - 1; i++) {
+                data.add(chardata[i].toString());
             }
-            if (iconWidth == -1 && iconHeight != -1) {
-                iconWidth = iconHeight;
-            }
-        } else {
-            iconWidth = textSize * 2;
-            iconHeight = textSize * 2;
         }
 
 
@@ -192,10 +159,10 @@ public class UICheckBox extends LinearLayout {
         }
 
         //Draw the layout
-        drawHorizontalLayouts();
+        draw();
     }
 
-    private void drawHorizontalLayouts() {
+    private void draw() {
         //Design the Parent Layout
         GradientDrawable gd = new GradientDrawable();
         gd.setColor(backgroundColor);
@@ -209,90 +176,42 @@ public class UICheckBox extends LinearLayout {
         }
 
         for (int i=0; i<data.size(); i++) {
-            //Create Layout
-            LinearLayout layout = new LinearLayout(mContext);
-            LinearLayout.LayoutParams params = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-            if ( i > 0 ) {
-                if (orientation == 0) {
-                    params.setMargins((int)padding, 0, 0, 0);
-                } else {
-                    params.setMargins(0, (int)padding, 0, 0);
-                }
-            }
-            layout.setLayoutParams(params);
-            layout.setOrientation(LinearLayout.HORIZONTAL);
-            if (iconPosition == 1) {
-                layout.setPadding(0, 0, (int)DroidFunctions.dpToPx(10), 0);
-            } else {
-                layout.setPadding((int)DroidFunctions.dpToPx(10), 0, 0, 0);
-            }
-
-            ImageView iv_icon = new ImageView(mContext);
-            //Create the Icon if provided
-            if (icons.size() > 0) {
-                iv_icon.setScaleType(ImageView.ScaleType.FIT_XY);
-                iv_icon.setLayoutParams(new LayoutParams((int)iconWidth, (int)iconHeight));
-                iv_icon.setImageBitmap(icons.get(i));
-            }
-
             CheckBox checkBox = new CheckBox(mContext);
-            checkBox.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT));
+            checkBox.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
             checkBox.setGravity(Gravity.CENTER_VERTICAL);
-            //Create the Checkbox if data provided
-            if (data.size() > 0) {
-                checkBox.setText(data.get(i));
-                checkBox.setTextColor(textColor);
-                checkBox.setTextSize(TypedValue.COMPLEX_UNIT_DIP, DroidFunctions.pxToDp(textSize));
-                checkBox.setTypeface(tf, textStyle);
-                if (iconPosition == 1) {
-                    checkBox.setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
-                } else {
-                    checkBox.setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
-                }
-
-                if (Build.VERSION.SDK_INT < 21) {
-                    CompoundButtonCompat.setButtonTintList(checkBox, ColorStateList.valueOf(checkColor));
-                } else {
-                    checkBox.setButtonTintList(ColorStateList.valueOf(checkColor));
-                }
-
-                if (customCheck != -1) {
-                    checkBox.setButtonDrawable(customCheck);
-                }
-
-                checkBox.setTag("" + i);
-                checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(CompoundButton compoundButton, boolean checked) {
-                        if (checked) {
-                            selectedItems.add(Integer.valueOf(compoundButton.getTag().toString()));
-                        } else {
-                            selectedItems.remove(Integer.valueOf(compoundButton.getTag().toString()));
-                        }
-                    }
-                });
-            }
-
-            //Create the Space Component
-            Space space = new Space(mContext);
-            space.setLayoutParams(new LayoutParams((int)spacing, (int)spacing));
-
-            //Add the Views
-            if (icons.size() > 0) {
-                if (iconPosition == 1) {
-                    layout.addView(iv_icon);
-                    layout.addView(space);
-                    layout.addView(checkBox);
-                } else {
-                    layout.addView(checkBox);
-                    layout.addView(space);
-                    layout.addView(iv_icon);
-                }
+            checkBox.setText(data.get(i));
+            checkBox.setTextColor(textColor);
+            checkBox.setTextSize(TypedValue.COMPLEX_UNIT_DIP, DroidFunctions.pxToDp(textSize));
+            checkBox.setTypeface(tf, textStyle);
+            if (renderDirection == 0) {
+                checkBox.setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
             } else {
-                layout.addView(checkBox);
+                checkBox.setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
             }
 
-            this.addView(layout);
+            if (Build.VERSION.SDK_INT < 21) {
+                CompoundButtonCompat.setButtonTintList(checkBox, ColorStateList.valueOf(checkColor));
+            } else {
+                checkBox.setButtonTintList(ColorStateList.valueOf(checkColor));
+            }
+
+            if (customCheck != -1) {
+                checkBox.setButtonDrawable(customCheck);
+            }
+
+            checkBox.setTag("" + i);
+            checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton compoundButton, boolean checked) {
+                    if (checked) {
+                        selectedItems.add(Integer.valueOf(compoundButton.getTag().toString()));
+                    } else {
+                        selectedItems.remove(Integer.valueOf(compoundButton.getTag().toString()));
+                    }
+                }
+            });
+
+            this.addView(checkBox);
         }
     }
 
@@ -311,15 +230,6 @@ public class UICheckBox extends LinearLayout {
 
     public ArrayList<String> getData() {
         return data;
-    }
-
-    public void setIcons(ArrayList<Bitmap> icons) {
-        this.icons = icons;
-        invalidateUICheckbox();
-    }
-
-    public ArrayList<Bitmap> getIcons() {
-        return icons;
     }
 
     public void setStrokeWidth(float strokeWidthInDp) {
@@ -358,15 +268,6 @@ public class UICheckBox extends LinearLayout {
         return textView;
     }
 
-    public void setIconPosition(int iconPosition) {
-        this.iconPosition = iconPosition;
-        invalidateUICheckbox();
-    }
-
-    public int getIconPosition() {
-        return iconPosition;
-    }
-
     public void setTextStyle(int textStyle) {
         if (textStyle < 0 || textStyle > 1) {
             textStyle = TEXTSTYLE_NORMAL;
@@ -388,13 +289,13 @@ public class UICheckBox extends LinearLayout {
         return textColor;
     }
 
-    public void setSpacing(float spacingInDp) {
-        this.spacing = DroidFunctions.dpToPx(spacingInDp);
+    public void setRenderDirection(int renderDirection) {
+        this.renderDirection = renderDirection;
         invalidateUICheckbox();
     }
 
-    public float getSpacing() {
-        return spacing;
+    public int getRenderDirection() {
+        return renderDirection;
     }
 
     public void setFont(String fontName) {
@@ -452,24 +353,6 @@ public class UICheckBox extends LinearLayout {
 
     public int getCustomCheck() {
         return customCheck;
-    }
-
-    public void setIconHeight(float iconHeightInDp) {
-        this.iconHeight = DroidFunctions.dpToPx(iconHeightInDp);
-        invalidateUICheckbox();
-    }
-
-    public float getIconHeight() {
-        return iconHeight;
-    }
-
-    public void setIconWidth(float iconWidthInDp) {
-        this.iconWidth = DroidFunctions.dpToPx(iconWidthInDp);
-        invalidateUICheckbox();
-    }
-
-    public float getIconWidth() {
-        return iconWidth;
     }
 
     public ArrayList<Integer> getSelectedItems() {
