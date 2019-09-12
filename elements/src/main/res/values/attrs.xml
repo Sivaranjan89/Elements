@@ -255,7 +255,14 @@
         <attr name="renderDirection" />
         <attr name="data" />
         <attr name="selectedItem" format="integer" />
+    </declare-styleable>
 
+
+
+
+    <declare-styleable name="UIDrawingBoard">
+        <attr name="brushSize" format="float"/>
+        <attr name="sketchColor" format="color"/>
     </declare-styleable>
 
 </resources>
