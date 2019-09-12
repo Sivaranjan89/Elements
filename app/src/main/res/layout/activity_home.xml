@@ -97,4 +97,18 @@
         app:renderDirection="RTL"
         app:data="@array/mydata"/>
 
+    <com.droid.elements.UIBubbleLayout
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:arrowDirection="top"
+        android:layout_gravity="center">
+
+        <com.droid.elements.UILabel
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:text="This is a text inside A bubble"
+            android:gravity="center"/>
+
+    </com.droid.elements.UIBubbleLayout>
+
 </LinearLayout>
