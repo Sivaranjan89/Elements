@@ -265,4 +265,13 @@
         <attr name="sketchColor" format="color"/>
     </declare-styleable>
 
+
+    <declare-styleable name="UIRatingBar">
+        <attr name="starCount" format="integer" />
+        <attr name="starColor" format="color" />
+        <attr name="filledStar" format="reference" />
+        <attr name="emptyStar" format="reference" />
+        <attr name="starSize" format="dimension" />
+        <attr name="spacing" />
+    </declare-styleable>
 </resources>
