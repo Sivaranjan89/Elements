@@ -14,7 +14,11 @@ import android.view.inputmethod.InputMethodManager;
 public class DroidFunctions {
 
     public static Drawable bitmapToDrawable(Context context, Bitmap bitmap) {
-        return new BitmapDrawable(context.getResources(), bitmap);
+        if (bitmap == null) {
+            return null;
+        } else {
+            return new BitmapDrawable(context.getResources(), bitmap);
+        }
     }
 
     public static Bitmap imageResourceToBitmap(Context context, int img) {
@@ -32,8 +36,9 @@ public class DroidFunctions {
         int intrinsicWidth = drawable.getIntrinsicWidth();
         int intrinsicHeight = drawable.getIntrinsicHeight();
 
-        if (!(intrinsicWidth > 0 && intrinsicHeight > 0))
+        if (!(intrinsicWidth > 0 && intrinsicHeight > 0)) {
             return null;
+        }
 
         try {
             Bitmap bitmap = Bitmap.createBitmap(intrinsicWidth, intrinsicHeight, Bitmap.Config.ARGB_8888);

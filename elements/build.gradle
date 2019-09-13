@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 group = 'com.blacktag'
-version='2.5'
+version='3.1'
 
 android {
     compileSdkVersion 29
