@@ -110,7 +110,7 @@
         app:progress="1"
         app:starCount="5"
         app:spacing="30dp"
-        app:starColor="#FF0000"
+        app:starColor="#EBCC0D"
         app:direction="horizontal"/>
 
 </LinearLayout>
