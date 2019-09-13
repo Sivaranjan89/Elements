@@ -273,5 +273,7 @@
         <attr name="emptyStar" format="reference" />
         <attr name="starSize" format="dimension" />
         <attr name="spacing" />
+        <attr name="direction" />
+        <attr name="progress" format="integer"/>
     </declare-styleable>
 </resources>

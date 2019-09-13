@@ -68,8 +68,7 @@
     <com.droid.elements.UICheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:paddingRight="10dp"
+        android:paddingRight="8dp"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         app:backgroundColor="#FFFFFF"
@@ -85,8 +84,7 @@
     <com.droid.elements.UIRadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:paddingRight="10dp"
+        android:paddingRight="8dp"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         app:backgroundColor="#FFFFFF"
@@ -98,5 +96,21 @@
         app:strokeColor="#000000"
         app:checkColor="#000000"
         app:selectedItem="1"/>
+
+
+
+    <com.droid.elements.UIRatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        app:filledStar="@drawable/filledstar"
+        app:emptyStar="@drawable/emptystar"
+        app:starSize="50dp"
+        app:progress="1"
+        app:starCount="5"
+        app:spacing="30dp"
+        app:starColor="#FF0000"
+        app:direction="horizontal"/>
 
 </LinearLayout>
