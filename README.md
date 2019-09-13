@@ -30,6 +30,23 @@ dependencies {<br />
 
 
 # UIButton Attributes
+<ol>
+            <li>text</li>
+            <li>textSize</li>
+            <li>textColor</li>
+            <li>textStyle</li>
+            <li>fontName</li>
+            <li>strokeColor</li>
+            <li>strokeWidth</li>
+            <li>cornerRadius</li>
+            <li>iconShape</li>
+            <li>iconWidth</li>
+            <li>iconHeight</li>
+            <li>spacing</li>
+            <li>gravity</li>
+            <li>buttonShape</li>
+</ol>
+
 
 # UILabel Attributes
 
