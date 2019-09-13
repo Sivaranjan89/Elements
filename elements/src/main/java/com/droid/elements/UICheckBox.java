@@ -115,7 +115,7 @@ public class UICheckBox extends LinearLayout {
         CharSequence[] chardata = ta.getTextArray(R.styleable.UIRadioButton_data);
 
         if (chardata != null) {
-            for (int i = 0; i < chardata.length - 1; i++) {
+            for (int i = 0; i < chardata.length; i++) {
                 data.add(chardata[i].toString());
             }
         }

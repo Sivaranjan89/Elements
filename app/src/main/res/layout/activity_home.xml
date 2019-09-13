@@ -7,108 +7,96 @@
     android:background="#494848">
 
     <com.droid.elements.UIButton
-        android:id="@+id/uibutton"
+        android:id="@+id/button"
         app:text="UIButton"
-        android:layout_width="250dp"
+        android:layout_width="wrap_content"
         android:layout_height="50dp"
-        app:textColor="#000000"
-        app:backgroundColor="#0BE6DD"
-        app:strokeColor="#000000"
-        app:strokeWidth="1dp"
-        app:cornerRadius="5dp"
-        app:textSize="15dp"
-        app:textStyle="bold"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"/>
-
-    <com.droid.elements.UIButton
-        android:id="@+id/uiinput"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        app:textColor="#000000"
-        app:backgroundColor="#0BE6DD"
-        app:strokeColor="#000000"
-        app:strokeWidth="1dp"
-        app:cornerRadius="5dp"
-        app:textSize="15dp"
-        app:textStyle="bold"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        app:text="UIEditText" />
-
-    <com.droid.elements.UIButton
-        android:id="@+id/uilabel"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
         app:textColor="#000000"
-        app:backgroundColor="#0BE6DD"
+        app:backgroundColor="#ffffff"
         app:strokeColor="#000000"
         app:strokeWidth="1dp"
-        app:cornerRadius="5dp"
+        app:cornerRadius="3dp"
         app:textSize="15dp"
         app:textStyle="bold"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        app:text="UILabel" />
+        app:icon="@drawable/twiiter"
+        app:iconWidth="30dp"
+        app:iconHeight="30dp"
+        app:iconPosition="left"
+        app:spacing="10dp"
+        android:padding="10dp"/>
 
-    <!--<com.droid.elements.expandablelist.UIExpandableListView
-        android:id="@+id/exp"
-        android:layout_width="300dp"
+    <com.droid.elements.UILabel
+        android:id="@+id/label"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:divider="#000000"
-        android:dividerHeight="1dp"
-        android:scrollbars="none"
-        android:layout_gravity="center_horizontal"
-        android:layoutDirection="rtl"
-        app:singleGroupDisplay="true"/>-->
+        android:layout_gravity="center"
+        app:text="UILabel"
+        app:textSize="15dp"
+        app:textColor="#FFFFFF"
+        app:textStyle="bold" />
+
+    <com.droid.elements.UIEditText
+        android:id="@+id/edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        app:hintText="UIEdittext"
+        app:textSize="15dp"
+        app:textColor="#000000"
+        app:textStyle="bold"
+        app:backgroundColor="#FFFFFF"
+        app:cornerRadius="3dp"
+        app:strokeColor="#000000"
+        app:strokeWidth="1dp"
+        app:icon="@drawable/twiiter"
+        app:iconHeight="30dp"
+        app:iconWidth="30dp"
+        android:gravity="center"
+        app:autoStretch="true"
+        app:spacing="10dp"
+        app:helperText="Helper text"
+        app:helperTextStyle="normal"
+        app:helperTextSize="10dp"
+        app:helperTextColor="#ffffff"
+        app:helperTextPosition="top_left"
+        />
 
     <com.droid.elements.UICheckBox
-        android:id="@+id/check"
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:paddingRight="10dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        app:backgroundColor="#FFFFFF"
+        app:data="@array/checks"
+        app:textStyle="bold"
+        app:textColor="#000000"
         app:cornerRadius="3dp"
         app:strokeWidth="1dp"
         app:strokeColor="#000000"
-        app:textSize="20dp"
-        app:textStyle="bold"
-        app:textColor="#FFFF00"
-        app:checkColor="#FF0000"
-        app:direction="vertical"
-        app:renderDirection="RTL"/>
+        app:checkColor="#000000"/>
+
 
     <com.droid.elements.UIRadioButton
-        android:id="@+id/radio"
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#ffffff"
+        android:padding="5dp"
+        android:paddingRight="10dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        app:backgroundColor="#FFFFFF"
+        app:data="@array/radios"
+        app:textStyle="bold"
+        app:textColor="#000000"
         app:cornerRadius="3dp"
         app:strokeWidth="1dp"
         app:strokeColor="#000000"
-        app:textSize="20dp"
-        app:textStyle="bold"
-        app:textColor="#ff0000"
-        app:checkColor="#FF0000"
-        app:direction="vertical"
-        app:renderDirection="RTL"
-        app:data="@array/mydata"/>
-
-    <com.droid.elements.UIBubbleLayout
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        app:arrowDirection="top"
-        android:layout_gravity="center">
-
-        <com.droid.elements.UILabel
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:text="This is a text inside A bubble"
-            android:gravity="center"/>
-
-    </com.droid.elements.UIBubbleLayout>
+        app:checkColor="#000000"
+        app:selectedItem="1"/>
 
 </LinearLayout>

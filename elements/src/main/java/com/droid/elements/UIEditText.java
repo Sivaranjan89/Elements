@@ -156,10 +156,10 @@ public class UIEditText extends LinearLayout {
         imeOptions = 6;
         ellipsize = 0;
         currency = "";
-        leftPadding = DroidFunctions.dpToPx(8);
-        rightPadding = DroidFunctions.dpToPx(8);
-        topPadding = DroidFunctions.dpToPx(8);
-        bottomPadding = DroidFunctions.dpToPx(8);
+        leftPadding = DroidFunctions.dpToPx(2);
+        rightPadding = DroidFunctions.dpToPx(2);
+        topPadding = DroidFunctions.dpToPx(2);
+        bottomPadding = DroidFunctions.dpToPx(2);
         disableComponent = false;
         isEditable = true;
 
@@ -227,10 +227,10 @@ public class UIEditText extends LinearLayout {
         imeOptions = ta.getInt(R.styleable.UIEditText_imeOptions, 6);
         ellipsize = ta.getInt(R.styleable.UIEditText_ellipsize, 0);
         currency = ta.getString(R.styleable.UIEditText_currencySymbol);
-        leftPadding = ta.getDimension(R.styleable.UIEditText_leftPadding, DroidFunctions.dpToPx(8));
-        rightPadding = ta.getDimension(R.styleable.UIEditText_rightPadding, DroidFunctions.dpToPx(8));
-        topPadding = ta.getDimension(R.styleable.UIEditText_topPadding, DroidFunctions.dpToPx(8));
-        bottomPadding = ta.getDimension(R.styleable.UIEditText_bottomPadding, DroidFunctions.dpToPx(8));
+        leftPadding = ta.getDimension(R.styleable.UIEditText_leftPadding, DroidFunctions.dpToPx(2));
+        rightPadding = ta.getDimension(R.styleable.UIEditText_rightPadding, DroidFunctions.dpToPx(2));
+        topPadding = ta.getDimension(R.styleable.UIEditText_topPadding, DroidFunctions.dpToPx(2));
+        bottomPadding = ta.getDimension(R.styleable.UIEditText_bottomPadding, DroidFunctions.dpToPx(2));
         disableComponent = ta.getBoolean(R.styleable.UIEditText_disableComponent, false);
         isEditable = ta.getBoolean(R.styleable.UIEditText_isEditable, true);
 
@@ -297,6 +297,8 @@ public class UIEditText extends LinearLayout {
         LinearLayout main = new LinearLayout(mContext);
         main.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         main.setOrientation(LinearLayout.HORIZONTAL);
+        main.setGravity(Gravity.CENTER_VERTICAL);
+        main.setPadding((int)leftPadding, (int)topPadding, (int)rightPadding, (int)bottomPadding);
 
         designEditText();
         designImage();
@@ -429,7 +431,6 @@ public class UIEditText extends LinearLayout {
             etParams = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.WRAP_CONTENT);
         }
-        editText.setPadding((int)leftPadding, (int)topPadding, (int)rightPadding, (int)bottomPadding);
         editText.setBackground(null);
         editText.setId(EDITTEXT_ID);
         editText.setText(text);

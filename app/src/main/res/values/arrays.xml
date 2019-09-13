@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="mydata" >
-        <item>Data 1</item>
-        <item>Data 2</item>
-        <item>Data 3</item>
+    <string-array name="checks" >
+        <item>Item 1</item>
+        <item>Item 2</item>
+        <item>Item 3</item>
+    </string-array>
+    <string-array name="radios" >
+        <item>Option 1</item>
+        <item>Option 2</item>
+        <item>Option 3</item>
     </string-array>
 </resources>
