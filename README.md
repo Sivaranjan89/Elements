@@ -49,6 +49,36 @@ dependencies {<br />
 
 
 # UILabel Attributes
+<ol>
+            <li>text</li>
+            <li>textSize</li>
+            <li>textColor</li>
+            <li>textStyle</li>
+            <li>fontName</li>
+            <li>strokeColor</li>
+            <li>strokeWidth</li>
+            <li>cornerRadius</li>
+            <li>backgroundColor</li>
+            <li>icon</li>
+            <li>iconShape</li>
+            <li>iconWidth</li>
+            <li>iconHeight</li>
+            <li>spacing</li>
+            <li>ellipsize</li>
+            <li>allCaps</li>
+            <li>showDivider</li>
+            <li>dividerColor</li>
+            <li>dividerWidth</li>
+            <li>showLine</li>
+            <li>lineColor</li>
+            <li>lineWidth</li>
+            <li>iconAlignment</li>
+            <li>strikeText</li>
+            <li>underlineText</li>
+            <li>textGravity</li>
+            <li>endSpace</li>
+            <li>labelPadding</li>
+</ol>
 
 # UIEditText Attributes
 
