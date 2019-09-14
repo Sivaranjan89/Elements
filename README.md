@@ -81,6 +81,60 @@ dependencies {<br />
 </ol>
 
 # UIEditText Attributes
+<ol>
+            <li>backgroundColor</li>
+            <li>text</li>
+            <li>textSize</li>
+            <li>textColor</li>
+            <li>textStyle</li>
+            <li>fontName</li>
+            <li>strokeColor</li>
+            <li>strokeWidth</li>
+            <li>cornerRadius</li>
+            <li>iconShape</li>
+            <li>iconWidth</li>
+            <li>iconHeight</li>
+            <li>spacing</li>
+            <li>hintText</li>
+            <li>hintTextColor</li>
+            <li>hintTextSize</li>
+            <li>helperText</li>
+            <li>helperTextSize</li>
+            <li>helperTextColor</li>
+            <li>helperTextStyle</li>
+            <li>helperTextPosition</li>
+            <li>helperFontName</li>
+            <li>iconAlignment</li>
+            <li>editTextShape</li>
+            <li>showDivider</li>
+            <li>dividerColor</li>
+            <li>dividerWidth</li>
+            <li>showLine</li>
+            <li>lineColor</li>
+            <li>lineWidth</li>
+            <li>autoStretch</li>
+            <li>singleLine</li>
+            <li>maxLines</li>
+            <li>inputType</li>
+            <li>digits</li>
+            <li>allowPaste</li>
+            <li>allCaps</li>
+            <li>maxLength</li>
+            <li>letterSpacing</li>
+            <li>lines</li>
+            <li>lineSpacing</li>
+            <li>imeActionLabel</li>
+            <li>cursorVisible</li>
+            <li>imeOptions</li>
+            <li>ellipsize</li>
+            <li>currencySymbol</li>
+            <li>leftPadding</li>
+            <li>topPadding</li>
+            <li>bottomPadding</li>
+            <li>rightPadding</li>
+            <li>disableComponent</li>
+            <li>isEditable</li>
+</ol>
 
 # UICheckbox Attributes
 
