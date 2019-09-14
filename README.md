@@ -197,6 +197,9 @@ dependencies {<br />
             <li>singleGroupDisplay</li>
 </ol>
 
+### Set data for the expandable listview as shown below, String refers to the parent and object refers to child which can be any array object
+expandableListView.setData(HashMap<String, Object>);
+
 ### You don't have to create an adapter for expandable listview. Just call as shown below,
 expandableListView.designParentChildView(new UIExpandableListView.DesignParentChildView() { <br>
             @Override<br>
