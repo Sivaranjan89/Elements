@@ -81,6 +81,8 @@ dependencies {<br />
             <li>labelPadding</li>
 </ol>
 
+### To Span Text in UILabel, use new TextSpanner().build. Several span options are provided. Refer to the example in HomeActivity.java
+
 # UIEditText Attributes
 <ol>
             <li>backgroundColor</li>
@@ -194,3 +196,16 @@ dependencies {<br />
 <ol>
             <li>singleGroupDisplay</li>
 </ol>
+
+### You don't have to create an adapter for expandable listview. Just call as shown below,
+expandableListView.designParentChildView(new UIExpandableListView.DesignParentChildView() { <br>
+            @Override<br>
+            public View designChildView(int parentPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent, Object child) {<br>
+                return convertView;<br>
+            }<br>
+
+            @Override<br>
+            public View designParentView(int parentPosition, boolean isExpanded, View convertView, ViewGroup parent, List<String> parentTitles) {<br>
+                return convertView;<br>
+            }<br>
+        });
