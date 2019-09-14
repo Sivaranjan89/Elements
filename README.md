@@ -203,7 +203,6 @@ expandableListView.designParentChildView(new UIExpandableListView.DesignParentCh
             public View designChildView(int parentPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent, Object child) {<br>
                 return convertView;<br>
             }<br>
-
             @Override<br>
             public View designParentView(int parentPosition, boolean isExpanded, View convertView, ViewGroup parent, List<String> parentTitles) {<br>
                 return convertView;<br>
