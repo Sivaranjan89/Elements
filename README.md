@@ -189,3 +189,8 @@ dependencies {<br />
             <li>brushSize</li>
             <li>sketchColor</li>
 </ol>
+
+# UIExpandableListView Attributes
+<ol>
+            <li>singleGroupDisplay</li>
+</ol>
