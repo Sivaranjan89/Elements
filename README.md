@@ -9,6 +9,7 @@ Available UI Elements with Latest release are,
 5) UIRadioButton
 6) UIRatingBar
 7) UIDrawingBoard
+8) UIExpandableListview
 
 # How to Install Plugin
 Add the below in your root build.gradle(project) at the end of repositories:<br />
@@ -172,5 +173,19 @@ dependencies {<br />
 </ol>
 
 # UIRatingBar Attributes
+<ol>
+            <li>starCount</li>
+            <li>starColor</li>
+            <li>filledStar</li>
+            <li>emptyStar</li>
+            <li>starSize</li>
+            <li>spacing</li>
+            <li>direction</li>
+            <li>progress</li>
+</ol>
 
 # UIDrawingBoard Attributes
+<ol>
+            <li>brushSize</li>
+            <li>sketchColor</li>
+</ol>
