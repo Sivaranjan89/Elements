@@ -137,8 +137,39 @@ dependencies {<br />
 </ol>
 
 # UICheckbox Attributes
+<ol>
+            <li>textSize</li>
+            <li>textColor</li>
+            <li>textStyle</li>
+            <li>fontName</li>
+            <li>strokeColor</li>
+            <li>strokeWidth</li>
+            <li>cornerRadius</li>
+            <li>backgroundColor</li>
+            <li>checkColor</li>
+            <li>customCheckbox</li>
+            <li>direction</li>
+            <li>renderDirection</li>
+            <li>data</li>
+</ol>
 
 # UIRadioButton Attributes
+<ol>
+            <li>textSize</li>
+            <li>textColor</li>
+            <li>textStyle</li>
+            <li>fontName</li>
+            <li>strokeColor</li>
+            <li>strokeWidth</li>
+            <li>cornerRadius</li>
+            <li>backgroundColor</li>
+            <li>checkColor</li>
+            <li>customCheckbox</li>
+            <li>direction</li>
+            <li>renderDirection</li>
+            <li>data</li>
+            <li>selectedItem</li>
+</ol>
 
 # UIRatingBar Attributes
 
